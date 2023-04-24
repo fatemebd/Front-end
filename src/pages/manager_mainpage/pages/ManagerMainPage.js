@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import styles from "./ManagerMainPage.module.css";
 import Table from "../components/Table";
+import Footer from "../components/Footer"
 
 const ManagerMainPage = () => {
   return (
@@ -17,11 +18,7 @@ const ManagerMainPage = () => {
         </div>
       </div>
       <Table />
-      <div className={styles.footer}>
-        <b className={styles.b1}>
-          تمامی حقوق استفاده از این سامانه متعلق به دانشگاه اصفهان می‌باشد.
-        </b>
-      </div>
+      <Footer />
     </div>
   );
 };
