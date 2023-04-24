@@ -36,17 +36,34 @@
 .b1 {
   position: relative;
 }
-
+.footer,
 .managerMainPage {
-  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.footer {
+  border-radius: var(--br-11xl) var(--br-11xl) 0 0;
+  background-color: var(--color-midnightblue-100);
+  width: 100%;
+  height: 59px;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-3xs) 441px;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+.managerMainPage {
   position: relative;
   background-color: var(--color-white);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-
+  gap: 89px;
   text-align: right;
   font-size: 26px;
   color: rgba(15, 25, 89, 0.4);
