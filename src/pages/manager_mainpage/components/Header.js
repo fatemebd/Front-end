@@ -19,7 +19,7 @@ const Header = () => {
         <img
           className={styles.universityOfIsfahanLogo2Icon}
           alt=""
-          src="/university-of-isfahanlogo-2@2x.png"
+          src="/assets/"
         />
         <div className={styles.wrapper}>
           <b className={styles.b}>
