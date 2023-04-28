@@ -1,27 +1,11 @@
-body {
-    margin: 0;
-    line-height: normal;
-  }
-  
-  .popup-overlay {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  
+
   :root {
     /* fonts */
-    --bold25: IRANSansX;
-    --overline: Inter;
+    --iransansx: IRANSansX;
   
     /* font sizes */
-    --overline-size: 10px;
     --font-size-xl: 20px;
-    --bold25-size: 25px;
+    --iransansx-size: 25px;
   
     /* Colors */
     --color-gray-100: #181d31;

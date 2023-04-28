@@ -1,0 +1,109 @@
+.university-of-isfahan {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .site-name {
+    height: 103px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 33px var(--padding-3xs);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .person_icon {
+    position: relative;
+    width: 79.17px;
+    height: 81.67px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .exit-icon {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .notif_icon {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 7px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+  }
+  .home_icon {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .home_parent {
+    width: 20px;
+    height: 18px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 7px;
+  }
+  .account,
+  .header,
+  .icons {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .account {
+    width: 181px;
+    height: 204px;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10;
+    gap: 5px;
+    font-size: 16px;
+   
+  }
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 var(--br-xl) var(--br-xl);
+    background-color: var(--color-midnightblue-100);
+    width: 100%;
+    height: 150px;
+    flex-direction: row;
+    padding: var(--padding-5xl) 15px var(--padding-5xl) 30px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    gap: 169px;
+    font-size: 26px;
+    
+  }
+  .b1 {
+    display: inline-block;
+    width: 132px;
+    height: 22px;
+    position: relative;
+    flex-shrink: 0;
+  }

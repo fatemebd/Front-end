@@ -7,8 +7,6 @@ function Table() {
       .then(data => setData(data))
       .catch(error => console.error(error));
   }, []);
- 
- console.log(data);
   return (
     <div>
       <h1>Table Example</h1>
@@ -20,13 +18,14 @@ function Table() {
             <th>Email</th>
           </tr>
         </thead>
+        
         <tbody>
 
           {data.map(item => (
             <tr>
-              <td>ddfd</td>
-              <td>ffdf</td>
-              <td>yyy</td>
+              <td>{item.id}</td>
+              <td>{item.title}</td>
+              <td>{item.body}</td>
             </tr>
           ))}
         </tbody>

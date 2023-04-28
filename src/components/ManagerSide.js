@@ -1,4 +1,4 @@
-import styles from "./ManagerSide.module.css";
+import styles from "../styles/ManagerSide.module.css";
 const ManagerSide = ({ onClose }) => {
   return (
     <div className={styles.managerSide}>

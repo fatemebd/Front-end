@@ -190,7 +190,7 @@
 }
 .buttom {
   font-size: var(--font-size-5xl);
-  font-family: var(--bold25);
+  font-family: var(--iransansx);
   color: var(--color-white);
   text-align: center;
   display: flex;
@@ -254,7 +254,7 @@
   text-align: center;
   font-size: var(--font-size-17xl);
   color: var(--color-white);
-  font-family: var(--bold25);
+  font-family: var(--iransansx);
 }
 .login-page.animate {
   animation: 1s ease 0s 1 normal forwards fade-in;
@@ -451,7 +451,7 @@
   text-align: center;
   font-size: var(--font-size-lg);
   color: var(--color-midnightblue-100);
-  font-family: var(--bold25);
+  font-family: var(--iransansx);
 }
 .close_icon{
   background-color: var(--color-white);
