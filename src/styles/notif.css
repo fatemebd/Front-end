@@ -1,0 +1,128 @@
+.popup-overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+  }
+  .parent {
+    position: relative;
+    width: 352px;
+    height: 155px;
+    overflow: hidden;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    color: var(--color-gray-100);
+    font-family: var(--iransansx);
+  }
+  .polygon {
+    position: absolute;
+    top: 1.05px;
+    left: 265.78px;
+    border-radius: 3px;
+    width: 42px;
+    height: 19px;
+  }
+  .close-icon {
+    width: 9.59px;
+    height: 9.59px;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .notification {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    border-radius: 6px;
+    background-color: #dedfe5;
+    width: 352px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+    z-index: 0;
+  }
+  .app-time-title {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--gap-5xl);
+    z-index: 1;
+  }
+  .text {
+    flex: 1;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: left;
+    font-size: var(--overline-size);
+    color: var(--color-gray-200);
+  }
+  .name-time {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+    font-weight: bold;
+    font-size: 10px;
+    
+  }
+  .title {
+    align-self: stretch;
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    color: #373737;
+    text-align: right;
+  }
+  .app-time-title,
+  .text {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+
+   .body {
+    align-self: stretch;
+    position: relative;
+    font-size: 12px;
+    line-height: 18px;
+    color: black;
+    text-align: left;
+    mix-blend-mode: normal;
+    z-index: 0;
+    margin: 0;
+    line-height: normal;
+  }
+  .dot {
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 0.01em;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+  .b {
+    letter-spacing: 0.01em;
+    line-height: 100%;
+    text-transform: uppercase;
+    position: relative;
+  }
+ 

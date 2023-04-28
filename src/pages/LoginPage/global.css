@@ -15,7 +15,7 @@ body {
 
 :root {
   /* fonts */
-  --bold25: IRANSansX;
+  --iransansx: IRANSansX;
   --font-roboto: Roboto;
   --overline: Inter;
 
@@ -28,7 +28,7 @@ body {
   --font-size-17xl: 36px;
   --font-size-5xl: 24px;
   --overline-size: 10px;
-  --bold25-size: 25px;
+  --iransansx-size: 25px;
 
   /* Colors */
   --color-white: #fff;
