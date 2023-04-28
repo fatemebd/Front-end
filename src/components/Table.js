@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
+import "../styles/Table.css";
 function Table() {
+
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -9,11 +10,11 @@ function Table() {
       .catch(error => console.error(error));
   }, []);
   return (
-    <div>
-      <h1>Table Example</h1>
+    <div class="table">
       <table>
         <thead>
           <tr>
+            if(props[arr].length>0)
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>

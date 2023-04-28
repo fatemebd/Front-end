@@ -40,23 +40,5 @@
     
   }
 
-  .table {
-    position: relative;
-    width: 100%;
-    left: 0;
-    height: 100vh;
-    flex-direction: row;
-    padding: 2px 0;
-    box-sizing: border-box;
-    align-items: center;
-  }
-  .table-body {
-    position: relative;
-    
-    width: 800px;
-    height: 300px;
-    overflow-y: auto;
-    color: var(--color-black);
-  }
 
   
