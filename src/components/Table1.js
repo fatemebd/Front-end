@@ -1,4 +1,4 @@
-import styles from  "../styles/Table.module1.css";
+import   "../styles/Table.css";
 const data = [
   { name: "Anom", age: 19, gender: "Male" },
   { name: "Megha", age: 19, gender: "Female" },

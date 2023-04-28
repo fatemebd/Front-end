@@ -1,0 +1,29 @@
+.Table {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  table {
+    position: relative;
+    border: 2px solid #0f1959;
+    border-radius: 20px;
+  width: 800px;
+  height: 200px;
+  border-collapse: collapse;
+  }
+  
+  th {
+    background-color: #0f1959;
+    color: white;
+    text-align: center;
+  }
+  
+  td {
+    color: #0f1959;
+  text-align: center;
+  border:2px solid #0f1959;
+  }
+  

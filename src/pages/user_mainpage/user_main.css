@@ -36,13 +36,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     
   }
 
   .table {
-    position: absolute;
-    top: calc(50% - 210px);
+    position: relative;
+    width: 100%;
     left: 0;
     height: 100vh;
     flex-direction: row;
@@ -51,11 +51,10 @@
     align-items: center;
   }
   .table-body {
-    position: absolute;
-    top: 467px;
-    left: 104px;
-    width: 1241px;
-    height: 424px;
+    position: relative;
+    
+    width: 800px;
+    height: 300px;
     overflow-y: auto;
     color: var(--color-black);
   }

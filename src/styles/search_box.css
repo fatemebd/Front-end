@@ -1,6 +1,6 @@
 input::placeholder{
     color:rgba(15, 25, 89, 0.4000000059604645);
-    font-size: 25px;
+    font-size: 18px;
     font-family:IRANSansX;   
     }
   .search-icon{
@@ -14,38 +14,37 @@ input::placeholder{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
   .input-search {
     
     outline: none;
     border: none;   
-    width: 280px;
-    height: 70px;
+    width: 350px;
+    height: 50px;
     direction: rtl;
     
   
   }
   .search-box {
-    position: absolute;
-    top: 248px;
-    gap: var(--gap-5xl);
+    position: relative;
+    gap: 10PX;
     border-radius: var(--br-xl);
     background-color: var(--color-white);
     border: 3px solid var(--color-midnightblue-100);
     box-sizing: border-box;
-    width: 450px;
-    height: 70px;
+    width: 350px;
+    height: 50px;
     overflow: hidden;
-    padding: var(--padding-26xl) 10px var(--padding-26xl) 47px;
+    padding: 010PX ;
     text-align: right;
-    font-size: 26px;
+    font-size: 18px;
     color: rgba(15, 25, 89, 0.4);
   }
   .ssearch-rounde-icon {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     overflow: hidden;
   }

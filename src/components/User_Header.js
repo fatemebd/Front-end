@@ -34,20 +34,23 @@ const Header=() =>{
   }
     return(
         <div class="header">
-        <img
-          class="university-of-isfahan"
-          src="/assets/img/university-of-isfahanlogo-3@2x.png"
-        />
-
+          <div class="logo">
+            <div class="name">
+            <b class="b1">دانشگاه اصفهان</b>
+            <b class="b1">name.ui.acir</b>
+            </div>
+          
+          <img class="university-of-isfahan" src="/assets/img/UI LogoWH.png"/>
+          </div>
         <div class="site-name">
           <b style={{position :"relative"}}>سامانه ارزیابی کارکنان دانشکده مهندسی کامپیوتر</b>
         </div>
+        
         <div class="account">
-          <img class="person_icon" alt=""  src="/assets/img/vector1.svg" />
+          <div class="name">
           <b class="b1">مطهره وکیلی</b>
-          <div class="icons">
+        <div class="icons">
             <img class="exit-icon" alt=""  src="/assets/img/rishutdownline.svg"/>
-
             <div class="notif_icon">
               <img class="exit-icon" 
               alt=""  id="notif" 
@@ -59,7 +62,12 @@ const Header=() =>{
               <img class="home_icon" alt=""  src="/assets/img/vector2.svg" />
             </div>
           </div>
+          </div>
+       
+          <img class="person_icon" alt=""  src="/assets/img/vector1.svg" />
+          
         </div>
+        
       </div>
     )
 }
