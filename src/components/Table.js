@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-function Table() {
+function Table({arr}) {
+  console.log(arr);
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -14,14 +15,13 @@ function Table() {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
+            {arr.map((element) =>
+              (<th>{element}</th>)
+            )}
           </tr>
         </thead>
         
         <tbody>
-
           {data.map(item => (
             <tr>
               <td>{item.id}</td>
