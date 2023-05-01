@@ -6,15 +6,16 @@ import SearchBox from "../../components/SearchBox"
 import Footer  from   "../../components/Footer"
 import Header from "../../components/User_Header";
 import Notification from "../../components/Notification";
-
+const arr =['icon','check','تاریخ پایان','کارمند','نام نظرسنجی','ردیف']
 const UsermainpagePage = () => {
     return (
         <>
-      <div class="user-main-page">
+      <div className="user-main-page">
          <Header/>
          <SearchBox />
-         <div class="table-body">
-          <Table class="table"/>
+         
+         <div className="table-body">
+          <Table arr={arr} className="table"/>
          </div>
          <Footer/>
       </div>

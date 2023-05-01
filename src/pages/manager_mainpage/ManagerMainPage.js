@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import styles from "./ManagerMainPage.module.css";
 import Table from "../components/Table";
 import Footer from "../components/Footer"
-
+const arr=['icon','تاریخ پایان','پرسشنامه','کارمند','نام نظرسنجی','ردیف'];
 const ManagerMainPage = () => {
   return (
     <div className={styles.managerMainPage}>
@@ -17,7 +17,7 @@ const ManagerMainPage = () => {
           />
         </div>
       </div>
-      <Table />
+      <Table arr={arr} />
       <Footer />
     </div>
   );
