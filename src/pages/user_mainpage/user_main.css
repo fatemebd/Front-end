@@ -33,7 +33,7 @@
     font-size: var(--font-size-xl);
     color: var(--color-white);
     font-family: var(--iransansx);
-    display: flex;
+    display: flex ;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;

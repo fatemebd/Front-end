@@ -1,23 +1,20 @@
-import Header from "../components/Header";
-import styles from "./ManagerMainPage.module.css";
-import Table from "../components/Table";
-import Footer from "../components/Footer"
-const arr=['icon','تاریخ پایان','پرسشنامه','کارمند','نام نظرسنجی','ردیف'];
+import React from "react";
+import "./main.css";
+import "./global.css";
+import Header from "../../components/adminHeader";
+import Table from "../../components/Table";
+import Footer from "../../components/Footer"
+import SearchBox from "../../components/SearchBox";
+
+const arr=['icon1','تاریخ پایان','پرسشنامه','کارمند','نام نظرسنجی','ردیف'];
 const ManagerMainPage = () => {
   return (
-    <div className={styles.managerMainPage}>
+    <div className="managerMainPage">
       <Header />
-      <div className={styles.searchBox}>
-        <div className={styles.parent}>
-          <b className={styles.b}>جست‌وجو در نظرسنجی‌ها</b>
-          <img
-            className={styles.materialSymbolssearchRoundeIcon}
-            alt=""
-            src="/materialsymbolssearchrounded.svg"
-          />
-        </div>
+      <SearchBox />
+      <div className="table-body">
+      <Table arr={arr} className="table" />
       </div>
-      <Table arr={arr} />
       <Footer />
     </div>
   );

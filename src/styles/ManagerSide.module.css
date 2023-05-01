@@ -93,10 +93,10 @@
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  padding: 15px 12px 111px;
+  padding: 15px 12px 0px;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-11xl);
+  gap: 5px;
 }
 .vectorIcon {
   position: absolute;
@@ -164,6 +164,7 @@
   gap: var(--gap-11xl);
 }
 .managerSide {
+  height: 100vh;
   position: relative;
   border-radius: var(--br-11xl) 0 0 var(--br-11xl);
   background-color: var(--color-white);
@@ -174,12 +175,48 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 35px;
+  gap: 0px;
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--color-midnightblue-100);
+  --font-iransansx: IRANSansX;
   font-family: var(--font-iransansx);
+}
+@import url("https://fonts.googleapis.com/css2?family=IRANSansX:wght@700&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-iransansx: IRANSansX;
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-17xl: 36px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-midnightblue-100: #0f1959;
+
+  /* Gaps */
+  --gap-11xl: 30px;
+  --gap-xl: 20px;
+  --gap-171xl: 190px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-26xl: 45px;
+  --padding-5xl: 24px;
+  --padding-9xs: 4px;
+  --padding-18xl: 37px;
+  --padding-11xs: 2px;
+  --padding-14xl: 33px;
+
+  /* border radiuses */
+  --br-11xl: 30px;
+  --br-xl: 20px;
 }

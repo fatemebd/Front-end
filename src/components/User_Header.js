@@ -40,7 +40,7 @@ const Header=() =>{
             <b class="b1">name.ui.acir</b>
             </div>
           
-          <img class="university-of-isfahan" src="/assets/img/UI LogoWH.png"/>
+            <img class="university-of-isfahan" src="/assets/img/UI LogoWH.png"/>
           </div>
         <div class="site-name">
           <b style={{position :"relative"}}>سامانه ارزیابی کارکنان دانشکده مهندسی کامپیوتر</b>
