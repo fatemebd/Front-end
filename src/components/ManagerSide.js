@@ -6,7 +6,7 @@ const ManagerSide = ({ onClose }) => {
         <img
           className={styles.materialSymbolsaccountCirclIcon}
           alt=""
-          src="/materialsymbolsaccountcircle.svg"
+          src="/assets/img/materialsymbolsaccountcircle.svg"
         />
         <b className={styles.b}>مطهره وکیلی</b>
         <img className={styles.accountChild} alt="" src="/line-1.svg" />
@@ -18,7 +18,7 @@ const ManagerSide = ({ onClose }) => {
           <img
             className={styles.rihome4LineIcon}
             alt=""
-            src="/rihome4line.svg"
+            src="/assets/img/rihome4line.svg"
           />
         </button>
         <button className={styles.parent}>
@@ -26,19 +26,19 @@ const ManagerSide = ({ onClose }) => {
           <img
             className={styles.rihome4LineIcon}
             alt=""
-            src="/carbondocumentadd.svg"
+            src="/assets/img/carbondocumentadd.svg"
           />
         </button>
         <button className={styles.parent}>
           <b className={styles.b2}>ایجاد پرسشنامه</b>
-          <img className={styles.rihome4LineIcon} alt="" src="/wpfsurvey.svg" />
+          <img className={styles.rihome4LineIcon} alt="" src="/assets/img/wpfsurvey.svg" />
         </button>
         <button className={styles.parent}>
           <b className={styles.b2}>فهرست کارمندان</b>
           <img
             className={styles.rihome4LineIcon}
             alt=""
-            src="/fluentpeoplelist20regular.svg"
+            src="/assets/img/fluentpeoplelist20regular.svg"
           />
         </button>
         <button className={styles.parent}>
@@ -46,7 +46,7 @@ const ManagerSide = ({ onClose }) => {
           <img
             className={styles.rihome4LineIcon}
             alt=""
-            src="/materialsymbolspatientlistrounded.svg"
+            src="/assets/img/materialsymbolspatientlistrounded.svg"
           />
         </button>
         <button className={styles.parent}>
@@ -54,22 +54,22 @@ const ManagerSide = ({ onClose }) => {
           <img
             className={styles.rihome4LineIcon}
             alt=""
-            src="/fluentappslistdetail20regular.svg"
+            src="/assets/img/fluentappslistdetail20regular.svg"
           />
         </button>
       </div>
       <div className={styles.rishutDownLineParent}>
         <button className={styles.rishutDownLine}>
-          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+          <img className={styles.vectorIcon} alt="" src="/assets/img/vector.svg" />
         </button>
         <button className={styles.rishutDownLine}>
-          <img className={styles.vectorIcon1} alt="" src="/vector1.svg" />
+          <img className={styles.vectorIcon1} alt="" src="/assets/img/vector1.svg" />
         </button>
         <button className={styles.icroundKeyboardDoubleArrowWrapper}>
           <img
             className={styles.icroundKeyboardDoubleArrowIcon}
             alt=""
-            src="/icroundkeyboarddoublearrowleft.svg"
+            src="/assets/img/icroundkeyboarddoublearrowleft.svg"
           />
         </button>
       </div>
