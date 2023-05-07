@@ -1,6 +1,4 @@
-.Table {
-  width: 100%;
-  height: 100vh;
+.table {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,22 +7,29 @@
   
   table {
     position: relative;
-    border: 3px solid #0f1959;
-    border-radius: 20px;
-  
-  height: 300px;
+    height: 350px;
   border-collapse: collapse;
+  overflow-y:auto;
+  display: block;
   }
   
   th {
     background-color: #0f1959;
     color: white;
     text-align: center;
+    position: sticky;
+    top: 0;
+    border: 2px solid #0f1959;
+   
+    font-size: 18px;
+    padding: 0 !important;
   }
   
   td {
     color: #0f1959;
   text-align: center;
   border:2px solid #0f1959;
+  font-size: 16px;
+  width: 10%;
   }
   

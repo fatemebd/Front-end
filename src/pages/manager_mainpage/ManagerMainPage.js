@@ -6,7 +6,7 @@ import Table from "../../components/Table";
 import Footer from "../../components/Footer"
 import SearchBox from "../../components/SearchBox";
 
-const arr=['icon1','تاریخ پایان','پرسشنامه','کارمند','نام نظرسنجی','ردیف'];
+const arr=['iconManager','تاریخ پایان','پرسشنامه','کارمند','نام نظرسنجی','ردیف'];
 const ManagerMainPage = () => {
   return (
     <div className="managerMainPage">

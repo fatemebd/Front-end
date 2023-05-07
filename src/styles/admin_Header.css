@@ -7,7 +7,7 @@
   }
   .b {
     height: 100%;
-    overflow-x: none;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     padding: 33px var(--padding-3xs);
@@ -30,7 +30,8 @@
   }
   .phlistIcon {
     position: relative;
-    height: 80px;
+    width: 107px;
+    height: 107px;
     flex-shrink: 0;
     overflow: hidden;
   }
