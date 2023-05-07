@@ -13,9 +13,9 @@ const UsermainpagePage = () => {
       <div class="user-main-page">
          <Header/>
          <SearchBox />
-         
-          <Table />
-         
+         <div class="table-body">
+          <Table class="table"/>
+         </div>
          <Footer/>
       </div>
       <Notification/>
