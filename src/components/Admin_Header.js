@@ -1,7 +1,11 @@
 import { useState, useCallback } from "react";
 import ManagerSide from "./ManagerSide";
 import PortalPopup from "./PortalPopup";
+<<<<<<< Updated upstream:src/components/adminHeader.js
 import styles from "../styles/adminHeader.module.css";
+=======
+import styles from "../styles/adminHeader.css";
+>>>>>>> Stashed changes:src/components/Admin_Header.js
 const Header = () => {
   const [isManagerSideOpen, setManagerSideOpen] = useState(false);
 

@@ -1,0 +1,9 @@
+.dropdown{
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 14px;
+    
+    gap:10px
+}

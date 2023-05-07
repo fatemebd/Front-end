@@ -15,6 +15,7 @@ function Table({arr}) {
       <table>
         <thead>
           <tr>
+<<<<<<< Updated upstream
             {arr.map((element) =>{
                 switch(element){
                   case "icon1":{
@@ -27,6 +28,11 @@ function Table({arr}) {
                 }
               }
             )}
+=======
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+>>>>>>> Stashed changes
           </tr>
         </thead>
         
