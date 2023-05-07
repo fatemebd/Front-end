@@ -6,7 +6,8 @@ import SearchBox from "../../components/SearchBox"
 import Footer  from   "../../components/Footer"
 import Header from "../../components/User_Header";
 import Notification from "../../components/Notification";
-const arr =['تاریخ پایان','کارمند','نام نظرسنجی','ردیف']
+const columns=['تاریخ پایان','کارمند','نام نظرسنجی','ردیف'];
+const values=['deadline','employee','template','id'];
 const UsermainpagePage = () => {
     return (
         <>
@@ -15,7 +16,7 @@ const UsermainpagePage = () => {
          <SearchBox />
          
          <div className="table-body">
-          <Table arr={arr} className="table"/>
+          <Table columns={columns} values={values} apiLink={"https://filebin.net/7ynb3fg95dsfmiqk"} />
          </div>
          <Footer/>
       </div>

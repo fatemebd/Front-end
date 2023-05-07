@@ -6,11 +6,10 @@ let iconManager=false;
 let check=false;
 let fillIcon=false;
 let userList=false;
-function Table({arr},apiLink) {
-
+function Table({columns,values,apiLink}) {
   // const [data, setData] = useState([]);
   // useEffect(() => {
-  //   fetch('https://filebin.net/7ynb3fg95dsfmiqk')
+  //   fetch(apiLink)
   //     .then(response => response.json())
   //     .then(data => setData(data))
   //     .catch(error => console.error(error));
@@ -20,7 +19,7 @@ function Table({arr},apiLink) {
       <table>
         <thead>
           <tr>
-            {arr.map((element) =>{
+            {columns.map((element) =>{
                 switch(element){
                   case "iconManager":{
                     iconManager=true;
@@ -40,18 +39,15 @@ function Table({arr},apiLink) {
         </thead>
         
         <tbody>
-          {data.map((item) => (
-            
-            <tr key={item.id}>
-              
+        {data.map((item) => (  
+          <tr key={item.id}>
               {iconManager &&(
-                <td><Result /></td>
+               <td style={{width:"10%"}}><Result /></td>
               )}
-          <td>{item.temp}</td>
-          <td>{item.date}</td>
-          <td>{item.emp}</td>
-          <td>{item.name}</td>
-          <td className="id">{item.id}</td>
+              {values.map((element)=>
+               <td>{item[element]}</td>                
+                               )}
+         
             </tr>
           ))}
         </tbody>
@@ -59,4 +55,5 @@ function Table({arr},apiLink) {
     </div>
   );
 }
+
 export default Table;
