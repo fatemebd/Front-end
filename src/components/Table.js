@@ -6,7 +6,8 @@ let iconManager=false;
 let check=false;
 let fillIcon=false;
 let userList=false;
-function Table({arr}) {
+function Table({arr},apiLink) {
+
   // const [data, setData] = useState([]);
   // useEffect(() => {
   //   fetch('https://filebin.net/7ynb3fg95dsfmiqk')
@@ -44,13 +45,13 @@ function Table({arr}) {
             <tr key={item.id}>
               
               {iconManager &&(
-                <td style={{width:40}}><Result /></td>
+                <td><Result /></td>
               )}
           <td>{item.temp}</td>
           <td>{item.date}</td>
           <td>{item.emp}</td>
           <td>{item.name}</td>
-          <td>{item.id}</td>
+          <td className="id">{item.id}</td>
             </tr>
           ))}
         </tbody>
@@ -58,5 +59,4 @@ function Table({arr}) {
     </div>
   );
 }
-
 export default Table;

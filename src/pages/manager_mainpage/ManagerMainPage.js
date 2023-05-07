@@ -13,7 +13,7 @@ const ManagerMainPage = () => {
       <Header />
       <SearchBox />
       <div className="table-body">
-      <Table arr={arr} className="table" />
+      <Table arr={arr} apiLink={"https://filebin.net/7ynb3fg95dsfmiqk"}  className="table" />
       </div>
       <Footer />
     </div>

@@ -30,7 +30,6 @@
 
 .table {
   position: relative;
-  width: 100%;
   left: 0;
   height: 100vh;
   flex-direction: row;
@@ -40,9 +39,8 @@
 }
 .table-body {
   position: relative;
-  
-  width: ;
   height: 300px;
   overflow-y: auto;
   color: var(--color-black);
+  width: 60vw;
 }
