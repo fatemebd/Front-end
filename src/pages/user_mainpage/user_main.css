@@ -16,7 +16,6 @@
   
 }
 
-<<<<<<< Updated upstream
   .table {
     position: relative;
     
@@ -32,22 +31,4 @@
     width: 80vw;
     color: var(--color-black); 
   }
-=======
-.table {
-  position: relative;
-  width: 100%;
-  left: 0;
-  height: 100vh;
-  padding: 2px 0;
-  box-sizing: border-box;
-  
-}
-.table-body {
-  position: relative;
-  width: 65vw;
-  
-  height: 300px;
-  color: var(--color-black);
-}
->>>>>>> Stashed changes
 
