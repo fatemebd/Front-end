@@ -14,6 +14,7 @@ function Table({columns,values,apiLink}) {
   //     .then(data => setData(data))
   //     .catch(error => console.error(error));
   // }, []);
+  let counter=1;
   return (
     <div  >
       <table>
@@ -32,7 +33,6 @@ function Table({columns,values,apiLink}) {
                   default:
                     return <th>{element}</th>;
                 }
-                
               }
             )}
           </tr>
@@ -41,15 +41,15 @@ function Table({columns,values,apiLink}) {
         <tbody>
         {data.map((item) => (  
           <tr key={item.id}>
-              {iconManager &&(
-               <td style={{width:"10%"}}><Result /></td>
-              )}
-              {values.map((element)=>
-               <td>{item[element]}</td>                
-                               )}
-         
-            </tr>
-          ))}
+            {iconManager &&(
+              <td className="iconManager"><Result /></td>
+            )}
+            {values.map((element)=>
+              <td>{item[element]}</td>                
+            )}
+            <td className="rowNum">{counter++}</td>
+          </tr>
+        ))}
         </tbody>
       </table>
     </div>
