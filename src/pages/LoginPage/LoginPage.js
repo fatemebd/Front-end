@@ -1,9 +1,10 @@
 import React from 'react';
 import "./global.css";
 import "./index.css";
+import Header from "../../components/loginHeader.js";
+import Footer from "../../components/Footer";
 
-function LoginPage ()
-{
+function LoginPage () {
  
   const handleRestorePassClick = () => {
     const popup = document.getElementById('restorePassModalContainer');
@@ -72,35 +73,24 @@ function LoginPage ()
   }, []);
 
   return (
-
-    <>
+    <div className='loginPage'>
   
       <header className="login-page" data-animate-on-scroll>
-        <div className="header">
-          <img
-            className="university-of-isfahan-logo-1-icon"
-            alt=""
-            src="https://s8.uupload.ir/files/university_of_isfahan-logo_5wep.png"
-          />
-
-          <b className="b5">سامانه ارزیابی کارکنان دانشکده مهندسی کامپیوتر</b>
-        </div>
+        <Header />
         <div className="login">
           <b className="b6">ورود</b>
           <div className="input-field-name">
             <input className="input2" type="text" />
-
             <div className="name">              
-              <b className="b7">نام کاربری</b>
+              <p className="b7">نام کاربری</p>
             </div>
           </div>
           <div className="pass">
             <b className="b8" id="text3" onClick={handleRestorePassClick}>فراموشی رمز عبور</b>
             <div className="input-field-pass2">
-              <input className="input2" type="text" />
-
+              <input className="input2" type="password" />
               <div className="name">                
-                <b className="b9">رمز عبور</b>
+                <p className="b9">رمز عبور</p>
               </div>
             </div>
           </div>
@@ -120,32 +110,30 @@ function LoginPage ()
             <div className="buttom">ورود</div>
           </button>
         </div>
-        <div className="footer">
-          <b className="b5"
-            >تمامی حقوق استفاده از این سامانه متعلق به دانشگاه اصفهان می‌باشد.</b
-          >
-        </div>
+        <Footer />
       </header>
 
       <div id="restorePassModalContainer" className="popup-overlay" style={{ display: 'none' }}>
         <div className="restore-pass-modal">
+          <div className='close-btn'>
           <button className='close-icon' onClick={handleRestorePassClick_close}>
             <img className="vector-icon" alt="" src="/assets/img/close.png" />
           </button>
+          </div>
+          
           <b className="b">بازیابی رمز عبور</b>
 
           <div className="input-field-pass">
             <input className="input" type="text" />
 
             <div className="wrapper">              
-              <b className="b1">پست الکترونیک</b>
+              <p className="b1">پست الکترونیک</p>
             </div>
           </div>
           
-          <b className="b3"
-            >رمز عبور موقت به ایمیل شما ارسال شد. لطفا پس از وارد شدن رمز خود را
-            تغییر دهید.</b
-          >
+          <b className="b3">
+            رمز عبور موقت به ایمیل شما ارسال شد. لطفا پس از وارد شدن رمز خود را تغییر دهید.
+          </b>
           <div className="robot1">
             <div className="frame2">
               <input className="checkbox1" type="checkbox" defaultChecked={true} />
@@ -167,7 +155,7 @@ function LoginPage ()
         
         </div>
       </div>
-    </>
+    </div>
   )
 
 }
