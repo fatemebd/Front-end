@@ -1,5 +1,7 @@
 import styles from "../styles/ManagerSide.module.css";
+import { useNavigate } from 'react-router-dom';
 const ManagerSide = ({ onClose }) => {
+  const navigate=useNavigate();
   return (
     <div className={styles.managerSide}>
       <div className={styles.account}>
@@ -12,7 +14,7 @@ const ManagerSide = ({ onClose }) => {
         <div className={styles.accountItem} />
       </div>
       <div className={styles.list}>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={()=>navigate('/ManagerMain')}>
           <b className={styles.b1}>خانه</b>
           <img
             className={styles.rihome4LineIcon}
@@ -20,7 +22,7 @@ const ManagerSide = ({ onClose }) => {
             src="/assets/img/rihome4line.svg"
           />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={()=>navigate('/questions')}>
           <b className={styles.b2}>ایجاد قالب</b>
           <img
             className={styles.rihome4LineIcon}
@@ -40,7 +42,7 @@ const ManagerSide = ({ onClose }) => {
             src="/assets/img/fluentpeoplelist20regular.svg"
           />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent}  onClick={()=>navigate('/UserList')}>
         <b className={styles.b2}>فهرست کاربران</b>
           <img
             className={styles.rihome4LineIcon}
@@ -58,7 +60,7 @@ const ManagerSide = ({ onClose }) => {
         </button>
       </div>
       <div className={styles.rishutDownLineParent}>
-        <button className={styles.rishutDownLine}>
+        <button className={styles.rishutDownLine} onClick={()=>navigate('/')}>
           <img className={styles.vectorIcon} alt="" src="/assets/img/vector.svg" />
         </button>
         <button className={styles.rishutDownLine}>

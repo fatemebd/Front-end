@@ -18,7 +18,7 @@ const UsermainpagePage = () => {
          <SearchBox />
          
          <div className="table-body">
-          <Table columns={columns} values={values} apiLink={"https://filebin.net/7ynb3fg95dsfmiqk"} className="table" />
+          <Table columns={columns} values={values} apiLink={"https://localhost:8000/questionnaire/questionnaires/"} className="table" />
          </div>
          <Footer/>
       </div>
