@@ -11,7 +11,7 @@ const ProjectRoutes = () => {
     <React.Suspense fallback={<>Loading...</>}>
       <Router>
         <Routes>
-          <Route path="/" element={<UsersList/>} />
+          <Route path="/" element={<ManagermainPage />} />
          
         </Routes>
       </Router>

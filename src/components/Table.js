@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
 import  "../styles/Table.css"
-import data from "../MOCK_DATA (1).json"
 let iconManager=false;
 let check=false;
 let fillIcon=false;
 let userList=false;
 function Table({columns,values,apiLink}) {
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   fetch(apiLink)
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .catch(error => console.error(error));
-  // }, []);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch(apiLink)
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+  }, []);
   let counter=1;
   return (
     <div className="table"  >
