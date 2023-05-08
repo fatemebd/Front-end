@@ -5,12 +5,13 @@ const Usermainpage = React.lazy(() => import("./pages/user_mainpage/user_main"))
 const LoginPage = React.lazy(() => import("./pages/LoginPage/LoginPage"));
 const ManagermainPage = React.lazy(() => import("./pages/manager_mainpage/ManagerMainPage"));
 const ChoosingRespondents=React.lazy(()=>import("./pages/ChoosingRespondents/choosing respondents"));
+const UsersList=React.lazy(()=>import("./pages/UsersList/users_list"))
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
       <Router>
         <Routes>
-          <Route path="/" element={<ManagermainPage/>} />
+          <Route path="/" element={<UsersList/>} />
          
         </Routes>
       </Router>

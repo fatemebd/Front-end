@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Icon, { Result } from "../components/icon";
+import Icon, { Result,Edit,Delete } from "../components/icon";
 import  "../styles/Table.css"
 import data from "../MOCK_DATA (1).json"
 let iconManager=false;
@@ -43,6 +43,14 @@ function Table({columns,values,apiLink}) {
           <tr key={item.id}>
             {iconManager &&(
               <td className="iconManager"><Result /></td>
+            )}
+            {userList&&(
+              <td className="usersListIcons">
+                <div className="icon_container">
+                  <Edit />
+                  <Delete />
+                </div>
+              </td>
             )}
             {values.map((element)=>
               <td>{item[element]}</td>                

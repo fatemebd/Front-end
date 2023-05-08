@@ -8,6 +8,7 @@ import SearchBox from "../../components/SearchBox";
 
 const columns=['iconManager','تاریخ پایان','کارمند','نام نظرسنجی','ردیف'];
 const values=['deadline','employee','template'];
+
 const ManagerMainPage = () => {
   return (
     <div className="managerMainPage">
