@@ -37,7 +37,7 @@ const Header=() =>{
           <div class="logo">
             <div class="name">
             <b class="b1">دانشگاه اصفهان</b>
-            <b class="b1">name.ui.acir</b>
+            <b class="b1">name.ui.ac.ir</b>
             </div>
           
             <img class="university-of-isfahan" src="/assets/img/UI LogoWH.png"/>
