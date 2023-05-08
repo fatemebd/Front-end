@@ -1,4 +1,5 @@
 import "../styles/search_box.css";
+
 const SearchBox=() =>{
     return(
         <div className="search-box">
