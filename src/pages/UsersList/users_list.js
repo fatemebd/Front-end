@@ -1,12 +1,13 @@
 import React from "react";
 import "./users_list.css"
 import "./global.css"
-import "../../components/Admin_Header"
-import "../../components/SearchBox"
-import "../../components/Table"
-import "../../components/Footer"
-const columns=['userList','ایمیل','سمت','نام و نام خانوادگی','نام کاربری','ردیف'];
-const values=[]
+import Header from "../../components/Admin_Header";
+import SearchBox from "../../components/SearchBox";
+import Table from "../../components/Table";
+import Footer from "../../components/Footer";
+
+const columns=['userList','ایمیل','سمت','دانشکده','نام و نام خانوادگی','نام کاربری','ردیف'];
+const values=['email','position','faculty','name','username'];
 
 const UserList=()=>{
     return(
@@ -19,5 +20,7 @@ const UserList=()=>{
          </div>
          <Footer/>
       </div>
-    )
-}
+    );
+};
+
+export default UserList;

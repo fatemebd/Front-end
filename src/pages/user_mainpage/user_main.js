@@ -6,8 +6,10 @@ import SearchBox from "../../components/SearchBox"
 import Footer  from   "../../components/Footer"
 import Header from "../../components/User_Header";
 import Notification from "../../components/Notification";
+
 const columns=['تاریخ پایان','کارمند','نام نظرسنجی','ردیف'];
 const values=['deadline','employee','template'];
+
 const UsermainpagePage = () => {
     return (
         <>

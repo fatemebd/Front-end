@@ -50,8 +50,8 @@
 }
 .rihome4LineIcon {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -93,7 +93,7 @@
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  padding: 15px 12px 0px;
+  padding-right: 20px;
   align-items: center;
   justify-content: center;
   gap: 5px;
@@ -135,8 +135,8 @@
 }
 .icroundKeyboardDoubleArrowIcon {
   position: relative;
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -145,8 +145,8 @@
   border: 0;
   padding: 0;
   background-color: transparent;
-  width: 50px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
   flex-direction: row;
 }
@@ -171,16 +171,16 @@
   box-shadow: -4px 4px 4px rgba(24, 29, 49, 0.3);
   border: 1px solid var(--color-midnightblue-100);
   box-sizing: border-box;
-  width: 315px;  
+  width: 280px;  
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   gap: 0px;
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
   text-align: center;
-  font-size: var(--font-size-xl);
+  font-size: 16px;
   color: var(--color-midnightblue-100);
   --font-iransansx: IRANSansX;
   font-family: var(--font-iransansx);
@@ -195,7 +195,7 @@ body {
   --font-iransansx: IRANSansX;
 
   /* font sizes */
-  --font-size-xl: 20px;
+  --font-size-xl: 16px;
   --font-size-17xl: 36px;
 
   /* Colors */

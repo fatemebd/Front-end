@@ -9,7 +9,6 @@ const ManagerSide = ({ onClose }) => {
           src="/assets/img/materialsymbolsaccountcircle.svg"
         />
         <b className={styles.b}>مطهره وکیلی</b>
-        <img className={styles.accountChild} alt="" src="/line-1.svg" />
         <div className={styles.accountItem} />
       </div>
       <div className={styles.list}>
@@ -63,7 +62,7 @@ const ManagerSide = ({ onClose }) => {
           <img className={styles.vectorIcon} alt="" src="/assets/img/vector.svg" />
         </button>
         <button className={styles.rishutDownLine}>
-          <img className={styles.vectorIcon1} alt="" src="/assets/img/vector1.svg" />
+          <img className={styles.vectorIcon1} alt="" src="/assets/img/setting.svg" />
         </button>
         <button className={styles.icroundKeyboardDoubleArrowWrapper}>
           <img
