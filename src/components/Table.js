@@ -15,7 +15,7 @@ function Table({columns,values,apiLink}) {
   //     .catch(error => console.error(error));
   // }, []);
   return (
-    <div  >
+    <div className="table"  >
       <table>
         <thead>
           <tr>
