@@ -1,5 +1,5 @@
 import React from "react";
-import "./main.css";
+import "./main1.css";
 import "./global.css";
 import Header from "../../components/Admin_Header";
 import Table from "../../components/Table";
