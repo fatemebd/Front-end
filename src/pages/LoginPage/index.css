@@ -6,6 +6,18 @@
     opacity: 1;
   }
 }
+
+.loginPage {
+  height: 100vh;
+  position: relative;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .university-of-isfahan-logo-1-icon {
   position: relative;
   width: 150px;
@@ -42,7 +54,7 @@
   height: 61px;
 }
 .input2 {
-  border: 3px solid var(--color-midnightblue-100);
+  border: 2px solid var(--color-midnightblue-100);
   background-color: var(--color-white);
   position: absolute;
   height: 81.4%;
@@ -54,35 +66,32 @@
   border-radius: var(--br-xl);
   box-sizing: border-box;
   overflow: hidden;
+  padding: 5%;
+  font-size: large;
+  font-family: var(--iransansx);
 }
-.name-icon {
-  top: calc(50% - 15.5px);
-  left: calc(50% - 49.5px);
-  width: 99px;
-  height: 31px;
-}
+
 .b7,
-.name,
-.name-icon {
+.name {
   position: absolute;
 }
 .b7 {
-  top: calc(50% - 13.5px);
-  left: calc(50% - 39.5px);
+  top: calc(50% - 20px);
+  left: calc(50% - 40px);
   display: inline-block;
   width: 78px;
 }
 .name {
-  top: calc(50% - 43px);
-  left: calc(50% + 89px);
+  top: calc(50% - 52px);
+  left: calc(50% + 50px);
   width: 99px;
   height: 31px;
   background-color: white;
 }
 .input-field-name {
   position: relative;
-  width: 440px;
-  height: 86px;
+  width: 350px;
+  height: 75px;
   flex-shrink: 0;
   font-size: var(--font-size-lg);
 }
@@ -100,10 +109,11 @@
   align-items: center;
   justify-content: center;
   width: 117px;
-  height: 18px;
+  height: 5px;
+  font-size: small;
 }
 .b9 {
-  top: calc(50% - 13.5px);
+  top: calc(50% - 20px);
   left: calc(50% - 32.5px);
   letter-spacing: 0.04em;
   display: inline-block;
@@ -113,8 +123,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 440px;
-  height: 86px;
+  width: 350px;
+  height: 75px;
   font-size: var(--font-size-lg);
 }
 .checkbox1,
@@ -123,8 +133,8 @@
   flex-shrink: 0;
 }
 .pass {
-  width: 440px;
-  height: 109px;
+  width: 350px;
+  height: 100px;
   font-size: var(--font-size-base);
 }
 .checkbox1 {
@@ -181,8 +191,8 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-lightgray);
   box-sizing: border-box;
-  width: 304px;
-  height: 76px;
+  width: 270px;
+  height: 65px;
   text-align: left;
   font-size: var(--font-size-sm);
   color: var(--color-black);
@@ -210,7 +220,7 @@
   background-color: var(--color-midnightblue-100);
   border-radius: var(--br-xl);
   box-sizing: border-box;
-  width: 172px;
+  width: 140px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -218,9 +228,9 @@
 .login {
   border-radius: var(--br-11xl);
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.01);
-  border: 3px solid var(--color-gray-100);
+  border: 2px solid var(--color-gray-100);
   flex-direction: column;
-  padding: var(--padding-20xl) 60px;
+  padding: 30px;
   gap: 16px;
   color: var(--color-midnightblue-100);
 }
@@ -238,7 +248,6 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  /* padding: var(--padding-3xs) var(--padding-422xl); */
   box-sizing: border-box;
   justify-content: center;
   font-size: var(--font-size-xl);
@@ -247,9 +256,10 @@
   position: relative;
   background-color: var(--color-white);
   width: 100%;
+  height: 100vh;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 118px;
+  justify-content: space-between;
+  
   opacity: 0;
   text-align: center;
   font-size: var(--font-size-17xl);
@@ -299,24 +309,26 @@
   left: 0;
   border-radius: var(--br-xl);
   background-color: var(--color-white);
-  border: 3px solid var(--color-midnightblue-100);
+  border: 2px solid var(--color-midnightblue-100);
   box-sizing: border-box;
   overflow: hidden;
+  padding: 5%;
+  font-size: large;
+  font-family: var(--iransansx);
 }
 .b1 {
   position: relative;
   display: inline-block;
-  width: 198px;
+  width: 150px;
   flex-shrink: 0;
 }
 .wrapper {
   position: absolute;
   height: 31.4%;
-  width: 41.14%;
+  width: 42%;
   top: 0;
-  right: 3.86%;
-  bottom: 68.6%;
-  left: 55%;
+  right: 5%;
+
   background-color: var(--color-white);
   overflow: hidden;
   display: flex;
@@ -327,8 +339,8 @@
 .input-field-pass,
 .input-field-pass1 {
   position: relative;
-  width: 440px;
-  height: 86px;
+  width: 350px;
+  height: 75px;
   flex-shrink: 0;
 }
 .input-field-pass1 {
@@ -436,26 +448,29 @@
   position: relative;
   border-radius: var(--br-11xl);
   background-color: var(--color-white);
-  border: 3px solid var(--color-gray-100);
+  border: 2px solid var(--color-gray-100);
   box-sizing: border-box;
-  width: 545px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 18px var(--padding-14xl) var(--padding-20xl) var(--padding-18xl);
+  padding: 1%;
   align-items: center;
   justify-content: center;
-  gap: 22px;
-  max-width: 90%;
-  max-height: 90%;
+  gap: 16px;
   text-align: center;
   font-size: var(--font-size-lg);
   color: var(--color-midnightblue-100);
   font-family: var(--iransansx);
 }
-.close_icon{
+.close-icon{
   background-color: var(--color-white);
   border: 0px;
   display: flex;
-  
+}
+
+.close-btn {
+  display: flex;
+  justify-content: flex-start;
+  width: 60vh;
+  height: fit-content;
 }
