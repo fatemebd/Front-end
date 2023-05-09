@@ -1,6 +1,5 @@
 import React from "react";
-import "./user_main.css"
-import "./global.css"
+import style from "./user_main.module.css"
 import Table from "../../components/Table";
 import SearchBox from "../../components/SearchBox"
 import Footer  from   "../../components/Footer"
@@ -13,12 +12,12 @@ const values=['deadline','employee','template'];
 const UsermainpagePage = () => {
     return (
         <>
-      <div className="user-main-page">
+      <div className={style.user_main_page}>
          <Header/>
          <SearchBox />
          
-         <div className="table-body">
-          <Table columns={columns} values={values} apiLink={"https://localhost:8000/questionnaire/questionnaires/"} className="table" />
+         <div className={style.table_body}>
+          <Table columns={columns} values={values} apiLink={"https://localhost:8000/questionnaire/questionnaires/"} className={style.table} />
          </div>
          <Footer/>
       </div>

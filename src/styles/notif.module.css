@@ -1,4 +1,4 @@
-.popup-overlay {
+.popup_overlay {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -27,7 +27,7 @@
     width: 42px;
     height: 19px;
   }
-  .close-icon {
+  .close_icon {
     width: 9.59px;
     height: 9.59px;
     flex-shrink: 0;
@@ -57,7 +57,7 @@
     gap: var(--gap-5xs);
     z-index: 0;
   }
-  .app-time-title {
+  .app_time_title {
     align-self: stretch;
     flex-direction: row;
     align-items: flex-start;
@@ -74,7 +74,7 @@
     font-size: var(--overline-size);
     color: var(--color-gray-200);
   }
-  .name-time {
+  .name_time {
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -93,7 +93,7 @@
     color: #373737;
     text-align: right;
   }
-  .app-time-title,
+  .app_time_title,
   .text {
     display: flex;
     justify-content: flex-start;

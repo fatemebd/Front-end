@@ -1,17 +1,17 @@
-import "../styles/search_box.css";
+import style from "../styles/search_box.module.css";
 
 const SearchBox=() =>{
     return(
-        <div className="search-box">
-          <input className="input-search" type="text" placeholder="جست‌وجو در نظرسنجی‌ها" 
+        <div className={style.search_box}>
+          <input className={style.input_search} type="text" placeholder="جست‌وجو در نظرسنجی‌ها" 
           onKeyDown={(e) => {if(e.key === "Enter") {
             let tbl=document.getElementById('tbl');
             tbl.remove();
           }}} >
           </input>
-          <button className="search-icon">
+          <button className={style.search_icon}>
           <img
-            className="ssearch-rounde-icon"
+            className={style.ssearch_rounde_icon}
             alt=""
             src="assets/img/materialsymbolssearchrounded.svg"
           />

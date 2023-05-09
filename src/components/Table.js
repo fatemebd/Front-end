@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
-import  "../styles/Table.css"
+import style from "../styles/Table.module.css"
 import data from "../MOCK_DATA (1).json"
 let iconManager=false;
 let check=false;
@@ -17,7 +17,7 @@ function Table({columns,values,apiLink}) {
   // }, []);
   let counter=1;
   return (
-    <div className="table"  >
+    <div className={style.table}  >
       <table>
         <thead>
           <tr>
@@ -43,11 +43,11 @@ function Table({columns,values,apiLink}) {
         {data.map((item) => (  
           <tr key={item.id}>
             {iconManager &&(
-              <td className="iconManager"><Result /></td>
+              <td className={style.iconManager}><Result /></td>
             )}
             {userList&&(
-              <td className="usersListIcons">
-                <div className="icon_container">
+              <td className={style.usersListIcons}>
+                <div className={style.icon_container}>
                   <Edit />
                   <Delete />
                 </div>
@@ -56,7 +56,7 @@ function Table({columns,values,apiLink}) {
             {values.map((element)=>
               <td>{item[element]}</td>                
             )}
-            <td className="rowNum">{counter++}</td>
+            <td className={style.rowNum}>{counter++}</td>
           </tr>
         ))}
         </tbody>

@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import ManagerSide from "./ManagerSide";
 import PortalPopup from "./PortalPopup";
-//import "../styles/adminHeader.css";
 import style from "../styles/adminHeader.module.css";
 
 const Header = () => {

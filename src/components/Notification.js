@@ -1,4 +1,4 @@
-import "../styles/notif.css";
+import style from "../styles/notif.module.css";
 
 const Notification=() =>{
 
@@ -9,24 +9,24 @@ const Notification=() =>{
       };
     
     return(
-        <div id="Container" class="popup-overlay" >
-      <div class="parent">
-        <img class="polygon" alt="" src="/assets/img/polygon-1.svg" />
+        <div id="Container" className={style.popup_overlay} >
+      <div className={style.parent}>
+        <img className={style.polygon} alt="" src="/assets/img/polygon_1.svg" />
 
-        <div class="notification">
-          <div class="content">
-            <div class="app-time-title">
-                <img class="close-icon" alt=""  src="/assets/img/vector.svg" onClick={close_Click} />
-              <div class="text">
-                <div class="name-time">
-                  <b class="b" style={{direction: "rtl"}}>۲ هفته پیش</b>
-                  <div class="dot">•</div>
-                  <b class="b">دانشجویان</b>
+        <div className={style.notification}>
+          <div className={style.content}>
+            <div className={style.app_time_title}>
+                <img className={style.close_icon} alt=""  src="/assets/img/vector.svg" onClick={close_Click} />
+              <div className={style.text}>
+                <div className={style.name_time}>
+                  <b className={style.b} style={{direction: "rtl"}}>۲ هفته پیش</b>
+                  <div className={style.dot}>•</div>
+                  <b className={style.b}>دانشجویان</b>
                 </div>
-                <b class="title">پرسشنامه اسفند ۱۴۰۱</b>
+                <b className={style.title}>پرسشنامه اسفند ۱۴۰۱</b>
               </div>
             </div>
-            <div class="body">
+            <div className={style.body}>
               Do ullamco ex velit anim do proident exercitation et anim tempor.
               Lorem sunt deserunt labore non excepteur veniam enim quis officia
               magna anim...

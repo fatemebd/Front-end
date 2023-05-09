@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import "./global.css";
 import "./index.css";
 import Header from "../../components/loginHeader.js";
 import Footer from "../../components/Footer";

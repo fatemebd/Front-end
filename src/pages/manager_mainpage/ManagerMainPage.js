@@ -1,6 +1,5 @@
 import React from "react";
-import "./main1.css";
-import "./global.css";
+import style from "./main1.module.css";
 import Header from "../../components/Admin_Header";
 import Table from "../../components/Table";
 import Footer from "../../components/Footer"
@@ -11,11 +10,11 @@ const values=['deadline','employee','template'];
 
 const ManagerMainPage = () => {
   return (
-    <div className="managerMainPage">
+    <div className={style.managerMainPage}>
       <Header />
       <SearchBox />
-      <div className="table-body">
-      <Table columns={columns} values={values} apiLink={"https://filebin.net/7ynb3fg95dsfmiqk"}  className="table" />
+      <div className={style.table_body}>
+      <Table columns={columns} values={values} apiLink={"https://filebin.net/7ynb3fg95dsfmiqk"}  className={style.table} />
       </div>
       <Footer />
     </div>

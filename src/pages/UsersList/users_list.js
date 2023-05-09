@@ -1,6 +1,5 @@
 import React from "react";
-import "./users_list.css"
-import "./global.css"
+import style from "./users_list.module.css"
 import Header from "../../components/Admin_Header";
 import SearchBox from "../../components/SearchBox";
 import Table from "../../components/Table";
@@ -11,11 +10,11 @@ const values=['email','position','faculty','name','username'];
 
 const UserList=()=>{
     return(
-        <div className="userList">
+        <div className={style.userList}>
          <Header/>
          <SearchBox />
          
-         <div className="table-body">
+         <div className={style.table_body}>
           <Table columns={columns} values={values} apiLink={"https://localhost:8000/accounts/get-stu/"} />
          </div>
          <Footer/>
