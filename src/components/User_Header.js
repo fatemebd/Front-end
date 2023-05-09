@@ -1,5 +1,5 @@
-import "../styles/user_header.css";
-
+//import "../styles/user_header.css";
+import styles from "../styles/user_header.module.css"
 const Header=() =>{
 
   const notifClick = () =>{
@@ -33,38 +33,38 @@ const Header=() =>{
   
   }
     return(
-        <div class="header">
-          <div class="logo">
-            <div class="name">
-            <b class="b1">دانشگاه اصفهان</b>
-            <b class="b1">name.ui.ac.ir</b>
+        <div className={styles.header}>
+          <div className={styles.logo}>
+            <div className={styles.name}>
+            <b className={styles.b1}>دانشگاه اصفهان</b>
+            <b className={styles.b1}>name.ui.ac.ir</b>
             </div>
           
-            <img class="university-of-isfahan" src="/assets/img/UI LogoWH.png"/>
+            <img className={styles.university_of_isfahan} src="/assets/img/UI LogoWH.png"/>
           </div>
-        <div class="site-name">
+        <div className={styles.site_name}>
           <b style={{position :"relative"}}>سامانه ارزیابی کارکنان دانشکده مهندسی کامپیوتر</b>
         </div>
         
-        <div class="account">
-          <div class="name">
-          <b class="b1">مطهره وکیلی</b>
-        <div class="icons">
-            <img class="exit-icon" alt=""  src="/assets/img/rishutdownline.svg"/>
-            <div class="notif_icon">
-              <img class="exit-icon" 
+        <div className={styles.account}>
+          <div className={styles.name}>
+          <b className={styles.b1}>مطهره وکیلی</b>
+        <div className={styles.icons}>
+            <img className={styles.exit_icon} alt=""  src="/assets/img/rishutdownline.svg"/>
+            <div className={styles.notif_icon}>
+              <img className={styles.exit_icon} 
               alt=""  id="notif" 
               src="/assets/img/claritynotificationline.svg" onClick={notifClick} />
             </div>
-            <img class="exit-icon" alt="" src="/assets/img/uilsetting.svg"/>
+            <img className={styles.exit_icon} alt="" src="/assets/img/uilsetting.svg"/>
 
-            <div class="home_parent">
-              <img class="home_icon" alt=""  src="/assets/img/vector2.svg" />
+            <div className={styles.home_parent}>
+              <img className={styles.home_icon} alt=""  src="/assets/img/vector2.svg" />
             </div>
           </div>
           </div>
        
-          <img class="person_icon" alt=""  src="/assets/img/vector1.svg" />
+          <img className={styles.person_icon} alt=""  src="/assets/img/vector1.svg" />
           
         </div>
         

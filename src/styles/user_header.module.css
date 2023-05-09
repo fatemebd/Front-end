@@ -1,11 +1,11 @@
-.university-of-isfahan {
+.university_of_isfahan {
   position: relative;
   width: 75px;
   height:75px;
   flex-shrink: 0;
   object-fit: cover;
 }
-.site-name {
+.site_name {
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -27,7 +27,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.exit-icon {
+.exit_icon {
   width: 20px;
   height: 20px;
   overflow: hidden;
