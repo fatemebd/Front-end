@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
-import style from "../styles/Table.module.css"
-import data from "../MOCK_DATA (1).json"
+
+import {useManagerMainContext} from "../contexts/managerMainContext"
+
+import  "../styles/Table.css"
 let iconManager=false;
 let check=false;
 let fillIcon=false;
 let userList=false;
-function Table({columns,values,apiLink}) {
 
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   fetch(apiLink)
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .catch(error => console.error(error));
-  // }, []);
+
+function Table(props) {
+  
+   const [data,setData]=useManagerMainContext();
+  setData(props.data);
+  
   let counter=1;
   return (
-    <div className={style.table}  >
+    <div className="table"  >
       <table>
         <thead>
           <tr>
-            {columns.map((element) =>{
+            {props.columns.map((element) =>{
                 switch(element){
                   case "iconManager":{
                     iconManager=true;
@@ -40,23 +40,23 @@ function Table({columns,values,apiLink}) {
         </thead>
         
         <tbody>
-        {data.map((item) => (  
+        {[data].map((item) => (  
           <tr key={item.id}>
             {iconManager &&(
-              <td className={style.iconManager}><Result /></td>
+              <td className="iconManager"><Result /></td>
             )}
             {userList&&(
-              <td className={style.usersListIcons}>
-                <div className={style.icon_container}>
+              <td className="usersListIcons">
+                <div className="icon_container">
                   <Edit />
                   <Delete />
                 </div>
               </td>
             )}
-            {values.map((element)=>
+            {props.values.map((element)=>
               <td>{item[element]}</td>                
             )}
-            <td className={style.rowNum}>{counter++}</td>
+            <td className="rowNum">{counter++}</td>
           </tr>
         ))}
         </tbody>
