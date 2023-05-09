@@ -100,10 +100,10 @@ function LoginPage () {
         console.log("200");
         if (data.is_staff) {
           // If user is staff, go to admin page
-          navigate("/admin");
+          navigate("/ManagerMain");
         } else {
           // If user is not staff, go to user page
-          navigate("/user");
+          navigate("/UserMain");
         }
       } else {
         alert('Invalid credentials');
