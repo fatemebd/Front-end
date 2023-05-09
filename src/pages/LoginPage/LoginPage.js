@@ -1,10 +1,28 @@
 import React from 'react';
+import { useState } from 'react';
 import "./global.css";
 import "./index.css";
 import Header from "../../components/loginHeader.js";
 import Footer from "../../components/Footer";
+import Button from "../../components/Button";
+import { useNavigate } from 'react-router-dom';
+
 
 function LoginPage () {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [isStaff, setIsStaff] = useState('');
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
  
   const handleRestorePassClick = () => {
     const popup = document.getElementById('restorePassModalContainer');
@@ -63,6 +81,39 @@ function LoginPage () {
     popup.addEventListener('click',closeModal());
   };
 
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/accounts/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      if (response.status === 200) {
+        const data = await response.json();
+        setIsStaff(data.is_staff);
+        data.is_staff = true;
+        setToken(data.token);
+        setFullName(data.user_full_name);
+        console.log("200");
+        if (data.is_staff) {
+          // If user is staff, go to admin page
+          navigate("/ManagerMain");
+        } else {
+          // If user is not staff, go to user page
+          navigate("/UserMain");
+        }
+      } else {
+        alert('Invalid credentials');
+        console.log("else");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const observer = new IntersectionObserver(handleScrollAnimElementIntersecting, {
     threshold: 0.15,
   });
@@ -80,7 +131,7 @@ function LoginPage () {
         <div className="login">
           <b className="b6">ورود</b>
           <div className="input-field-name">
-            <input className="input2" type="text" />
+            <input value={username} onChange={handleUsernameChange} className="input2" type="text" />
             <div className="name">              
               <p className="b7">نام کاربری</p>
             </div>
@@ -88,7 +139,7 @@ function LoginPage () {
           <div className="pass">
             <b className="b8" id="text3" onClick={handleRestorePassClick}>فراموشی رمز عبور</b>
             <div className="input-field-pass2">
-              <input className="input2" type="password" />
+              <input value={password} onChange={handlePasswordChange} className="input2" type="password" />
               <div className="name">                
                 <p className="b9">رمز عبور</p>
               </div>
@@ -96,7 +147,7 @@ function LoginPage () {
           </div>
           <div className="robot1">
             <div className="frame2">
-              <input className="checkbox1" type="checkbox" defaultChecked={true} />
+              <input className="checkbox1" type="checkbox" defaultChecked={false} />
 
               <div className="im-not-a1">I'm not a robot</div>
             </div>
@@ -106,10 +157,11 @@ function LoginPage () {
               <div className="im-not-a1">Privacy - Terms</div>
             </div>
           </div>
-          <button className="signin-button">
+          <button onClick={handleLogin} className="signin-button">
             <div className="buttom">ورود</div>
           </button>
         </div>
+        {/* <Button  name={"ورود"} link={"/UserMain"} icon={""} onClick={() => console.log("yep!")} /> */}
         <Footer />
       </header>
 
