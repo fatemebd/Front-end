@@ -1,25 +1,15 @@
-import React, {
-  createContext,
-  Dispatch,
-  FC,
-  useContext,
-  useState,
-} from "react";
+import React from "react";
+const ManagerMainContext = React.createContext();
 
-
-const defaultContextValue = [{}, () => {}];
-
-export const JsonContext = createContext(defaultContextValue);
-
-export const managerMainContextProvider = (
+export const ManagerMainContextProvider = (
   props
 ) => {
-  const [json, setJson] = useState(json1);
+  const [data, setData] = useState(props.data);
 
   return (
-    <JsonContext.Provider value={[json, setJson]}>
+    <ManagerMainContext.Provider value={[data, setData]}>
       {props.children}
-    </JsonContext.Provider>
+    </ManagerMainContext.Provider>
   );
 };
-export const managerMainContext = () => useContext(JsonContext);
+export const usMmanagerMainContext = () => useContext(ManagerMainContext);

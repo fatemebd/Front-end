@@ -1,8 +1,8 @@
 import { useState, useCallback } from "react";
 import ManagerSide from "./ManagerSide";
 import PortalPopup from "./PortalPopup";
-import "../styles/adminHeader.css";
-import styles from "../styles/adminHeader.css";
+//import "../styles/adminHeader.css";
+import style from "../styles/adminHeader.module.css";
 
 const Header = () => {
   const [isManagerSideOpen, setManagerSideOpen] = useState(false);
@@ -17,22 +17,22 @@ const Header = () => {
 
   return (
     <>
-      <div className="header">
-      <div className="logo">
-            <div className="name">
-            <b className="b1">دانشگاه اصفهان</b>
-            <b className="b1">name.ui.acir</b>
+      <div className={style.header}>
+      <div className={style.logo}>
+            <div className={style.name}>
+            <b className={style.b1}>دانشگاه اصفهان</b>
+            <b className={style.b1}>name.ui.acir</b>
             </div>
           
-            <img className="universityOfIsfahanLogo2Icon" src="/assets/img/UI LogoWH.png"/>
+            <img className={style.universityOfIsfahanLogo2Icon} src="/assets/img/UI LogoWH.png"/>
           </div>
-        <div className="wrapper">
-          <b className="b1">
+        <div className={style.wrapper}>
+          <b className={style.b1}>
             سامانه ارزیابی کارکنان دانشکده مهندسی کامپیوتر
           </b>
         </div>
-        <div className="accountWrapper" onClick={openManagerSide}>
-            <img className="phlistIcon "alt="" src="/assets/img/phlist.svg" />
+        <div className={style.accountWrapper} onClick={openManagerSide}>
+            <img className={style.phlistIcon} alt="" src="/assets/img/phlist.svg" />
         </div>
       </div>
       {isManagerSideOpen && (
