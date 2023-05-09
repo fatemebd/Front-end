@@ -1,10 +1,18 @@
-import React from "react";
-const ManagerMainContext = React.createContext();
+import React, {
+  createContext,
+  useContext,
+  useState,
+} from "react";
+
+
+const defaultContextValue = [{}, () => {}];
+
+export const ManagerMainContext = createContext(defaultContextValue);
 
 export const ManagerMainContextProvider = (
   props
 ) => {
-  const [data, setData] = useState(props.data);
+  const [data, setData] = useState([]);
 
   return (
     <ManagerMainContext.Provider value={[data, setData]}>
@@ -12,4 +20,4 @@ export const ManagerMainContextProvider = (
     </ManagerMainContext.Provider>
   );
 };
-export const usMmanagerMainContext = () => useContext(ManagerMainContext);
+export const useManagerMainContext = () => useContext(ManagerMainContext);

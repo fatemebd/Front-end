@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./main1.css";
-import "./global.css";
 import Header from "../../components/Admin_Header";
 import Table from "../../components/Table";
 import Footer from "../../components/Footer"
 import SearchBox from "../../components/SearchBox";
 import managerData from "../../MOCK_DATA (1).json"
+import style from "./main1.module.css"
 
 const columns=['iconManager','تاریخ پایان','کارمند','نام نظرسنجی','ردیف'];
 const values=['deadline','employee','template'];
@@ -20,11 +19,11 @@ const ManagerMainPage = () => {
   }, []);
 
   return (
-    <div className="managerMainPage">
+    <div className={style.managerMainPage}>
       <Header />
       <SearchBox />
-      <div className="table-body">
-      <Table columns={columns} values={values} data={data}  className="table" />
+      <div className={style.table_body}>
+      <Table columns={columns} values={values} data={data}  className={style.table} />
       </div>
       <Footer />
     </div>
