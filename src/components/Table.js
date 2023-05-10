@@ -1,31 +1,27 @@
-import  { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
-import React, {
-  createContext,
-  useContext,
-} from "react";
-
-import {ManagerMainContext,useManagerMainContext} from "../contexts/managerMainContext"
-
 import style from "../styles/Table.module.css"
+import data from "../MOCK_DATA (1).json"
 let iconManager=false;
 let check=false;
 let fillIcon=false;
 let userList=false;
+function Table({columns,values,apiLink}) {
 
-
-function Table(props) {
-  let {managercontext}=useContext(ManagerMainContext)
-   const [data,setData]=useManagerMainContext();
-  setData(props.data);
-  
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   fetch(apiLink)
+  //     .then(response => response.json())
+  //     .then(data => setData(data))
+  //     .catch(error => console.error(error));
+  // }, []);
   let counter=1;
   return (
     <div className={style.table}  >
       <table>
         <thead>
           <tr>
-            {props.columns.map((element) =>{
+            {columns.map((element) =>{
                 switch(element){
                   case "iconManager":{
                     iconManager=true;
@@ -44,7 +40,7 @@ function Table(props) {
         </thead>
         
         <tbody>
-        {[data].map((item) => (  
+        {data.map((item) => (  
           <tr key={item.id}>
             {iconManager &&(
               <td className={style.iconManager}><Result /></td>
@@ -57,7 +53,7 @@ function Table(props) {
                 </div>
               </td>
             )}
-            {props.values.map((element)=>
+            {values.map((element)=>
               <td>{item[element]}</td>                
             )}
             <td className={style.rowNum}>{counter++}</td>
