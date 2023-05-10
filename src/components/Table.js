@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
-import React, {
-  createContext,
-  useContext,
-} from "react";
+import React from "react";
 
 
 import style from "../styles/Table.module.css"
@@ -15,13 +11,14 @@ let userList=false;
 
 
 function Table(props) {
+  //const {values, columns} = props
   let counter=1;
   return (
     <div className={style.table}  >
       <table>
         <thead>
           <tr>
-            {columns.map((element) =>{
+            {props.columns.map((element) =>{
                 switch(element){
                   case "iconManager":{
                     iconManager=true;
@@ -53,7 +50,7 @@ function Table(props) {
                 </div>
               </td>
             )}
-            {values.map((element)=>
+            {props.values.map((element)=>
               <td>{item[element]}</td>                
             )}
             <td classN
