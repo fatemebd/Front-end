@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
+import React, {
+  createContext,
+  useContext,
+} from "react";
 
-import {useManagerMainContext} from "../contexts/managerMainContext"
+import {ManagerMainContext,useManagerMainContext} from "../contexts/managerMainContext"
 
 import style from "../styles/Table.module.css"
 let iconManager=false;
@@ -11,7 +15,7 @@ let userList=false;
 
 
 function Table(props) {
-  
+  let {managercontext}=useContext(ManagerMainContext)
    const [data,setData]=useManagerMainContext();
   setData(props.data);
   
