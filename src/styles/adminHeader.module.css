@@ -27,6 +27,8 @@
     align-items: center;
     justify-content: center;
     text-align: right;
+   right: 2%;
+    position: relative;
   }
   .phlistIcon {
     position: relative;
@@ -72,9 +74,10 @@
     padding: var(--padding-5xl) 15px var(--padding-5xl) 30px;
     box-sizing: border-box;
     justify-content: space-around;
-    gap: 169px;
+    gap: 20%;
     font-size: 22px;
     background-color: #0f1959;
+    color: white;
   }
   
   .b1 {

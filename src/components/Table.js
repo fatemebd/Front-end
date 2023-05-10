@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Icon, { Result,Edit,Delete } from "../components/icon";
 import React, {
   createContext,
@@ -7,6 +7,7 @@ import React, {
 
 
 import style from "../styles/Table.module.css"
+import data from "../MOCK_DATA (1).json"
 let iconManager=false;
 let check=false;
 let fillIcon=false;
@@ -20,7 +21,7 @@ function Table(props) {
       <table>
         <thead>
           <tr>
-            {props.columns.map((element) =>{
+            {columns.map((element) =>{
                 switch(element){
                   case "iconManager":{
                     iconManager=true;
@@ -39,7 +40,7 @@ function Table(props) {
         </thead>
         
         <tbody>
-        {[data].map((item) => (  
+        {data.map((item) => (  
           <tr key={item.id}>
             {iconManager &&(
               <td className={style.iconManager}><Result /></td>
@@ -52,7 +53,7 @@ function Table(props) {
                 </div>
               </td>
             )}
-            {props.values.map((element)=>
+            {values.map((element)=>
               <td>{item[element]}</td>                
             )}
             <td classN

@@ -3,13 +3,17 @@ import { useState } from 'react';
 import "./index.css";
 import Header from "../../components/loginHeader.js";
 import Footer from "../../components/Footer";
+import Button from "../../components/Button";
 import { useNavigate } from 'react-router-dom';
+
 
 function LoginPage () {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const [token, setToken] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [isStaff, setIsStaff] = useState('');
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -85,23 +89,21 @@ function LoginPage () {
         },
         body: JSON.stringify({ username, password })
       });
-      
-      console.log(localStorage.getItem('token'));
-      
+
       if (response.status === 200) {
         const data = await response.json();
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("is_staff", data.is_staff);
-        localStorage.setItem("user_full_name", data.user_full_name);
-
-        console.log(localStorage.getItem("token"));
-
+        setIsStaff(data.is_staff);
+        data.is_staff = true;
+        setToken(data.token);
+        setFullName(data.user_full_name);
+        console.log("200");
         if (data.is_staff) {
+          // If user is staff, go to admin page
           navigate("/ManagerMain");
         } else {
+          // If user is not staff, go to user page
           navigate("/UserMain");
         }
-        
       } else {
         alert('Invalid credentials');
         console.log("else");
