@@ -12,7 +12,9 @@ export const ManagerMainContext = createContext(defaultContextValue);
 export const ManagerMainContextProvider = (
   props
 ) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    
+  ]);
 
   return (
     <ManagerMainContext.Provider value={[data, setData]}>

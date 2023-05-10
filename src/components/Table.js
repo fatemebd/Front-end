@@ -5,7 +5,6 @@ import React, {
   useContext,
 } from "react";
 
-import {ManagerMainContext,useManagerMainContext} from "../contexts/managerMainContext"
 
 import style from "../styles/Table.module.css"
 let iconManager=false;
@@ -15,10 +14,6 @@ let userList=false;
 
 
 function Table(props) {
-  let {managercontext}=useContext(ManagerMainContext)
-   const [data,setData]=useManagerMainContext();
-  setData(props.data);
-  
   let counter=1;
   return (
     <div className={style.table}  >
@@ -60,7 +55,8 @@ function Table(props) {
             {props.values.map((element)=>
               <td>{item[element]}</td>                
             )}
-            <td className={style.rowNum}>{counter++}</td>
+            <td classN
+            ame={style.rowNum}>{counter++}</td>
           </tr>
         ))}
         </tbody>
