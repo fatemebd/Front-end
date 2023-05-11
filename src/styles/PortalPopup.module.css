@@ -1,5 +1,5 @@
 .portalPopupOverlay {
-  
+  background-color: rgba(113, 113, 113, 0.3);
   display: flex;
   flex-direction: row-reverse;
   align-items: end !important;
@@ -9,4 +9,5 @@
   left: 0;
   right: 0;
   padding: 0;
+  
 }

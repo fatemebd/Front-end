@@ -93,10 +93,10 @@ function LoginPage () {
       if (response.status === 200) {
         const data = await response.json();
         setIsStaff(data.is_staff);
-        data.is_staff = true;
         setToken(data.token);
         setFullName(data.user_full_name);
         console.log("200");
+        console.log(data);
         if (data.is_staff) {
           // If user is staff, go to admin page
           navigate("/ManagerMain");

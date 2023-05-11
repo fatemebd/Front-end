@@ -9,8 +9,11 @@ const columns=['iconManager','تاریخ پایان','کارمند','نام نظ
 const values=['deadline','employee','template'];
 
 const ManagerMainPage = () => {
+ 
   return (
+    
     <div className={style.managerMainPage}>
+      
       <Header />
       <SearchBox />
       <div className={style.table_body}>

@@ -70,6 +70,9 @@ const PortalPopup = ({
       const { width: containerW, height: containerH } = containerItem;
       style.position = "absolute";
       switch (placement) {
+        case "center":
+          style.top=relativeY/2;
+          style.left=relativeX/2;
         case "Top left":
           style.top = relativeY - containerH - top;
           style.left = relativeX + left;

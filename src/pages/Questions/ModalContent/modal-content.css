@@ -304,6 +304,6 @@ th {
   font-style: normal;
   font-size: 17px;
   padding: 10.5px 40px;
-  
+  font-family: var(--iransansx);
   text-align: center;
 }

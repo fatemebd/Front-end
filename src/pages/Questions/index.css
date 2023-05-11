@@ -57,6 +57,7 @@
   height: 8vh;
   letter-spacing: 0em;
   text-align: center;
+  font-family: var(--iransansx);
 }
 
 .btn p {
@@ -73,8 +74,8 @@
   background-color: rgba(15, 25, 89, 1);
   border-radius: 10px;
   position: fixed;
-  bottom: 10%;
-  left: 5%;
+  bottom: 3%;
+  left: 3%;
   transform: translateX(-20%);
  
 }
@@ -84,6 +85,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  bottom: 7px;
+  font-family: var(--iransansx);
+  position: relative;
   
 }
 
@@ -93,7 +97,9 @@
   color: white;
   width: fit-content;
   font-size: 18px;
-  padding: 5px 20px;
+  padding: 3px 20px;
+  font-family: var(--iransansx);
+
   
 }
 

@@ -1,8 +1,9 @@
-
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/user_header.module.css"
 const Header=() =>{
-
+  const navigate=useNavigate();
   const notifClick = () =>{
+
     var notif = document.getElementById("notif");
     if (notif) {
    
@@ -29,7 +30,7 @@ const Header=() =>{
       
   }
 
-
+    
   
   }
     return(
@@ -50,7 +51,7 @@ const Header=() =>{
           <div className={styles.name}>
           <b className={styles.b1}>مطهره وکیلی</b>
         <div className={styles.icons}>
-            <img className={styles.exit_icon} alt=""  src="/assets/img/rishutdownline.svg"/>
+            <img className={styles.exit_icon} alt=""  src="/assets/img/rishutdownline.svg" onClick={()=>navigate("/")}/>
             <div className={styles.notif_icon}>
               <img className={styles.exit_icon} 
               alt=""  id="notif" 

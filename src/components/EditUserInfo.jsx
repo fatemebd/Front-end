@@ -13,7 +13,7 @@ function EditUserInfo() {
   return (
       <div className={styles.editUser}>
         <div className={styles.icon}>
-          <img className={styles.vectorIcon} alt="" src="/assets/img/close.png" />
+          <img className={styles.vectorIcon} alt="" src="/assets/img/close.png"/>
         </div>
 
         <div className={styles.wrapper}>

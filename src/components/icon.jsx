@@ -1,5 +1,6 @@
-import React from 'react';
-
+import { useState, useCallback } from "react";
+import PortalPopup from './PortalPopup';
+import EditUserInfo from "./EditUserInfo"
 export const Result = () => {
 
     return (
@@ -9,10 +10,29 @@ export const Result = () => {
     );
 };
 export const Edit = ()=>{
+    const [isEditOpen, setEditOpen] = useState(false);
+
+  const openEditSide = useCallback(() => {
+    setEditOpen(true);
+  }, []);
+
+  const closeEdit = useCallback(() => {
+    console.log("ddddddddddd")
+    setEditOpen(false);
+  }, []);
     return(
         <div>
-            <img src="/assets/img/edit.svg"/>
+            <img src="/assets/img/edit.svg" onClick={openEditSide}/>
+            {isEditOpen&&(
+            <PortalPopup
+            overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="center"
+          onOutsideClick={closeEdit}>
+                <EditUserInfo onClose={closeEdit}/>
+            </PortalPopup>
+        )}
         </div>
+         
     )
 }
 

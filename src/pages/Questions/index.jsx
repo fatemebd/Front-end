@@ -91,7 +91,7 @@ export default function Questions() {
       >
         ذخیره
       </button>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
     </>
   );
