@@ -62,7 +62,12 @@ const ManagerSide = ({ onClose }) => {
         </button>
       </div>
       <div className={styles.rishutDownLineParent}>
-        <button className={styles.rishutDownLine} onClick={()=>navigate('/')}>
+        <button className={styles.rishutDownLine} onClick={()=>{
+                                                            navigate('/');
+                                                            localStorage.setItem('token', null);
+                                                            localStorage.setItem('fullName', null);
+                                                            localStorage.setItem('isAuthenticated', false);
+                                                            }}>
           <img className={styles.vectorIcon} alt="" src="/assets/img/vector.svg" />
         </button>
         <button className={styles.rishutDownLine}>
