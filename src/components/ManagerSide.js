@@ -1,7 +1,9 @@
 import styles from "../styles/ManagerSide.module.css";
 import { useNavigate } from 'react-router-dom';
+
 const ManagerSide = ({ onClose }) => {
   const navigate=useNavigate();
+  
   return (
     <div className={styles.managerSide}>
       <div className={styles.account}>
@@ -10,7 +12,7 @@ const ManagerSide = ({ onClose }) => {
           alt=""
           src="/assets/img/materialsymbolsaccountcircle.svg"
         />
-        <b className={styles.b}>مطهره وکیلی</b>
+        <b className={styles.b}>{localStorage.getItem('fullName')}</b>
         <div className={styles.accountItem} />
       </div>
       <div className={styles.list}>

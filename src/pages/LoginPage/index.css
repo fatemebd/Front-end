@@ -52,6 +52,7 @@
   color: var(--color-gray-100);
   width: 73px;
   height: 61px;
+  font-size: 26px;
 }
 .input2 {
   border: 2px solid var(--color-midnightblue-100);
@@ -293,7 +294,7 @@
 }
 .b {
   position: relative;
-  font-size: var(--font-size-17xl);
+  font-size: 26px;
   display: inline-block;
   color: var(--color-gray-100);
   width: 430px;

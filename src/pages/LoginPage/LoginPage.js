@@ -14,6 +14,9 @@ function LoginPage () {
   const [token, setToken] = useState('');
   const [fullName, setFullName] = useState('');
   const [isStaff, setIsStaff] = useState('');
+  window.localStorage.setItem('token', null);
+  window.localStorage.setItem('fullName', null);
+  window.localStorage.setItem('isAuthenticated', false);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -94,7 +97,10 @@ function LoginPage () {
         const data = await response.json();
         setIsStaff(data.is_staff);
         setToken(data.token);
+        window.localStorage.setItem('token', data.token);
         setFullName(data.user_full_name);
+        window.localStorage.setItem('fullName', data.user_full_name);
+        window.localStorage.setItem('isAuthenticated', true);
         console.log("200");
         console.log(data);
         if (data.is_staff) {
@@ -160,7 +166,6 @@ function LoginPage () {
             <div className="buttom">ورود</div>
           </button>
         </div>
-        {/* <Button  name={"ورود"} link={"/UserMain"} icon={""} onClick={() => console.log("yep!")} /> */}
         <Footer />
       </header>
 
