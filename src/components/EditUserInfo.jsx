@@ -1,6 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styles from "../styles/EditUserInfo.module.css";
+
 
 function EditUserInfo() {
   const [fname, setFname] = useState(["فاطمه"]);
@@ -9,6 +10,18 @@ function EditUserInfo() {
   const [position, setPosition] = useState(["دانشجو"]);
   const [college, setCollege] = useState(["کامپیوتر"]);
   const [username, setUsername] = useState(["۹۹۳۶۲۳۰۳۲"]);
+  const [image, setImage] = useState("/assets/img/materialsymbolsaccountcircle.svg");
+  const inputFile = useRef(null);
+
+  const handleImageChange = (e) => {
+    const selectedFile = e.target.files[0];
+    const imageUrl = selectedFile ? URL.createObjectURL(selectedFile) : image;
+    setImage(imageUrl);
+  };
+
+  const onButtonClick = () => {
+    inputFile.current.click();
+  };
 
   return (
       <div className={styles.editUser}>
@@ -21,12 +34,24 @@ function EditUserInfo() {
         </div>
 
         <div className={styles.info}>
-          <div className={styles.prpfile}>
-            <button className={styles.btnUpload}>
-              <img className={styles.mdicloudUploadOutlineIcon} alt="" src="/assets/img/upload.png" />
-              <b className={styles.b1}>بارگزاری تصویر</b>
-            </button>
+          <div className={styles.profile}>
+            <div className={styles.prpfile}>
+              {image && <img src={image} alt="profile photo" height={"100%"} width={"100%"} />}
+            </div>
+            <div>
+              <input
+                style={{ display: "none" }}
+                accept=".jpg,.png"
+                ref={inputFile}
+                onChange={handleImageChange}
+                type="file"
+              />
+              <div className={styles.upload} onClick={onButtonClick}>
+                بارگذاری تصویر
+              </div>
+            </div>
           </div>
+          
 
           <div className={styles.main}>
             <div className={styles.name}>

@@ -79,8 +79,8 @@
 }
 .mdicloudUploadOutlineIcon {
   position: relative;
-  width: 72px;
-  height: 60px;
+  width: 80%;
+  height: 80%;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -93,22 +93,38 @@
   height: 32px;
   flex-shrink: 0;
 }
-.input,
-.prpfile {
+.input {
   border-radius: var(--br-xl);
   box-sizing: border-box;
   overflow: hidden;
 }
+
 .prpfile {
   background-color: #d9d9d9;
-  width: 20%;
-  height:30%;
+  position: relative;
+  border-radius: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 55%;
+  height:65%;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+.profile {
+  width: 26%;
+  height:36%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
 .input {
   border: 2px solid var(--color-midnightblue-100);
   background-color: var(--color-white);
@@ -346,12 +362,12 @@
   display: flex;
 }
 .info {
-  width: 90%;
-  height: 85%;
+  width: 75%;
+  height: 80%;
   flex-shrink: 0;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0;
 }
 .editUser {
@@ -369,14 +385,14 @@
   display: flex;
   flex-direction: column;
   padding: 1%;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   gap: 4%;
   text-align: center;
   font-size: var(--font-size-lg);
   color: var(--color-midnightblue-100);
   font-family: var(--iransansx);
-  
+  z-index: 100px;
 }
 
 .btnUpload {
