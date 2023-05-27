@@ -1,0 +1,20 @@
+.box {
+    direction: rtl;
+    font-size: 16px;
+    border: 2px solid var(--color-midnightblue-100);
+    border-radius: 10px;
+    width: 20vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.formName {
+    display: flex ;
+    align-items: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
