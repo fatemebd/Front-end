@@ -18,7 +18,7 @@ function ChoosingSurveyTemplate () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox />
+            <SearchBox text="جست و جو در قالب ها"/>
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="2" />

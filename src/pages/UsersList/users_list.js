@@ -12,7 +12,7 @@ const UserList=()=>{
     return(
         <div className={style.userList}>
          <Header/>
-         <SearchBox />
+         <SearchBox text="جست و جو در کاربران" />
          
          <div className={style.table_body}>
           <Table columns={columns} values={values} apiLink={"https://localhost:8000/accounts/get-stu/"} />

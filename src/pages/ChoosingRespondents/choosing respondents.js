@@ -15,7 +15,7 @@ const ChoosingRespondentsPage = () => {
          <div className="body">
          <Table />
          <div className="search">
-         <SearchBox />
+         <SearchBox text="" />
          <div className="dd">
          <Dropdown name="job" options={[['assistant','معاون گروه'],['teacher','استاد'],['expert','کارشناس آموزش']]} label="سمت"/>
          <Dropdown name="group" options={[['sw','نرم افزار'],['IT','فناوری ارتباطات'],['AI','هوش مصنوعی']]} label="گروه آموزشی"/>

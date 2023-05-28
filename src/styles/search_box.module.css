@@ -1,7 +1,7 @@
 input::placeholder{
     color:rgba(15, 25, 89, 0.4000000059604645);
     font-size: 18px;
-    font-family:IRANSansX;   
+    font-family: var(--iransansx);   
     }
   .search_icon{
     background-color: var(--color-white);
@@ -23,6 +23,8 @@ input::placeholder{
     width: 350px;
     height: 50px;
     direction: rtl;
+    font-family: var(--iransansx);
+    font-size: 18px;
     
   
   }
@@ -37,7 +39,7 @@ input::placeholder{
     height: 50px;
     overflow: hidden;
     padding: 010PX ;
-    text-align: right;
+    text-align:center;
     font-size: 18px;
     color: rgba(15, 25, 89, 0.4);
   }

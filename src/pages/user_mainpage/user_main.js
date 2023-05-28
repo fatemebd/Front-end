@@ -14,7 +14,7 @@ const UsermainpagePage = () => {
         <>
       <div className={style.user_main_page}>
          <Header/>
-         <SearchBox />
+         <SearchBox  text="جست و جو در نظر سنجی ها"/>
          
          <div className={style.table_body}>
           <Table columns={columns} values={values} apiLink={"https://localhost:8000/questionnaire/questionnaires/"} className={style.table} />

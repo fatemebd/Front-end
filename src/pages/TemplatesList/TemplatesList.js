@@ -16,7 +16,7 @@ function TemplatesList () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox />
+            <SearchBox text="جست و جو در قالب ها" />
             <div className={styles.container}>
 
                 <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
