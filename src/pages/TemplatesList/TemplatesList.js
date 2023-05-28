@@ -18,7 +18,9 @@ function TemplatesList () {
             <Header />
             <SearchBox />
             <div className={styles.container}>
-                <Box />
+
+                <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
+                
             </div>
             <Footer />
         </div>
