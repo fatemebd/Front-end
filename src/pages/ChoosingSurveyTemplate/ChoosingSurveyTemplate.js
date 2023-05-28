@@ -45,7 +45,7 @@ function ChoosingSurveyTemplate () {
 
                 
             </div>
-            <ChangePageIcon before="1" next="1" />
+            <ChangePageIcon before="/ChoosingTargetEmployee" next="/ChoosingRespondents" />
             <Footer />
         </div>
     )

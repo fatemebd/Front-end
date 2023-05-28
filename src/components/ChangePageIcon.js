@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from "../styles/ChangePageIcon.module.css";
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 function ChangePageIcon (props) {
-    if (props.before == "0" && props.next == "1") {
+    const navigate = useNavigate();
+
+    if (props.before == null) {
         return (
             <div className={styles.container}>
-                <div className={styles.next}>
+                <div className={styles.next} onClick={() => {navigate(props.next)}}>
                     <FiChevronLeft />                
                 </div>
 
@@ -16,27 +19,27 @@ function ChangePageIcon (props) {
             </div>
         )
     }
-    else if (props.before == "1" && props.next == "0") {
+    else if (props.next == null) {
         return (
             <div className={styles.container}>
                 <div className={styles.next_disable}>
                     <FiChevronLeft />                
                 </div>
 
-                <div className={styles.before}>
+                <div className={styles.before} onClick={() => {navigate(props.before)}}>
                     <FiChevronRight />
                 </div>
             </div>
         )
     }
-    else if (props.before == "1" && props.next == "1") {
+    else {
         return (
             <div className={styles.container}>
-                <div className={styles.next}>
+                <div className={styles.next} onClick={() => {navigate(props.next)}}>
                     <FiChevronLeft />                
                 </div>
 
-                <div className={styles.before}>
+                <div className={styles.before} onClick={() => {navigate(props.before)}}>
                     <FiChevronRight />
                 </div>
             </div>
