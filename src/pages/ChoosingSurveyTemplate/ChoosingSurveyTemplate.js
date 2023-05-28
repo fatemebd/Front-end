@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import SearchBox from "../../components/SearchBox";
 import Box from "../../components/Box"
 import StatusBar from '../../components/StatusBar';
+import ChangePageIcon from '../../components/ChangePageIcon';
 
 function ChoosingSurveyTemplate () {
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ function ChoosingSurveyTemplate () {
 
                 
             </div>
-
+            <ChangePageIcon before="1" next="1" />
             <Footer />
         </div>
     )
