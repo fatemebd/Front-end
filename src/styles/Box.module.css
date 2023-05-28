@@ -18,3 +18,8 @@
     justify-content: center;
     gap: 5%;
 }
+
+.box:hover {
+    box-shadow: 1px 1px var(--color-midnightblue-100);
+    cursor: pointer;
+}
