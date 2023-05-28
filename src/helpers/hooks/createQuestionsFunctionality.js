@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const useCreateQuestions = (type, info, number) => {
   const initialState = info
@@ -12,19 +13,19 @@ const useCreateQuestions = (type, info, number) => {
           italic: false,
           underline: false,
         },
-        questionId: Math.floor(Math.random() * 10000),
+        questionId: uuidv4(),
         options: [
           {
             id:
               type !== "shortAnswer"
-                ? Math.floor(Math.random() * 10000)
+                ? uuidv4()
                 : "min",
             value: "",
           },
           {
             id:
               type !== "shortAnswer"
-                ? Math.floor(Math.random() * 10000)
+                ? uuidv4()
                 : "max",
             value: "",
           },

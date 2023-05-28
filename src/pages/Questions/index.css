@@ -1,3 +1,18 @@
+:root {
+  /* fonts */
+  --iransansx: IRANSansX;
+}
+
+.main{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  font-family: var(--iransansx);
+  position: relative;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -68,6 +83,7 @@
   box-sizing: border-box;
   padding: 10px 40px;
   font-size: 18px;
+  font-family: var(--iransansx);
   letter-spacing: 0px;
   text-align: center;
   color: white;
@@ -105,16 +121,4 @@
 
 .edit-delete-container button:last-child {
   margin-left: 20px;
-}
-.main{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100vh;
-  font-family: var(--iransansx);
-  position: relative;
- 
- 
-  
 }

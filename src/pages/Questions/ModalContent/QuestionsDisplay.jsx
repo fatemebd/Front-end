@@ -6,9 +6,9 @@ const QuestionsDisplay = ({
   answerMode,
   optionsAccess,
 }) => {
-  console.log(questionInfo.type);
+  const { questionId, styles, number, question, type } = questionInfo;
   const [answerInfo, setAnswerInfo] = useState({
-    questionInfo,
+    questionId,
     answer: "",
   });
 
@@ -22,15 +22,15 @@ const QuestionsDisplay = ({
       }`}
     >
       <div
-        className={`${questionInfo.styles.bold && "bold"} ${
+        className={`${styles.bold && "bold"} ${
           questionInfo.styles.italic && "italic"
-        } ${questionInfo.styles.underline && "underline"} question`}
+        } ${styles.underline && "underline"} question`}
       >
-        <p>{questionInfo.number}-</p>
-        {questionInfo.question && <p>{questionInfo.question}</p>}
+        <p>{number}-</p>
+        {question && <p>{question}</p>}
       </div>
       <div className="choices-container">
-        {questionInfo.type === "multiple" &&
+        {type === "multiple" &&
           questionInfo?.options.map(({ value, id }, index) =>
             value ? (
               <div key={id} className="choice-container">
@@ -59,7 +59,7 @@ const QuestionsDisplay = ({
             ) : null
           )}
       </div>
-      {questionInfo.type === "shortAnswer" && (
+      {type === "shortAnswer" && (
         <textarea
           maxLength={
             questionInfo?.options &&
@@ -78,13 +78,13 @@ const QuestionsDisplay = ({
           value={answerInfo.answer}
         />
       )}
-      {questionInfo.type === "matrix" && optionsAccess.show && (
+      {type === "matrix" && optionsAccess.show && (
         <table>
           <thead>
             <tr>
               <th>ردیف</th>
               <th>پرسش</th>
-              {questionInfo.options.map((column) => (
+              {questionInfo?.options.map((column) => (
                 <th key={column.id}>{column.value}</th>
               ))}
             </tr>
