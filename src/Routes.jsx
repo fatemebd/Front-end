@@ -12,6 +12,7 @@ const TemplatesList = React.lazy(() => import("./pages/TemplatesList/TemplatesLi
 const ChoosingSurveyTemplate = React.lazy(() => import("./pages/ChoosingSurveyTemplate/ChoosingSurveyTemplate"));
 const ChoosingTargetEmployee = React.lazy(() => import("./pages/ChoosingTargetEmployee/ChoosingTargetEmployee"));
 const UserSetting = React.lazy(() => import("./pages/UserSetting/UserSetting"));
+const Answer=React.lazy(()=>import("./pages/Answer/index"))
 
 const ProjectRoutes = () => {
   return (
@@ -23,6 +24,8 @@ const ProjectRoutes = () => {
           <Route path="/UserMain" element={<Usermainpage />} />
           <Route path="/UserList" element={<UsersList />} />
           <Route path="/questions" element={<Questions />} />
+          <Route path="/answer" element={<Answer />} />
+
           <Route path="/TemplatesList" element={<TemplatesList />} />
           <Route path="/ChoosingSurveyTemplate" element={<ChoosingSurveyTemplate />} />
           <Route path="/ChoosingTargetEmployee" element={<ChoosingTargetEmployee />} />
