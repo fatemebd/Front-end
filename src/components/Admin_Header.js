@@ -20,7 +20,7 @@ const Header = () => {
       <div className={style.logo}>
             <div className={style.name}>
             <b className={style.b1}>دانشگاه اصفهان</b>
-            <b className={style.b1}>name.ui.acir</b>
+            <b className={style.b1}>name.ui.ac.ir</b>
             </div>
           
             <img className={style.universityOfIsfahanLogo2Icon} src="/assets/img/UI LogoWH.png"/>

@@ -2,6 +2,11 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import styles from "../styles/EditUserInfo.module.css";
 
+const close_Click = () => {
+      
+  const popup = document.getElementById('edituser');     
+  popup.style.display = 'none';    
+};
 
 function EditUserInfo() {
   const [fname, setFname] = useState(["فاطمه"]);
@@ -24,9 +29,10 @@ function EditUserInfo() {
   };
 
   return (
-      <div className={styles.editUser}>
+    <div className={styles.Edit} id="edituser">
+      <div className={styles.editUser} >
         <div className={styles.icon}>
-          <img className={styles.vectorIcon} alt="" src="/assets/img/close.png"/>
+          <img className={styles.vectorIcon} alt="" src="/assets/img/close.png" onClick={close_Click}/>
         </div>
 
         <div className={styles.wrapper}>
@@ -38,7 +44,7 @@ function EditUserInfo() {
             <div className={styles.prpfile}>
               {image && <img src={image} alt="profile photo" height={"100%"} width={"100%"} />}
             </div>
-            <div>
+            {/* <div>
               <input
                 style={{ display: "none" }}
                 accept=".jpg,.png"
@@ -49,7 +55,7 @@ function EditUserInfo() {
               <div className={styles.upload} onClick={onButtonClick}>
                 بارگذاری تصویر
               </div>
-            </div>
+            </div> */}
           </div>
           
 
@@ -113,8 +119,9 @@ function EditUserInfo() {
             </div>
           </div>
 
-        </div>
+          </div>
 
+        </div>
       </div>
   );
 };
