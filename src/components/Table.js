@@ -37,7 +37,7 @@ function Table(props) {
         </thead>
         
         <tbody>
-        {data.map((item) => (  
+        {props.data.map((item) => (  
           <tr key={item.id}>
             {iconManager &&(
               <td className={style.iconManager}><Result /></td>

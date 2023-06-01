@@ -50,3 +50,19 @@ input::placeholder{
     flex-shrink: 0;
     overflow: hidden;
   }
+
+  .table {
+    position: relative;
+    
+    width: 80vw;
+    left: 0;
+    height: 350px;
+    padding: 2px 0;
+    box-sizing: border-box;
+    
+  }
+  .table_body {
+    position: relative;
+    width: 80vw;
+    color: var(--color-black); 
+  }
