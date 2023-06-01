@@ -45,7 +45,7 @@ function Table(props) {
             {userList&&(
               <td className={style.usersListIcons}>
                 <div className={style.icon_container}>
-                  <Edit />
+                  <Edit info={item} />
                   <Delete />
                 </div>
               </td>

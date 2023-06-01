@@ -6,13 +6,13 @@ import Table from "../../components/Table";
 import Footer from "../../components/Footer";
 import EditUserInfo from "../../components/EditUserInfo"
 
-const columns=['userList','ایمیل','سمت','دانشکده','نام و نام خانوادگی','نام کاربری','ردیف'];
-const values=['email','position','faculty','name','username'];
+const columns=['userList',,'تلفن همراه','ایمیل','سمت','دانشکده',' نام خانوادگی','نام' ,'ردیف'];
+const values=['phone','email','position','faculty','last_name','first_name'];
 
 const UserList=()=>{
     return(
         <>
-        <div className={style.userList}>
+        <div className={style.userList} >
          <Header/>
          <SearchBox text="جست و جو در کاربران" />
          
@@ -20,9 +20,10 @@ const UserList=()=>{
           <Table columns={columns} values={values} apiLink={"https://localhost:8000/accounts/get-stu/"} />
          </div>
 
-         <Footer/>
+         <Footer/>   
+         
       </div>
-      <EditUserInfo/>
+      
       </>
       
     );

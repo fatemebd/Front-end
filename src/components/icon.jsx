@@ -1,8 +1,10 @@
 import { useState, useCallback } from "react";
+import EditUserInfo from "./EditUserInfo";
 
 
 const editClick = () =>{
-        console.log("no");
+  
+          
         var popup = document.getElementById("edituser");
         if (!popup) return;
         var popupStyle = popup.style;
@@ -24,6 +26,7 @@ const editClick = () =>{
             }
           };
         popup.addEventListener("click", onClick);
+        
       
   }  
   
@@ -38,11 +41,13 @@ export const Result = () => {
 
 
 
-export const Edit = ()=>{
+export const Edit = (props)=>{
     return(
            
         <div>
+          
             <img src="/assets/img/edit.svg" onClick={editClick}/>
+            <EditUserInfo info={props.info} />
         </div> 
     )
 
