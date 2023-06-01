@@ -19,8 +19,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< Updated upstream
-=======
     justify-content: space-between;
     height: 100%;
 }
@@ -52,5 +50,4 @@
 }
 .download{
     margin-right: 5%;
->>>>>>> Stashed changes
 }
