@@ -49,7 +49,7 @@ const Header=() =>{
         
         <div className={styles.account}>
           <div className={styles.name}>
-          <b className={styles.b1}>مطهره وکیلی</b>
+          <b className={styles.b1}>{localStorage.getItem('fullName')}</b>
         <div className={styles.icons}>
             <img className={styles.exit_icon} alt=""  src="/assets/img/rishutdownline.svg" onClick={()=>navigate("/")}/>
             <div className={styles.notif_icon}>
