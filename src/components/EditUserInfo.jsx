@@ -8,15 +8,17 @@ const close_Click = () => {
   popup.style.display = 'none';    
 };
 
-function EditUserInfo() {
-  const [fname, setFname] = useState(["فاطمه"]);
-  const [lname, setLname] = useState(["عبادی"]);
-  const [email, setEmail] = useState(["fateme.s.e.81@gmail.com"]);
-  const [position, setPosition] = useState(["دانشجو"]);
-  const [college, setCollege] = useState(["کامپیوتر"]);
-  const [username, setUsername] = useState(["۹۹۳۶۲۳۰۳۲"]);
-  const [image, setImage] = useState("/assets/img/materialsymbolsaccountcircle.svg");
+function EditUserInfo(prop) {
+ 
+  const username=prop.info.name;
+  const [first_name, setfirst_name] = useState([prop.info.first_name]);
+  const [last_name, setlast_name] = useState([prop.info.last_name]);
+  const [email, setEmail] = useState([prop.info.email]);
+  const [position, setPosition] = useState([prop.info.position]);
+  const [faculty, setfaculty] = useState([prop.info.faculty]);
+  const [image, setImage] = useState("/assets/img/materialsymbolsaccountcircle.svg");//prop.info.image_path//
   const inputFile = useRef(null);
+  const [phone, setphone] = useState([prop.info.phone]);
 
   const handleImageChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -28,6 +30,26 @@ function EditUserInfo() {
     inputFile.current.click();
   };
 
+  const handleSave = async () => {
+    
+    try {
+      const response = await fetch('http://localhost:8000/accounts/edit-stu', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+         body: JSON.stringify({ username, first_name,last_name,email,faculty,position,phone })
+      });
+    
+
+       if (response.status === 200) 
+        console.log(response.message)
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
   return (
     <div className={styles.Edit} id="edituser">
       <div className={styles.editUser} >
@@ -62,13 +84,13 @@ function EditUserInfo() {
           <div className={styles.main}>
             <div className={styles.name}>
               <div className={styles.inputFieldLastname}>
-                <input className={styles.input} type="text" required value={lname} onChange={(e) => {setLname(e.target.value)}} />
+                <input className={styles.input} type="text" required value={last_name} onChange={(e) => {setlast_name(e.target.value)}} />
                 <div className={styles.container}>
                   <p className={styles.b2}>نام خانوادگی</p>
                 </div>
               </div>
               <div className={styles.inputFieldName}>
-                <input className={styles.input} type="text" required value={fname} onChange={(e) => {setFname(e.target.value)}} />
+                <input className={styles.input} type="text" required value={first_name} onChange={(e) => {setfirst_name(e.target.value)}} />
                 <div className={styles.frame}>
                   <p className={styles.b2}>نام </p>
                 </div>
@@ -85,7 +107,7 @@ function EditUserInfo() {
 
             <div className={styles.job}>
               <div className={styles.inputFieldLastname}>
-                <input className={styles.input} type="text" required value={college} onChange={(e) => {setCollege(e.target.value)}} />
+                <input className={styles.input} type="text" required value={faculty} onChange={(e) => {setfaculty(e.target.value)}} />
                 <div className={styles.container}>
                   <p className={styles.b2}>دانشکده</p>
                 </div>
@@ -97,25 +119,26 @@ function EditUserInfo() {
                 </div>
               </div>
             </div>
-
+           
             <div className={styles.inputFieldLastname}>
-              <input className={styles.input} type="text" required value={username} onChange={(e) => {setUsername(e.target.value)}} />
+              <input className={styles.input} type="text" required value={phone} onChange={(e) => {setphone(e.target.value)}} />
               <div className={styles.container}>
-                <p className={styles.b2}>نام کاربری</p>
+                <p className={styles.b2}> تلفن همراه </p>
               </div>
             </div>
+          
+           
+
 
             <div className={styles.success}>
               <b className={styles.b}> با موفقیت افزوده شد.</b>
             </div>
 
             <div className={styles.save}>
-              <button className={styles.button}>
+              <button onClick={handleSave} className={styles.button}>
                 <p className={styles.buttom}>ذخیره</p>
               </button>
-              <div className={styles.button1}>
-                <p className={styles.b}>شبکه ارتباطات</p>
-              </div>
+              
             </div>
           </div>
 
