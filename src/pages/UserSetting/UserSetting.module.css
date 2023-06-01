@@ -239,6 +239,7 @@
     display: inline-block;
     width: 150px;
     flex-shrink: 0;
+    font-size: 15px;
 }
 
 .button {

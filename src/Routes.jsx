@@ -25,7 +25,6 @@ const ProjectRoutes = () => {
           <Route path="/UserList" element={<UsersList />} />
           <Route path="/questions" element={<Questions />} />
           <Route path="/answer" element={<Answer />} />
-
           <Route path="/TemplatesList" element={<TemplatesList />} />
           <Route path="/ChoosingSurveyTemplate" element={<ChoosingSurveyTemplate />} />
           <Route path="/ChoosingTargetEmployee" element={<ChoosingTargetEmployee />} />
