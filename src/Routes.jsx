@@ -20,7 +20,7 @@ const ProjectRoutes = () => {
       <Router>
         <Routes>
           <Route path="/ManagerMain" element={<ManagermainPage />} />
-          <Route path="/" element={<Usermainpage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/UserMain" element={<Usermainpage />} />
           <Route path="/UserList" element={<UsersList />} />
           <Route path="/questions" element={<Questions />} />
