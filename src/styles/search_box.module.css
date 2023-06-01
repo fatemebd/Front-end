@@ -8,6 +8,7 @@ input::placeholder{
     border: 0px;
     display: flex;
     cursor: pointer;
+    width: 20%;
   }
   .input_search,
   .search_box {
@@ -45,8 +46,7 @@ input::placeholder{
   }
   .ssearch_rounde_icon {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 65%;
     flex-shrink: 0;
     overflow: hidden;
   }
