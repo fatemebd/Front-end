@@ -2,12 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Usermainpage = React.lazy(() => import("./pages/user_mainpage/user_main"));
-// const LoginPage = React.lazy(() => import("./pages/Results/results"));
 const LoginPage = React.lazy(() => import("./pages/LoginPage/LoginPage"));
 const ManagermainPage = React.lazy(() => import("./pages/manager_mainpage/ManagerMainPage"));
 const ChoosingRespondents=React.lazy(()=>import("./pages/ChoosingRespondents/choosing respondents"));
 const UsersList=React.lazy(()=>import("./pages/UsersList/users_list"))
 const Questions = React.lazy(() => import("./pages/Questions"));
+const EditUserInfo = React.lazy(() => import("./components/EditUserInfo"));
+const TemplatesList = React.lazy(() => import("./pages/TemplatesList/TemplatesList"));
+const ChoosingSurveyTemplate = React.lazy(() => import("./pages/ChoosingSurveyTemplate/ChoosingSurveyTemplate"));
+const ChoosingTargetEmployee = React.lazy(() => import("./pages/ChoosingTargetEmployee/ChoosingTargetEmployee"));
+const UserSetting = React.lazy(() => import("./pages/UserSetting/UserSetting"));
+
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
@@ -18,8 +23,10 @@ const ProjectRoutes = () => {
           <Route path="/UserMain" element={<Usermainpage />} />
           <Route path="/UserList" element={<UsersList />} />
           <Route path="/questions" element={<Questions />} />
-
-         
+          <Route path="/TemplatesList" element={<TemplatesList />} />
+          <Route path="/ChoosingSurveyTemplate" element={<ChoosingSurveyTemplate />} />
+          <Route path="/ChoosingTargetEmployee" element={<ChoosingTargetEmployee />} />
+          <Route path="/UserSetting" element={<UserSetting />} />
         </Routes>
       </Router>
     </React.Suspense>
