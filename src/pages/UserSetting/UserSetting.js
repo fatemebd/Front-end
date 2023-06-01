@@ -15,12 +15,14 @@ function UserSetting () {
     const [m2Phone, setM2Phone] = useState('');
     const [m3Pass, setM3Pass] = useState('');
     const [m3Email, setM3Email] = useState('');
+    
 
     const navigate = useNavigate();
     if (localStorage.getItem('token') == 'null') {
         navigate("/");
         return;
     }
+    const token = 'Token ' + localStorage.getItem('token');
 
     //Inputs
     const handleM1PassChange = (event) => {
@@ -193,6 +195,7 @@ function UserSetting () {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
+              'Authorization': token,
             },
             body: JSON.stringify({
               new_phone: newPhone,
@@ -219,6 +222,7 @@ function UserSetting () {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
+              'Authorization': token,
             },
             body: JSON.stringify({
               new_email: newEmail,
@@ -245,6 +249,7 @@ function UserSetting () {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
+              'Authorization': token,
             },
             body: JSON.stringify({
               old_password: pass,
