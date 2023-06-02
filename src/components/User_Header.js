@@ -65,7 +65,7 @@ const Header=() =>{
           </div>
           </div>
        
-          <img className={styles.person_icon} alt=""  src="/assets/img/vector1.svg" />
+          <img className={styles.person_icon} alt=""  src={localStorage.getItem('img')} />
           
         </div>
         

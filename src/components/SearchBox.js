@@ -19,7 +19,6 @@ const SearchBox = (props) => {
       .catch(error => console.error(error));
   }, [props.apilink]);
 
-console.log(data);  
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {

@@ -1,8 +1,7 @@
 import React from "react";
-import style from "./users_list.module.css"
+import style from "./EmployeeList.module.css"
 import Header from "../../components/Admin_Header";
 import SearchBox from "../../components/SearchBox";
-import Table from "../../components/Table";
 import Footer from "../../components/Footer";
 import EditUserInfo from "../../components/EditUserInfo"
 
@@ -14,7 +13,7 @@ const UserList=()=>{
         <>
         <div className={style.userList} >
          <Header/>
-         <SearchBox  text="جست‌و‌جو در کاربران..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-users/" />
+         <SearchBox  text="جست‌و‌جو در کاربران..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-emp/" />
          <Footer/>   
          
       </div>

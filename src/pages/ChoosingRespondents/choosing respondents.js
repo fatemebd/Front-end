@@ -50,7 +50,7 @@ document.querySelectorAll("tr").forEach(e => e.addEventListener("click", ()=> {h
             </div>
                 
             </div>
-            <ChangePageIcon before="/ChoosingSurveyTemplate" next="/ServrySetting" />
+            <ChangePageIcon before="/ChoosingSurveyTemplate" next="/SurveySetting" />
             <Footer />
         </div>
      );

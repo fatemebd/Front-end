@@ -15,7 +15,7 @@ const ManagerMainPage = () => {
     <div className={style.managerMainPage}>
       
       <Header />
-      <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها" columns={columns} values={values} apilink="http://localhost:8000/questionnaire/questionnaires/"/>
+      <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها..." columns={columns} values={values} apilink="http://localhost:8000/questionnaire/questionnaires/"/>
 
       <Footer />
     </div>
