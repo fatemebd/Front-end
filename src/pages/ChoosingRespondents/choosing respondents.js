@@ -45,7 +45,7 @@ document.querySelectorAll("tr").forEach(e => e.addEventListener("click", ()=> {h
                 </div>
                
             <div className={styles.searchcontainer}>
-            <SearchBox  text="جست‌و‌جو در کارمندان" columns={columns} values={values} apilink={apilink} />
+            <SearchBox  text="جست‌و‌جو در کاربران..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-users/" />
 
             </div>
                 
