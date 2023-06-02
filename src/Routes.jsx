@@ -32,6 +32,8 @@ const ProjectRoutes = () => {
           <Route path="/TemplatesList" element={<TemplatesList />} />
           <Route path="/ChoosingSurveyTemplate" element={<ChoosingSurveyTemplate />} />
           <Route path="/ChoosingTargetEmployee" element={<ChoosingTargetEmployee />} />
+          <Route path="/ChoosingRespondents" element={<ChoosingRespondents />} />
+
           <Route path="/UserSetting" element={<UserSetting />} />
           <Route path="/ManagerSetting" element={<ManagerSetting />} />
           <Route path="/TargetEmp" element={<TargetEmp />} />
