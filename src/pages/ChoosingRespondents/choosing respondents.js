@@ -8,6 +8,16 @@ import Header from "../../components/User_Header";
 
 
 const ChoosingRespondentsPage = () => {
+   document.querySelectorAll("tr")
+.forEach(e => e.addEventListener("click", function() {
+    // Here, `this` refers to the element the event was hooked on
+    console.log(e);
+    if(e.style.background!="#a6a6a6")
+     e.style.background="#a6a6a6";
+     else
+     e.style.background="";
+     
+}));
     return (
         <>
       <div className="ChoosingRespondentsPage">
