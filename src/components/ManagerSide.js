@@ -52,7 +52,7 @@ const ManagerSide = ({ onClose }) => {
             src="/assets/img/materialsymbolspatientlistrounded.svg"
           />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={() => navigate('/TemplatesList')}>
           <b className={styles.b2}>لیست قالب‌ها</b>
           <img
             className={styles.rihome4LineIcon}

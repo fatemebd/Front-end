@@ -1,7 +1,7 @@
 import QuestionsDisplay from "../Questions/ModalContent/QuestionsDisplay";
 import UserHeader from "../../components/User_Header";
 import { useRef } from "react";
-import "../Questions/ModalContent/modal-content.css";
+import "./modal-content.css";
 const data = {
   time: "farda",
   name: "sina",
@@ -58,8 +58,9 @@ export const Answer = () => {
         [answer.questionInfo.number]: answer,
       }),
     });
+
   return (
-    <div>
+    <div className="mainPage">
       <UserHeader />
       <div
         style={{
@@ -98,17 +99,17 @@ export const Answer = () => {
       ))}
       <button
         onClick={() => console.log(answers.current)}
+        className="sendBtn"
         style={{
           position: "fixed",
           boxSizing: "border-box",
-          bottom: 100,
-          left: "10%",
+          bottom: 50,
+          left: "5%",
           backgroundColor: "rgba(15, 25, 89, 1)",
           color: "white",
           padding: "10px 45px",
           borderRadius: 20,
           fontWeight: "bold",
-          fontSize: 24,
         }}
       >
         ارسال
