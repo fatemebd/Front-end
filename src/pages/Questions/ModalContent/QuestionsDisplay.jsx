@@ -33,7 +33,7 @@ const QuestionsDisplay = ({
         {type === "multiple" &&
           questionInfo?.options.map(({ value, id }, index) =>
             value ? (
-              <div key={id} className="choice-container">
+              <div key={id} className="choice-container" >
                 <button
                   onClick={() =>
                     setAnswerInfo((s) => ({
@@ -43,12 +43,13 @@ const QuestionsDisplay = ({
                   }
                   disabled={!answerMode}
                   className="choice"
+                  style={ {fontFamily: "inherit", fontSize:"16px"} }
                 >
                   {value}
                 </button>
                 <p
                   style={{
-                    backgroundColor: answerInfo.answer === value && "black",
+                    backgroundColor: answerInfo.answer === value && "#0f1959", fontFamily: "inherit",
                     color: answerInfo.answer === value && "white",
                   }}
                   className="choice-number"
@@ -69,7 +70,7 @@ const QuestionsDisplay = ({
             questionInfo?.options &&
             questionInfo?.options.find((option) => option.id === "min").value
           }
-          style={{ padding: 10 }}
+          style={{ padding: 10, fontFamily: "inherit" }}
           className="display-textarea"
           disabled={!answerMode}
           onChange={(e) =>
@@ -99,11 +100,14 @@ const QuestionsDisplay = ({
                     <td key={column.id}>
                       <button
                         style={{
-                          width: "100%",
-                          height: "100%",
+                          width: "20px",
+                          height: "20px",
+                          fontFamily: "inherit",
+                          border: "1px solid #0f1959",
+                          borderRadius: "50px",
                           backgroundColor:
                             answerInfo?.answer[row.value] === column.value
-                              ? "black"
+                              ? "#0f1959"
                               : "transparent",
                         }}
                         onClick={() =>

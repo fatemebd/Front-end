@@ -3,21 +3,21 @@ import UserHeader from "../../components/User_Header";
 import { useRef } from "react";
 import "./modal-content.css";
 const data = {
-  time: "farda",
-  name: "sina",
+  time: "تاریخ",
+  name: "زهرا ثمربخش",
   questions: [
     {
       number: 1,
 
       options: [
-        { id: "sina", value: "sina" },
-        { id: "sina2", value: "sina2" },
+        { id: "sina", value: "ستون ۱" },
+        { id: "sina2", value: "ستون ۲" },
       ],
-      question: "adw",
+      question: "سوال ماتریسی",
       questionId: 8506,
       rows: [
-        { id: "sina", value: "sina" },
-        { id: "sina2", value: "sina2" },
+        { id: "sina", value: "سطر ۱" },
+        { id: "sina2", value: "سطر ۲" },
       ],
       styles: { bold: false, italic: false, underline: false },
 
@@ -27,10 +27,10 @@ const data = {
       number: 2,
 
       options: [
-        { id: "sina", value: "sina" },
-        { id: "sina2", value: "sina2" },
+        { id: "sina", value: "گزینه ۱" },
+        { id: "sina2", value: "گزینه ۲" },
       ],
-      question: "adwfadw",
+      question: "سوال تستی",
       questionId: 853506,
       styles: { bold: true, italic: false, underline: false },
       type: "multiple",
@@ -41,7 +41,7 @@ const data = {
         { id: "max", value: 500 },
         { id: "min", value: 52 },
       ],
-      question: "adwfadw",
+      question: "سوال تشریحی",
       questionId: 85350346,
       styles: { bold: true, italic: true, underline: false },
       type: "shortAnswer",

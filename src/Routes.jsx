@@ -7,12 +7,12 @@ const ManagermainPage = React.lazy(() => import("./pages/manager_mainpage/Manage
 const ChoosingRespondents=React.lazy(()=>import("./pages/ChoosingRespondents/choosing respondents"));
 const UsersList=React.lazy(()=>import("./pages/UsersList/users_list"))
 const Questions = React.lazy(() => import("./pages/Questions"));
-const EditUserInfo = React.lazy(() => import("./components/EditUserInfo"));
 const TemplatesList = React.lazy(() => import("./pages/TemplatesList/TemplatesList"));
 const ChoosingSurveyTemplate = React.lazy(() => import("./pages/ChoosingSurveyTemplate/ChoosingSurveyTemplate"));
 const ChoosingTargetEmployee = React.lazy(() => import("./pages/ChoosingTargetEmployee/ChoosingTargetEmployee"));
 const UserSetting = React.lazy(() => import("./pages/UserSetting/UserSetting"));
 const Answer=React.lazy(()=>import("./pages/Answer/index"))
+const ManagerSetting = React.lazy(() => import("./pages/ManagerSetting/ManagerSetting"));
 
 const ProjectRoutes = () => {
   return (
@@ -29,6 +29,7 @@ const ProjectRoutes = () => {
           <Route path="/ChoosingSurveyTemplate" element={<ChoosingSurveyTemplate />} />
           <Route path="/ChoosingTargetEmployee" element={<ChoosingTargetEmployee />} />
           <Route path="/UserSetting" element={<UserSetting />} />
+          <Route path="/ManagerSetting" element={<ManagerSetting />} />
         </Routes>
       </Router>
     </React.Suspense>
