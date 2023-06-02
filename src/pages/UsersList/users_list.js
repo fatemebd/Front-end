@@ -6,19 +6,19 @@ import Table from "../../components/Table";
 import Footer from "../../components/Footer";
 import EditUserInfo from "../../components/EditUserInfo"
 
-const columns=['userList',,'تلفن همراه','ایمیل','سمت','دانشکده',' نام خانوادگی','نام' ,'ردیف'];
-const values=['phone','email','position','faculty','last_name','first_name'];
+const columns=['userList','تلفن همراه','سمت','دانشکده','ایمیل','نام و نام خانوادگی',' نام کاربری','ردیف'];
+const values=['phone','position','faculty','email','name','username'];
 
 const UserList=()=>{
     return(
         <>
         <div className={style.userList} >
          <Header/>
-         <SearchBox text="جست‌وجو در کاربران" />
-         
+         <SearchBox  text="جست‌و‌جو در کابران..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-stu/" />
+{/*          
          <div className={style.table_body}>
           <Table columns={columns} values={values} apiLink={"https://localhost:8000/accounts/get-stu/"} />
-         </div>
+         </div> */}
 
          <Footer/>   
          
