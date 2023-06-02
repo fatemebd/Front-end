@@ -1,0 +1,34 @@
+.textarea {
+    border: solid 1px #0f1959;
+    border-radius: 15px;
+    width: 60vw;
+    height: 20vh;
+    font-size: small;
+    color: #0f1959;
+    text-align: right;
+    padding: 10px;
+    fontFamily: "inherit"
+}
+
+.q {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    color: #0f1959;
+    text-align: right;
+    padding: 1%;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    width: 3vw;
+    height: 2vh;
+    justify-content: center;
+    padding-left: 3%;
+}
+
+.icon {
+    width: 3vw;
+    height: 2vh;
+}

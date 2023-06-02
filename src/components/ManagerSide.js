@@ -10,10 +10,9 @@ const ManagerSide = ({ onClose }) => {
         <img
           className={styles.materialSymbolsaccountCirclIcon}
           alt=""
-          src="/assets/img/materialsymbolsaccountcircle.svg"
+          src={localStorage.getItem('img')}
         />
         <b className={styles.b}>{localStorage.getItem('fullName')}</b>
-        <div className={styles.accountItem} />
       </div>
       <div className={styles.list}>
         <button className={styles.parent} onClick={()=>navigate('/ManagerMain')}>
