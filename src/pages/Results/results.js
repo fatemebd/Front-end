@@ -4,11 +4,14 @@ import Table from "../../components/Table";
 import Footer from "../../components/Footer"
 import styles from "./results.module.css"
 import { FiDownload } from "react-icons/fi";
+import Chart from "../../components/chart";
+
 import DescriptiveQuestions from "../../components/DescriptiveQuestions";
 import SearchBox from "../../components/SearchBox"
 
 const columns=['سمت','کد پرسنلی','نام و نام‌خانوادگی','ردیف'];
 const values=['deadline','employee','template'];
+
 
 const Results = () => {
 
@@ -81,6 +84,7 @@ const Results = () => {
                 <p className={styles.title}>تعداد پاسخ</p>
             </div>
         </div>
+        <Chart />
 
         <div className={styles.shortQ}>
             <DescriptiveQuestions />
