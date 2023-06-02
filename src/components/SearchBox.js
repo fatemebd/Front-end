@@ -6,11 +6,17 @@ const SearchBox = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(props.apilink)
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      "Authorization": `Token ${localStorage.getItem('token')}`,
+    });
+
+    fetch(props.apilink, { headers })
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error(error));
-  }, []);
+  }, [props.apilink]);
+  
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
