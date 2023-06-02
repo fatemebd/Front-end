@@ -20,14 +20,20 @@ const SearchBox = (props) => {
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
+      const headers = new Headers({
+        "Content-Type": "application/json",
+        "Authorization": `Token ${localStorage.getItem('token')}`,
+      });
       const link = props.apilink + "?search=" + e.target.value;
-      fetch(link)
+      console.log(link);
+      fetch(link,{ headers })
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
     }
   };
 
+  
   // only render the Table component when there is data to display
   // const tableComponent = data.length > 0 ? (
   //   <Table data={data} columns={props.columns} values={props.values} apiLink={props.apilink} />
