@@ -1,11 +1,13 @@
 import Icon, { Result,Edit,Delete } from "../components/icon";
 import React from "react";
+import RadioButton from "./RadioButton"
 
 
 import style from "../styles/Table.module.css"
 import data from "../MOCK_DATA (1).json"
 let iconManager=false;
 let check=false;
+let radio=false;
 let fillIcon=false;
 let userList=false;
 
@@ -28,6 +30,10 @@ function Table(props) {
                     userList=true;
                     return <th> </th>
                   }
+                  case "radio":{
+                    radio=true;
+                    return <th> </th>
+                  }
                   default:
                     return <th>{element}</th>;
                 }
@@ -38,7 +44,10 @@ function Table(props) {
         
         <tbody>
         {props.data.map((item) => (  
-          <tr key={item.id}>
+          <tr >
+            {radio &&(
+              <td ><RadioButton /></td>
+            )}
             {iconManager &&(
               <td className={style.iconManager}><Result /></td>
             )}

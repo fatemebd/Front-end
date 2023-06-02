@@ -15,6 +15,9 @@
   justify-content: space-between;
   
 }
+.container{
+  width: 100%;
+}
 
   /* .table {
     position: relative;

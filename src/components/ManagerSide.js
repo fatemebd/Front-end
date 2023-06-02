@@ -32,7 +32,7 @@ const ManagerSide = ({ onClose }) => {
             src="/assets/img/carbondocumentadd.svg"
           />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={() => navigate('/TargetEmp')}>
           <b className={styles.b2}>ایجاد پرسشنامه</b>
           <img className={styles.rihome4LineIcon} alt="" src="/assets/img/wpfsurvey.svg" />
         </button>

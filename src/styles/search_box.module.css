@@ -54,15 +54,14 @@ input::placeholder{
   .table {
     position: relative;
     
-    width: 80vw;
+    width: 100vw;
     left: 0;
     height: 350px;
-    padding: 2px 0;
     box-sizing: border-box;
     
   }
   .table_body {
     position: relative;
-    width: 80vw;
+    width: 100%;
     color: var(--color-black); 
   }

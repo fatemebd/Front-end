@@ -40,7 +40,7 @@ const SearchBox = (props) => {
   // ) : null;
 const t=()=>{
   return(
-    <Table data={data} columns={props.columns} values={props.values} apiLink={props.apilink} />
+    <Table data={data} columns={props.columns} values={props.values} apiLink={props.apilink}  />
 
   )
 }

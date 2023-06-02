@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./user_main.module.css"
-import Table from "../../components/Table";
 import SearchBox from "../../components/SearchBox"
 import Footer  from   "../../components/Footer"
 import Header from "../../components/User_Header";
@@ -15,6 +14,7 @@ const UsermainpagePage = () => {
       <div className={style.user_main_page}>
          <Header/>
          <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها" columns={columns} values={values} apilink="http://localhost:8000/questionnaire/questionnaires/"/>
+
          <Footer/>
       </div>
       <Notification/>

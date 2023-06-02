@@ -7,6 +7,11 @@ import SearchBox from "../../components/SearchBox";
 import StatusBar from '../../components/StatusBar';
 import ChangePageIcon from '../../components/ChangePageIcon';
 
+const columns=['radio','سمت ','نام و نام خانوادگی','نام کاربری','ردیف'];
+const values=['position','name','username'];
+
+
+
 function ChoosingTargetEmployee () {
     const navigate = useNavigate();
     if (localStorage.getItem('token') == 'null') {
@@ -22,10 +27,7 @@ function ChoosingTargetEmployee () {
                 <div className={styles.stat}>
                     <StatusBar status="1" />
                 </div>
-                <div className={styles.container}>
-                    <p>Hello</p>
-
-                </div>
+               
 
                 
             </div>
