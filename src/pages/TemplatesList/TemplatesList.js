@@ -52,7 +52,7 @@ function TemplatesList () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox text="جست و جو در قالب ها" onChange={() => {handleSearchChange()}} />
+            {/* <SearchBox text="جست و جو در قالب ها" onChange={() => {handleSearchChange()}} /> */}
             <div className={styles.container}>
                 <div className={styles.box} onClick={() => navigate('/questions')}>
                     <div className={styles.formName}>
