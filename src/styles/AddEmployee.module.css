@@ -1,0 +1,417 @@
+:root {
+  /* fonts */
+  --iransansx: IRANSansX;
+  --font-roboto: Roboto;
+  --overline: Inter;
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-5xs: 8px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-17xl: 36px;
+  --font-size-5xl: 24px;
+  --overline-size: 10px;
+  --iransansx-size: 25px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gray-300: #fafafa;
+  --color-gray-100: #181d31;
+  --color-gray-200: rgba(0, 0, 0, 0.56);
+  --color-midnightblue-100: #0f1959;
+  --color-lightgray: #d6d6d6;
+  --color-darkgray: #a6a6a6;
+  --color-black: #000;
+  --color-silver: #c1c1c1;
+
+  /* Gaps */
+  --gap-9xs: 4px;
+  --gap-sm: 14px;
+  --gap-5xs: 8px;
+  --gap-5xl: 24px;
+
+  /* Paddings */
+  --padding-14xl: 33px;
+  --padding-20xl: 39px;
+  --padding-18xl: 37px;
+  --padding-3xs: 10px;
+  --padding-422xl: 441px;
+  --padding-5xl: 24px;
+  --padding-26xl: 45px;
+
+  /* border radiuses */
+  --br-11xl: 30px;
+  --br-3xs: 10px;
+  --br-12xs: 1px;
+  --br-xl: 20px;
+  --br-31xl: 50px;
+  --br-9xs: 4px;
+}
+.vectorIcon {
+  position: relative;
+  width: 15.82px;
+  height: 15.82px;
+  flex-shrink: 0;
+}
+.icon {
+  align-self: stretch;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box; 
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+.b {
+  position: relative;
+  font-size: 20px;
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.mdicloudUploadOutlineIcon {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.b1 {
+  align-self: stretch;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  flex-shrink: 0;
+}
+.input {
+  border-radius: var(--br-xl);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.prpfile {
+  background-color: #d9d9d9;
+  position: relative;
+  border-radius: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 58%;
+  height:75%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  width: 26%;
+  height:36%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.input {
+  border: 2px solid var(--color-midnightblue-100);
+  background-color: var(--color-white);
+  position: absolute;
+  height: 81.4%;
+  width: 100%;
+  top: 18.6%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: var(--iransansx);
+  font-size: small;
+  text-align: center;
+  padding: 5%;
+}
+.b2 {
+  position: relative;
+  display: inline-block;
+  width: 158px;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.container {
+  position: absolute;
+  height: 36.05%;
+  width: 34.01%;
+  top: 2.33%;
+  right: 4.65%;
+  bottom: 61.63%;
+  left: 61.34%;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.inputFieldLastname {
+  position: relative;
+  width: 40vh;
+  height: 8vh;
+  flex-shrink: 0;
+}
+.b3 {
+  position: absolute;
+  top: 21px;
+  left: 65px;
+  display: inline-block;
+  width: 215px;
+  height: 28px;
+}
+.frame,
+.input1 {
+  position: absolute;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+.input1 {
+  height: 81.4%;
+  width: 100%;
+  top: 18.6%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  border: 2px solid var(--color-midnightblue-100);
+  box-sizing: border-box;
+  font-family: var(--iransansx);
+  font-size: small;
+  padding: 5%;
+  text-align: center;
+}
+.frame {
+  height: 36.05%;
+  width: 21.51%;
+  top: 2.33%;
+  right: 5.52%;
+  bottom: 61.63%;
+  left: 72.97%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-midnightblue-100);
+}
+.inputFieldName {
+  position: relative;
+  width: 40vh;
+  height: 8vh;
+  flex-shrink: 0;
+  font-size: var(--font-size-3xl);
+  color: var(--color-midnightblue-200);
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2%;
+}
+.samars160yahoocom {
+  position: absolute;
+  top: 17px;
+  left: 44px;
+  display: inline-block;
+  width: 392px;
+  height: 30px;
+}
+.frameDiv {
+  position: absolute;
+  height: 36.05%;
+  width: 31.92%;
+  top: 2.33%;
+  right: 4.81%;
+  bottom: 61.63%;
+  left: 63.27%;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-midnightblue-100);
+}
+.inputFieldEmail {
+  position: relative;
+  width: 50vh;
+  height: 8vh;
+  flex-shrink: 0;
+  font-size: var(--font-size-3xl);
+  color: var(--color-midnightblue-200);
+}
+.wrapper2 {
+  position: absolute;
+  height: 36.05%;
+  width: 21.51%;
+  top: 2.33%;
+  right: 5.52%;
+  bottom: 61.63%;
+  left: 72.97%;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.job,
+.wrapper2,
+.success {
+  flex-direction: row;
+  align-items: center;
+}
+.job {
+  width: 715px;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-xl);
+  gap: 2%;
+}
+.success {
+  width: 708px;
+  display: none;
+  padding: var(--padding-3xs) 127px var(--padding-3xs) var(--padding-3xs);
+  box-sizing: border-box;
+  justify-content: flex-start;
+  text-align: right;
+  font-size: 20px;
+  color: #3d956f;
+}
+.buttom {
+  position: relative;
+  font-size: 16px;
+  font-family: var(--font-iransansx);
+  color: var(--color-white);
+  text-align: center;
+}
+.button {
+  cursor: pointer;
+  border: 1px solid var(--color-midnightblue-100);
+  padding: var(--padding-3xs) var(--padding-10xs);
+  background-color: var(--color-midnightblue-100);
+  border-radius: var(--br-xl);
+  width: 8vw;;
+  height:6vh;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  font-family: var(--iransansx);
+}
+.button,
+.button1,
+.save {
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+}
+.button1 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-midnightblue-100);
+  border: 1px solid var(--color-midnightblue-100);
+  width: 240px;
+  height: 68px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: none;
+  padding: var(--padding-3xs) var(--padding-10xs);
+  justify-content: center;
+}
+.save {
+  width: 715px;
+  display: flex;
+  padding: 0 145px;
+  justify-content: flex-start;
+  gap: 25px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+}
+.main {
+  width: 50vw;
+  height: 60vh;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 3%;
+  color: var(--color-midnightblue-100);
+}
+.editUser,
+.main,
+.info {
+  box-sizing: border-box;
+  display: flex;
+}
+.info {
+  width: 70%;
+  height: 80%;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+}
+.editUser {
+  position: absolute;
+  bottom: 18%;
+  left: 17.5%;
+  right: 17.5%;
+  top:17%;
+  width: 65vw;
+  height: 70vh;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-100);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 4%;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-midnightblue-100);
+  font-family: var(--iransansx);
+ 
+  
+}
+
+.btnUpload {
+  background-color: #d9d9d9;
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--iransansx);
+  cursor: pointer;
+}
+.Edit{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+}

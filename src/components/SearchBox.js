@@ -48,20 +48,23 @@ const t=()=>{
   return (
     <div className={style.ss}>
       <div className={style.search_box}>
-        <button className={style.search_icon}>
-          <img
-            className={style.ssearch_rounde_icon}
-            alt=""
-            src="assets/img/loupe.png"
-          />
-        </button>
+          <button className={style.search_icon}>
+            <img
+              className={style.ssearch_rounde_icon}
+              alt=""
+              src="assets/img/loupe.png"
+            />
+          </button>
+        
         <input
           className={style.input_search}
           type="text"
           placeholder={props.text}
           onKeyDown={handleSearch}
-        />
+        />     
       </div>
+      {props.addemp && <button className={style.addemp} > افزودن کارمند </button>}
+      
       <div id="tbl1" className={style.table_body}>
         {t()}
       </div>

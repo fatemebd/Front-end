@@ -101,6 +101,7 @@ function LoginPage () {
         setFullName(data.user_full_name);
         window.localStorage.setItem('fullName', data.user_full_name);
         window.localStorage.setItem('isAuthenticated', true);
+        window.localStorage.setItem('userid', username);
         if (data.image_path != '') {
           window.localStorage.setItem('img', data.image_path);
         }

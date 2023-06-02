@@ -74,3 +74,13 @@ input::placeholder{
     width: 100%;
 
 }
+
+.addemp {
+  border: 1px solid var(--color-midnightblue-100);
+  border-radius: 20px;
+  background-color: white;
+  font-family: var(--iransansx);
+  font-size: small;
+  width: 10%;
+  height: 10%;
+}

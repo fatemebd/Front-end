@@ -13,7 +13,7 @@ const UserList=()=>{
         <>
         <div className={style.userList} >
          <Header/>
-         <SearchBox  text="جست‌و‌جو در کاربران..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-emp/" />
+         <SearchBox  text="جست‌و‌جو در کارمندان..." columns={columns} values={values} addemp="true" apilink="http://localhost:8000/accounts/get-emp/" />
          <Footer/>   
          
       </div>
