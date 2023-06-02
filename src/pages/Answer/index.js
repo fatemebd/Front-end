@@ -65,7 +65,7 @@ export const Answer = () => {
   // fetch data here and replace with dummy data --------------------------------------------------------------
   const headers = new Headers({
     "Content-Type": "application/json",
-    Authorization: "Token" + localStorage.getItem("token"),
+    "Authorization": `Token ${localStorage.getItem('token')}`,
   });
   // test realData then replace with dummy data -----------------------------------------------------------
   const [realData, setData] = useState();

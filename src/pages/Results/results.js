@@ -9,13 +9,13 @@ import Chart from "../../components/chart";
 import DescriptiveQuestions from "../../components/DescriptiveQuestions";
 import SearchBox from "../../components/SearchBox"
 
-const columns=['سمت','کد پرسنلی','نام و نام‌خانوادگی','ردیف'];
-const values=['deadline','employee','template'];
+const columns=['userList',,'سمت','دانشکده','نام و نام خانوادگی',' نام کاربری','ردیف'];
+const values=['position','faculty','name','username'];
 
 
 const Results = () => {
 
-    const handleChangeModalClick = () => {
+    const handleChangeModalClick1 = () => {
         const popup = document.getElementById('ParticipantList');
         if (!popup) return;
         const popupStyle = popup.style;
@@ -38,7 +38,7 @@ const Results = () => {
         popup.addEventListener('click', onClick);
     };
 
-    const handleRestoreModalClick_close = () => {
+    const handleRestoreModalClick1_close = () => {
     const closeModal = () => {
         const popup = document.getElementById('ParticipantList');
         if (!popup) return;
@@ -47,6 +47,52 @@ const Results = () => {
     }
     
     const popup = document.getElementById('ParticipantList');
+    if (!popup) return;
+    
+    popup.setAttribute('closable', '');
+    
+    const onClick =
+        popup.onClick ||
+        function (e) {
+        if (e.target === popup && popup.hasAttribute('closable')) {
+            closeModal();
+        }
+        };
+    popup.addEventListener('click',closeModal());
+    };
+
+    const handleChangeModalClick2 = () => {
+        const popup = document.getElementById('NotParticipantList');
+        if (!popup) return;
+        const popupStyle = popup.style;
+        if (popupStyle) {
+          popupStyle.display = 'flex';
+          popupStyle.zIndex = 100;
+          popupStyle.backgroundColor = 'rgba(113, 113, 113, 0.3)';
+          popupStyle.alignItems = 'center';
+          popupStyle.justifyContent = 'center';
+        }
+        popup.setAttribute('closable', '');
+    
+        const onClick =
+          popup.onClick ||
+          function (e) {
+            if (e.target === popup && popup.hasAttribute('closable')) {
+              popupStyle.display = 'none';
+            }
+          };
+        popup.addEventListener('click', onClick);
+    };
+
+    const handleRestoreModalClick2_close = () => {
+    const closeModal = () => {
+        const popup = document.getElementById('NotParticipantList');
+        if (!popup) return;
+        popup.removeEventListener('click', onClick);
+        popup.style.display = 'none';
+    }
+    
+    const popup = document.getElementById('NotParticipantList');
     if (!popup) return;
     
     popup.setAttribute('closable', '');
@@ -73,8 +119,12 @@ const Results = () => {
                 <p className={styles.date}>فعال تا تاریخ</p>
             </div> 
             <div className={styles.box}>
-                <p className={styles.title}>لیست افراد</p>
-                <button className={styles.button} onClick={() => {handleChangeModalClick()}} >مشاهده</button>
+                <p className={styles.title}>شرکت کرده</p>
+                <button className={styles.button} onClick={() => {handleChangeModalClick1()}} >مشاهده</button>
+            </div >
+            <div className={styles.box}>
+                <p className={styles.title}>شرکت نکرده</p>
+                <button className={styles.button} onClick={() => {handleChangeModalClick2()}} >مشاهده</button>
             </div >
             <div className={styles.box}>
                 <p className={styles.title}>دانلود نتایج</p>
@@ -99,13 +149,31 @@ const Results = () => {
 
         <div id="ParticipantList" className={styles.change} style={{ display: 'none' }}>
                 <div className={styles.passModal}>
-                    <div className={styles.close}  onClick={() => {handleRestoreModalClick_close()}}>
+                    <div className={styles.close}  onClick={() => {handleRestoreModalClick1_close()}}>
                         <button className={styles.closeBtn}>
                             <img className={styles.close_icon} alt="" src="/assets/img/close.png" />
                         </button>
                     </div>
                     <div className={styles.contain}>
-                    <SearchBox  text="جست‌وجو در افراد..." columns={columns} values={values} apilink="???"/>
+                    <SearchBox  text="جست‌وجو در افراد..." columns={columns} values={values} apilink="http://localhost/questionnaire/submissions/responded-users/"/>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+            <div id="NotParticipantList" className={styles.change} style={{ display: 'none' }}>
+                <div className={styles.passModal}>
+                    <div className={styles.close}  onClick={() => {handleRestoreModalClick2_close()}}>
+                        <button className={styles.closeBtn}>
+                            <img className={styles.close_icon} alt="" src="/assets/img/close.png" />
+                        </button>
+                    </div>
+                    <div className={styles.contain}>
+                    <SearchBox  text="جست‌وجو در افراد..." columns={columns} values={values} apilink="http://localhost/questionnaire/submissions/not-responded-users/"/>
                     </div>
 
 

@@ -20,35 +20,55 @@ function EditUserInfo(prop) {
   const inputFile = useRef(null);
   const [phone, setphone] = useState('');
 
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    faculty: "",
+    position: "",
+    phone: "",
+    image_path: ""
+  });
+  
+  function handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+  
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  }
+  
   const handleImageChange = (e) => {
     const selectedFile = e.target.files[0];
-    const imageUrl = selectedFile ? URL.createObjectURL(selectedFile) : image;
-    setImage(imageUrl);
+    const imagePath = selectedFile ? selectedFile.name : "materialsymbolsaccountcircle.svg";
+    console.log("/assets/img/" + imagePath);
+    setImage("/assets/img/" + imagePath);
+    setFormData(prevState => ({ ...prevState, image_path: "/assets/img/" + imagePath }));
   };
+  
 
   const onButtonClick = () => {
     inputFile.current.click();
   };
 
-  const handleSave = async () => {
-    
-    try {
-      const response = await fetch('http://localhost:8000/accounts/edit-stu', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-         body: JSON.stringify({ username, first_name,last_name,email,faculty,position,phone })
-      });
-    
 
-       if (response.status === 200) 
-        console.log(response.message)
-      
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetch("http://localhost:8000/account/add-emp/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Token ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+  }
   
   return (
     <div className={styles.Edit} id="addEmp">
@@ -84,13 +104,13 @@ function EditUserInfo(prop) {
           <div className={styles.main}>
             <div className={styles.name}>
               <div className={styles.inputFieldLastname}>
-                <input className={styles.input} type="text" required value={last_name} onChange={(e) => {setlast_name(e.target.value)}} />
+                <input className={styles.input} type="text" required name={last_name} value={formData.last_name} onChange={handleInputChange} />
                 <div className={styles.container}>
                   <p className={styles.b2}>نام خانوادگی</p>
                 </div>
               </div>
               <div className={styles.inputFieldName}>
-                <input className={styles.input} type="text" required value={first_name} onChange={(e) => {setfirst_name(e.target.value)}} />
+                <input className={styles.input} type="text" required name={first_name} value={formData.first_name} onChange={handleInputChange} />
                 <div className={styles.frame}>
                   <p className={styles.b2}>نام </p>
                 </div>
@@ -99,7 +119,7 @@ function EditUserInfo(prop) {
 
               
               <div className={styles.inputFieldEmail}>
-                <input className={styles.input} type="text"  value={email} required onChange={(e) => {setEmail(e.target.value)}} />
+                <input className={styles.input} type="text" name={email} value={formData.email} required onChange={handleInputChange} />
                 <div className={styles.frameDiv}>
                   <p className={styles.b2}>پست الکترونیک</p>
                 </div>
@@ -107,13 +127,13 @@ function EditUserInfo(prop) {
 
             <div className={styles.job}>
               <div className={styles.inputFieldLastname}>
-                <input className={styles.input} type="text" required value={faculty} onChange={(e) => {setfaculty(e.target.value)}} />
+                <input className={styles.input} type="text" required name={faculty} value={formData.faculty} onChange={handleInputChange} />
                 <div className={styles.container}>
                   <p className={styles.b2}>دانشکده</p>
                 </div>
               </div>
               <div className={styles.inputFieldLastname}>
-                <input className={styles.input} type="text" required value={position} onChange={(e) => {setPosition(e.target.value)}} />
+                <input className={styles.input} type="text" required name={position} value={formData.position} onChange={handleInputChange} />
                 <div className={styles.wrapper2}>
                   <p className={styles.b2}>سمت</p>
                 </div>
@@ -121,7 +141,7 @@ function EditUserInfo(prop) {
             </div>
            
             <div className={styles.inputFieldLastname}>
-              <input className={styles.input} type="text" required value={phone} onChange={(e) => {setphone(e.target.value)}} />
+              <input className={styles.input} type="text" required name={phone} value={formData.phone} onChange={handleInputChange} />
               <div className={styles.container}>
                 <p className={styles.b2}> تلفن همراه </p>
               </div>
@@ -135,7 +155,7 @@ function EditUserInfo(prop) {
             </div>
 
             <div className={styles.save}>
-              <button onClick={handleSave} className={styles.button}>
+              <button onClick={handleSubmit} className={styles.button}>
                 <p className={styles.buttom}>ذخیره</p>
               </button>
               
