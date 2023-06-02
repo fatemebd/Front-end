@@ -3,25 +3,33 @@ import { useNavigate } from 'react-router-dom';
 import styles from "./TemplatesList.module.css";
 import Header from '../../components/Admin_Header';
 import Footer from '../../components/Footer';
-import SearchBox from "../../components/SearchBox";
-import Box from "../../components/Box"
+import TemplateSearch from "../../components/TemplateSearch"
+import { useState, useEffect } from 'react';
+
+
 
 function TemplatesList () {
+    const [questionnaires, setQuestionnaires] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
     const navigate = useNavigate();
+
+
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+
+
     if (localStorage.getItem('token') == 'null') {
         navigate("/");
         return;
-    }      
+    }
+    
 
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox text="جست و جو در قالب ها" />
-            <div className={styles.container}>
-
-                <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                
-            </div>
+            <TemplateSearch text="جست‌و‌جو در قالب‌ها" selectMode="0" onChange={() => {handleSearchChange()}} />
             <Footer />
         </div>
     )

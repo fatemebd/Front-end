@@ -5,7 +5,7 @@
 .main{
     position: relative;
     background-color: var(--color-white);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     text-align: center;
     font-size: var(--font-size-xl);
@@ -55,6 +55,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .icon{
     width: 150%;
@@ -62,4 +63,64 @@
 }
 .download{
     margin-right: 5%;
+}
+
+
+.change {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.passModal {
+    position: relative;
+    border-radius: var(--br-11xl);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray-100);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-midnightblue-100);
+    font-family: var(--iransansx);
+}
+
+.closeIcon {
+    position: relative;
+    width: 15.82px;
+    height: 15.82px;
+}
+
+.close {
+    display: flex;
+    justify-content: flex-start;
+    width: 60vw;
+    height: fit-content;
+}
+
+.closeBtn {
+    background-color: var(--color-white);
+    border: 0px;
+    display: flex;
+    cursor: pointer;
+}
+
+.close_icon {
+    position: relative;
+    width: 15.82px;
+    height: 15.82px;
+}
+
+.contain {
+    width: 65vw;
 }

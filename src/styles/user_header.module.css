@@ -94,9 +94,9 @@
   padding: var(--padding-5xl) 15px var(--padding-5xl) 30px;
   box-sizing: border-box;
   justify-content: space-around;
-  gap: 20%;
+  gap: 19%;
   font-size: 22px;
-  
+  color: white;
 }
 .b1 {
   display: inline-block;

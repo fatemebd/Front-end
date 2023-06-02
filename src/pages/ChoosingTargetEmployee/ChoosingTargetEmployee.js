@@ -7,7 +7,22 @@ import SearchBox from "../../components/SearchBox";
 import StatusBar from '../../components/StatusBar';
 import ChangePageIcon from '../../components/ChangePageIcon';
 
+const columns=['radio','سمت ','نام و نام خانوادگی','نام کاربری','ردیف'];
+const values=['position','name','username'];
+
+
+
 function ChoosingTargetEmployee () {
+
+    const survey = {
+
+        template : null,
+        employee : null,
+        deadline : null,
+        users : [], 
+      }
+      window.localStorage.setItem("survey", JSON.stringify(survey));
+
     const navigate = useNavigate();
     if (localStorage.getItem('token') == 'null') {
         navigate("/");
@@ -17,16 +32,15 @@ function ChoosingTargetEmployee () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox text="جست و جو در کارمندان" />
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="1" />
                 </div>
-                <div className={styles.container}>
-                    <p>Hello</p>
+               
+            <div className={styles.searchcontainer}>
+            <SearchBox  text="جست‌و‌جو در کارمندان..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-emp/" />
 
-                </div>
-
+            </div>
                 
             </div>
             <ChangePageIcon next="/ChoosingSurveyTemplate" />

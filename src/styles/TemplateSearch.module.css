@@ -37,7 +37,7 @@ input::placeholder{
     border: 3px solid var(--color-midnightblue-100);
     box-sizing: border-box;
     width: 350px;
-    height: 7vh;
+    height: 50px;
     overflow: hidden;
     padding: 010PX ;
     text-align:center;
@@ -54,45 +54,53 @@ input::placeholder{
   .table {
     position: relative;
     
-    width: 100vw;
+    width: 80vw;
     left: 0;
     height: 350px;
+    padding: 2px 0;
     box-sizing: border-box;
     
   }
   .table_body {
     position: relative;
-    width: 80%;
+    width: 80vw;
     color: var(--color-black); 
   }
-  .ss{
+
+  .container {
+    height: 65vh;
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 6vh;
-    align-items: center;
-    width: 100%;
-
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    direction: rtl;
 }
-.ssb{
- 
+
+.box {
+  direction: rtl;
+  font-size: 16px;
+  border: 2px solid var(--color-midnightblue-100);
+  border-radius: 10px;
+  width: 20vw;
+  height: 15vh;
   display: flex;
-  flex-direction: row;
-  width: 80%;
-  gap: 20vw;
-  justify-content: flex-end;
-
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.addemp {
-  border: 1px solid var(--color-midnightblue-100);
-  /* border-radius: 20px; */
-  background-color: white;
-  font-family: var(--iransansx);
-  font-size: small;
-  width: 10vw;
-  height: 7vh;
-  border-radius: var(--br-xl);
-  background-color: var(--color-white);
-  border: 3px solid var(--color-midnightblue-100);
+.formName {
+  display: flex ;
+  align-items: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.box:hover {
+  box-shadow: 1px 1px var(--color-midnightblue-100);
+  cursor: pointer;
 }

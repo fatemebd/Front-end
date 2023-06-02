@@ -1,10 +1,9 @@
 import React from "react";
-import style from "./users_list.module.css"
+import style from "./EmployeeList.module.css"
 import Header from "../../components/Admin_Header";
 import SearchBox from "../../components/SearchBox";
-import Table from "../../components/Table";
 import Footer from "../../components/Footer";
-import EditUserInfo from "../../components/EditUserInfo"
+import AddEmployee from "../../components/AddEmployee";
 
 const columns=['userList','تلفن همراه','سمت','دانشکده','ایمیل','نام و نام خانوادگی',' نام کاربری','ردیف'];
 const values=['phone','position','faculty','email','name','username'];
@@ -14,11 +13,11 @@ const UserList=()=>{
         <>
         <div className={style.userList} >
          <Header/>
-         <SearchBox  text="جست‌و‌جو در کاربران..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-users/" />
+         <SearchBox  text="جست‌و‌جو در کارمندان..." columns={columns} values={values} addemp="true" apilink="http://localhost:8000/accounts/get-emp/" />
          <Footer/>   
          
       </div>
-      
+      <AddEmployee/>
       </>
       
     );

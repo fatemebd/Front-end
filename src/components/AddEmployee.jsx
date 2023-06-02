@@ -1,24 +1,24 @@
 import React from 'react';
 import { useState, useRef } from 'react';
-import styles from "../styles/EditUserInfo.module.css";
+import styles from "../styles/AddEmployee.module.css";
 
 const close_Click = () => {
       
-  const popup = document.getElementById('edituser');     
+  const popup = document.getElementById('addEmp');     
   popup.style.display = 'none';    
 };
 
 function EditUserInfo(prop) {
  
-  const username=prop.info.name;
-  const [first_name, setfirst_name] = useState([prop.info.first_name]);
-  const [last_name, setlast_name] = useState([prop.info.last_name]);
-  const [email, setEmail] = useState([prop.info.email]);
-  const [position, setPosition] = useState([prop.info.position]);
-  const [faculty, setfaculty] = useState([prop.info.faculty]);
+  const [username, setUsername] = useState('');
+  const [first_name, setfirst_name] = useState('');
+  const [last_name, setlast_name] = useState('');
+  const [email, setEmail] = useState('');
+  const [position, setPosition] = useState('');
+  const [faculty, setfaculty] = useState('');
   const [image, setImage] = useState("/assets/img/materialsymbolsaccountcircle.svg");//prop.info.image_path//
   const inputFile = useRef(null);
-  const [phone, setphone] = useState([prop.info.phone]);
+  const [phone, setphone] = useState('');
 
   const handleImageChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -51,14 +51,14 @@ function EditUserInfo(prop) {
   };
   
   return (
-    <div className={styles.Edit} id="edituser">
+    <div className={styles.Edit} id="addEmp">
       <div className={styles.editUser} >
         <div className={styles.icon}>
           <img className={styles.vectorIcon} alt="" src="/assets/img/close.png" onClick={close_Click}/>
         </div>
 
         <div className={styles.wrapper}>
-          <b className={styles.b}>ویرایش اطلاعات</b>
+          <b className={styles.b}>افزودن کارمند</b>
         </div>
 
         <div className={styles.info}>
@@ -66,7 +66,7 @@ function EditUserInfo(prop) {
             <div className={styles.prpfile}>
               {image && <img src={image} alt="profile photo" height={"100%"} width={"100%"} />}
             </div>
-            {/* <div>
+            <div>
               <input
                 style={{ display: "none" }}
                 accept=".jpg,.png"
@@ -77,7 +77,7 @@ function EditUserInfo(prop) {
               <div className={styles.upload} onClick={onButtonClick}>
                 بارگذاری تصویر
               </div>
-            </div> */}
+            </div>
           </div>
           
 

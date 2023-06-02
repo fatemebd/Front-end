@@ -6,7 +6,60 @@ import styles from "./results.module.css"
 import { FiDownload } from "react-icons/fi";
 import Chart from "../../components/chart";
 
+import DescriptiveQuestions from "../../components/DescriptiveQuestions";
+import SearchBox from "../../components/SearchBox"
+
+const columns=['سمت','کد پرسنلی','نام و نام‌خانوادگی','ردیف'];
+const values=['deadline','employee','template'];
+
+
 const Results = () => {
+
+    const handleChangeModalClick = () => {
+        const popup = document.getElementById('ParticipantList');
+        if (!popup) return;
+        const popupStyle = popup.style;
+        if (popupStyle) {
+          popupStyle.display = 'flex';
+          popupStyle.zIndex = 100;
+          popupStyle.backgroundColor = 'rgba(113, 113, 113, 0.3)';
+          popupStyle.alignItems = 'center';
+          popupStyle.justifyContent = 'center';
+        }
+        popup.setAttribute('closable', '');
+    
+        const onClick =
+          popup.onClick ||
+          function (e) {
+            if (e.target === popup && popup.hasAttribute('closable')) {
+              popupStyle.display = 'none';
+            }
+          };
+        popup.addEventListener('click', onClick);
+    };
+
+    const handleRestoreModalClick_close = () => {
+    const closeModal = () => {
+        const popup = document.getElementById('ParticipantList');
+        if (!popup) return;
+        popup.removeEventListener('click', onClick);
+        popup.style.display = 'none';
+    }
+    
+    const popup = document.getElementById('ParticipantList');
+    if (!popup) return;
+    
+    popup.setAttribute('closable', '');
+    
+    const onClick =
+        popup.onClick ||
+        function (e) {
+        if (e.target === popup && popup.hasAttribute('closable')) {
+            closeModal();
+        }
+        };
+    popup.addEventListener('click',closeModal());
+    };
  
     return (
       
@@ -21,7 +74,7 @@ const Results = () => {
             </div> 
             <div className={styles.box}>
                 <p className={styles.title}>لیست افراد</p>
-                <button className={styles.button}>مشاهده</button>
+                <button className={styles.button} onClick={() => {handleChangeModalClick()}} >مشاهده</button>
             </div >
             <div className={styles.box}>
                 <p className={styles.title}>دانلود نتایج</p>
@@ -32,7 +85,34 @@ const Results = () => {
             </div>
         </div>
         <Chart />
+
+        <div className={styles.shortQ}>
+            <DescriptiveQuestions />
+        </div>
+
         <Footer />
+
+
+
+
+
+
+        <div id="ParticipantList" className={styles.change} style={{ display: 'none' }}>
+                <div className={styles.passModal}>
+                    <div className={styles.close}  onClick={() => {handleRestoreModalClick_close()}}>
+                        <button className={styles.closeBtn}>
+                            <img className={styles.close_icon} alt="" src="/assets/img/close.png" />
+                        </button>
+                    </div>
+                    <div className={styles.contain}>
+                    <SearchBox  text="جست‌وجو در افراد..." columns={columns} values={values} apilink="???"/>
+                    </div>
+
+
+
+                </div>
+            </div>
+
       </div>
     );
   };

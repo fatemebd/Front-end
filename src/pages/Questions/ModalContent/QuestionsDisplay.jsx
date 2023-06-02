@@ -6,14 +6,16 @@ const QuestionsDisplay = ({
   answerMode,
   optionsAccess,
 }) => {
-  const { questionId, styles, number, question, type } = questionInfo;
+  const { styles, number, question, type } = questionInfo;
   const [answerInfo, setAnswerInfo] = useState({
-    questionId,
+    questionInfo,
     answer: "",
   });
 
   useEffect(() => {
-    typeof answerMode === "function" && answerMode(answerInfo);
+    answerInfo.answer &&
+      typeof answerMode === "function" &&
+      answerMode(answerInfo);
   }, [answerInfo, answerMode]);
   return (
     <div
@@ -43,12 +45,14 @@ const QuestionsDisplay = ({
                   }
                   disabled={!answerMode}
                   className="choice"
+                  style={{ fontFamily: "inherit", fontSize: "16px" }}
                 >
                   {value}
                 </button>
                 <p
                   style={{
-                    backgroundColor: answerInfo.answer === value && "black",
+                    backgroundColor: answerInfo.answer === value && "#0f1959",
+                    fontFamily: "inherit",
                     color: answerInfo.answer === value && "white",
                   }}
                   className="choice-number"
@@ -69,7 +73,7 @@ const QuestionsDisplay = ({
             questionInfo?.options &&
             questionInfo?.options.find((option) => option.id === "min").value
           }
-          style={{ padding: 10 }}
+          style={{ padding: 10, fontFamily: "inherit" }}
           className="display-textarea"
           disabled={!answerMode}
           onChange={(e) =>
@@ -99,11 +103,14 @@ const QuestionsDisplay = ({
                     <td key={column.id}>
                       <button
                         style={{
-                          width: "100%",
-                          height: "100%",
+                          width: "20px",
+                          height: "20px",
+                          fontFamily: "inherit",
+                          border: "1px solid #0f1959",
+                          borderRadius: "50px",
                           backgroundColor:
                             answerInfo?.answer[row.value] === column.value
-                              ? "black"
+                              ? "#0f1959"
                               : "transparent",
                         }}
                         onClick={() =>

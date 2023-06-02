@@ -10,10 +10,9 @@ const ManagerSide = ({ onClose }) => {
         <img
           className={styles.materialSymbolsaccountCirclIcon}
           alt=""
-          src="/assets/img/materialsymbolsaccountcircle.svg"
+          src={localStorage.getItem('img')}
         />
         <b className={styles.b}>{localStorage.getItem('fullName')}</b>
-        <div className={styles.accountItem} />
       </div>
       <div className={styles.list}>
         <button className={styles.parent} onClick={()=>navigate('/ManagerMain')}>
@@ -32,11 +31,11 @@ const ManagerSide = ({ onClose }) => {
             src="/assets/img/carbondocumentadd.svg"
           />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={() => navigate('/TargetEmp')}>
           <b className={styles.b2}>ایجاد پرسشنامه</b>
           <img className={styles.rihome4LineIcon} alt="" src="/assets/img/wpfsurvey.svg" />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={() => navigate('/EmployeeList')}>
           <b className={styles.b2}>فهرست کارمندان</b>
           <img
             className={styles.rihome4LineIcon}
@@ -52,7 +51,7 @@ const ManagerSide = ({ onClose }) => {
             src="/assets/img/materialsymbolspatientlistrounded.svg"
           />
         </button>
-        <button className={styles.parent}>
+        <button className={styles.parent} onClick={() => navigate('/TemplatesList')}>
           <b className={styles.b2}>لیست قالب‌ها</b>
           <img
             className={styles.rihome4LineIcon}

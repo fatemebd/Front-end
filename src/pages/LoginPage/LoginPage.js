@@ -101,6 +101,16 @@ function LoginPage () {
         setFullName(data.user_full_name);
         window.localStorage.setItem('fullName', data.user_full_name);
         window.localStorage.setItem('isAuthenticated', true);
+        window.localStorage.setItem('userid', username);
+        if (data.image_path != '') {
+          window.localStorage.setItem('img', data.image_path);
+        }
+        else if (data.is_staff) {
+          window.localStorage.setItem('img', "/assets/img/materialsymbolsaccountcircle.svg");
+        }
+        else {
+          window.localStorage.setItem('img', "/assets/img/vector1.svg");
+        }
         console.log("200");
         console.log(data);
         if (data.is_staff) {

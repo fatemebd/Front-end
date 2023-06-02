@@ -1,6 +1,35 @@
 import { useState, useCallback } from "react";
-import PortalPopup from './PortalPopup';
-import EditUserInfo from "./EditUserInfo"
+import EditUserInfo from "./EditUserInfo";
+
+
+const editClick = () =>{
+  
+          
+        var popup = document.getElementById("edituser");
+        if (!popup) return;
+        var popupStyle = popup.style;
+        if (popupStyle) {
+          
+          popupStyle.display = "flex";
+          popupStyle.zIndex = 100;
+          popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+          popupStyle.alignItems = "center";
+          popupStyle.justifyContent = "center";
+        }
+        popup.setAttribute("closable", "");
+    
+        var onClick =
+          popup.onClick ||
+          function (e) {
+            if (e.target === popup && popup.hasAttribute("closable")) {
+              popupStyle.display = "none";
+            }
+          };
+        popup.addEventListener("click", onClick);
+        
+      
+  }  
+  
 export const Result = () => {
 
     return (
@@ -9,31 +38,20 @@ export const Result = () => {
         </div>
     );
 };
-export const Edit = ()=>{
-    const [isEditOpen, setEditOpen] = useState(false);
 
-  const openEditSide = useCallback(() => {
-    setEditOpen(true);
-  }, []);
 
-  const closeEdit = useCallback(() => {
-    console.log("ddddddddddd")
-    setEditOpen(false);
-  }, []);
+
+export const Edit = (props)=>{
     return(
+           
         <div>
-            <img src="/assets/img/edit.svg" onClick={openEditSide}/>
-            {isEditOpen&&(
-            <PortalPopup
-            overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="center"
-          onOutsideClick={closeEdit}>
-                <EditUserInfo onClose={closeEdit}/>
-            </PortalPopup>
-        )}
-        </div>
-         
+          
+            <img src="/assets/img/edit.svg" onClick={editClick}/>
+            <EditUserInfo info={props.info} />
+        </div> 
     )
+
+
 }
 
 export const Delete = ()=>{

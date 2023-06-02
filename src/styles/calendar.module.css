@@ -1,0 +1,17 @@
+.input {
+    border-radius: 15px;
+    border: 1px #0f1959 solid;
+    padding: 4px 12px;
+    background-color: white;
+    height: 22px;
+    box-shadow: 0 0 2px #0f1959;
+  }
+  
+  .input:focus {
+    outline: none;
+    border: 1px solid #0f1959;
+    box-shadow: 0 0 10px 2px #0f1959;
+  }
+  .sel{
+    background-color:rgba(15, 25, 89, 0.1);
+  }

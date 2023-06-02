@@ -3,43 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import styles from "./ChoosingSurveyTemplate.module.css";
 import Header from '../../components/Admin_Header';
 import Footer from '../../components/Footer';
-import SearchBox from "../../components/SearchBox";
 import Box from "../../components/Box"
+import TemplateSearch from "../../components/TemplateSearch"
 import StatusBar from '../../components/StatusBar';
 import ChangePageIcon from '../../components/ChangePageIcon';
+import { useState, useEffect } from 'react';
+
 
 function ChoosingSurveyTemplate () {
+    const [questionnaires, setQuestionnaires] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
     const navigate = useNavigate();
+
+
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+
+
     if (localStorage.getItem('token') == 'null') {
         navigate("/");
         return;
     }      
 
+
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox text="جست و جو در قالب ها"/>
+            
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="2" />
                 </div>
                 <div className={styles.container}>
 
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
-                    <Box formName="رفتار با دانشجویان" numOfQuestions="۸" />
+                    <TemplateSearch text="جست‌و‌جو در قالب‌ها..."/>
+                    {/* {boxes} */}
 
                 </div>
 

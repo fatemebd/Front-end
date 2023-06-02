@@ -1,23 +1,100 @@
 import style from "../styles/search_box.module.css";
+import Table from "../components/Table";
+import React, { useState, useEffect } from "react";
 
-const SearchBox=(props) =>{
-    return(
-        <div className={style.search_box}>
-          <input className={style.input_search} type="text" placeholder={props.text}
-          // onKeyDown={(e) => {if(e.key === "Enter") {
-          //   let tbl=document.getElementById('tbl');
-          //   tbl.remove();
-          // }}} 
-          >
-          </input>
+const addHandle=()=>
+  {
+    var popup = document.getElementById("addEmp");
+    if (!popup) return;
+    var popupStyle = popup.style;
+    if (popupStyle) {
+      
+      popupStyle.display = "flex";
+      popupStyle.zIndex = 100;
+      popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+      popupStyle.alignItems = "center";
+      popupStyle.justifyContent = "center";
+    }
+    popup.setAttribute("closable", "");
+
+    var onClick =
+      popup.onClick ||
+      function (e) {
+        if (e.target === popup && popup.hasAttribute("closable")) {
+          popupStyle.display = "none";
+        }
+      };
+    popup.addEventListener("click", onClick); 
+}  
+  
+const SearchBox = (props) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      "Authorization": `Token ${localStorage.getItem('token')}`,
+    });
+
+    fetch(props.apilink, { headers })
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+  }, [props.apilink]);
+
+
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      const headers = new Headers({
+        "Content-Type": "application/json",
+        "Authorization": `Token ${localStorage.getItem('token')}`,
+      });
+      const link = props.apilink + "?search=" + e.target.value;
+      fetch(link,{ headers })
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error(error));
+    }
+  };
+
+  
+  // only render the Table component when there is data to display
+  // const tableComponent = data.length > 0 ? (
+  //   <Table data={data} columns={props.columns} values={props.values} apiLink={props.apilink} />
+  // ) : null;
+const t=()=>{
+  return(
+    <Table data={data} columns={props.columns} values={props.values} apiLink={props.apilink}  />
+
+  )
+}
+  return (
+    <div className={style.ss}>
+      <div className={style.ssb}>
+      <div className={style.search_box}>
           <button className={style.search_icon}>
-          <img
-            className={style.ssearch_rounde_icon}
-            alt=""
-            src="assets/img/materialsymbolssearchrounded.svg"
-          />
+            <img
+              className={style.ssearch_rounde_icon}
+              alt=""
+              src="assets/img/loupe.png"
+            />
           </button>
+        
+        <input
+          className={style.input_search}
+          type="text"
+          placeholder={props.text}
+          onKeyDown={handleSearch}
+        />  
+           
       </div>
-    );
+      {props.addemp && (<button className={style.addemp} onClick={addHandle} > افزودن کارمند </button>)}
+      </div>
+      
+      <div id="tbl1" className={style.table_body}>
+        {t()}
+      </div>
+    </div>
+  );
 };
+
 export default SearchBox;
