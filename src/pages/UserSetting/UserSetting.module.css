@@ -57,7 +57,7 @@
 .mainPage {
     font-family: var(--iransansx);
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     text-align: center;
     font-size: var(--font-size-xl);

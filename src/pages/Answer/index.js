@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 // you should fetch data below --------------------------------------
 const data = {
-  time: "تاریخ",
+  time: "۱۴۰۲/۰۳/۲۵",
   name: "زهرا ثمربخش",
   questions: [
     {
@@ -69,7 +69,6 @@ export const Answer = () => {
   });
   // test realData then replace with dummy data -----------------------------------------------------------
   const [realData, setData] = useState();
-  console.log(realData);
   const getUrl = "localhost:8000/question/get/";
   const fetchedData = () => {
     fetch(getUrl, {
@@ -83,9 +82,10 @@ export const Answer = () => {
 
   useLayoutEffect(() => {
     fetchedData();
+    console.log(realData);
   }, []);
   const [loading, setLoading] = useState(false);
-  const postUrl = "localhost:8000/questionnaire/submissions/create/";
+  const postUrl = "http://localhost:8000/questionnaire/submissions/create/";
   // send data --------------------------------------------------------------------
   const send = () => {
     // send if all answered --------------------------------------------------------

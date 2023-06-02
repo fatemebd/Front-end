@@ -70,7 +70,7 @@ const ManagerSide = ({ onClose }) => {
           <img className={styles.vectorIcon} alt="" src="/assets/img/vector.svg" />
         </button>
         <button className={styles.rishutDownLine}>
-          <img className={styles.vectorIcon1} alt="" src="/assets/img/setting.svg" />
+          <img className={styles.vectorIcon1} alt="" src="/assets/img/setting.svg" onClick={() => navigate('/ManagerSetting')} />
         </button>
         <button className={styles.icroundKeyboardDoubleArrowWrapper}>
           <img
