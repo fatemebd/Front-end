@@ -2,6 +2,8 @@ import QuestionsDisplay from "../Questions/ModalContent/QuestionsDisplay";
 import UserHeader from "../../components/User_Header";
 import { useRef } from "react";
 import "./modal-content.css";
+
+// you should fetch data below --------------------------------------
 const data = {
   time: "تاریخ",
   name: "زهرا ثمربخش",
@@ -51,13 +53,31 @@ const data = {
 export const Answer = () => {
   const answers = useRef({});
 
-  const addAnswer = (answer) =>
-    (answers.current = {
+  const addAnswer = (answer) => {
+    const { questionId, type } = answer.questionInfo;
+    answers.current = {
       ...answers.current,
       ...(answer?.questionInfo && {
-        [answer.questionInfo.number]: answer,
+        [answer.questionInfo.number]: {
+          type,
+          questionId,
+          answer: answer.answer,
+        },
       }),
-    });
+    };
+  };
+  // fetch data here and replace with dummy data --------------------------------------------------------------
+  const fetchedData = () => {};
+
+  // send data --------------------------------------------------------------------
+  const send = () => {
+    // send if all answered --------------------------------------------------------
+    if (data.questions.length === Object.values(answers.current).length) {
+      console.log(answers.current);
+      return;
+    }
+    console.log("please answer all questions");
+  };
 
   return (
     <div className="mainPage">
@@ -98,7 +118,7 @@ export const Answer = () => {
         />
       ))}
       <button
-        onClick={() => console.log(answers.current)}
+        onClick={send}
         className="sendBtn"
         style={{
           position: "fixed",

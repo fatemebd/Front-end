@@ -6,14 +6,16 @@ const QuestionsDisplay = ({
   answerMode,
   optionsAccess,
 }) => {
-  const { questionId, styles, number, question, type } = questionInfo;
+  const { styles, number, question, type } = questionInfo;
   const [answerInfo, setAnswerInfo] = useState({
-    questionId,
+    questionInfo,
     answer: "",
   });
 
   useEffect(() => {
-    typeof answerMode === "function" && answerMode(answerInfo);
+    answerInfo.answer &&
+      typeof answerMode === "function" &&
+      answerMode(answerInfo);
   }, [answerInfo, answerMode]);
   return (
     <div
@@ -33,7 +35,7 @@ const QuestionsDisplay = ({
         {type === "multiple" &&
           questionInfo?.options.map(({ value, id }, index) =>
             value ? (
-              <div key={id} className="choice-container" >
+              <div key={id} className="choice-container">
                 <button
                   onClick={() =>
                     setAnswerInfo((s) => ({
@@ -43,13 +45,14 @@ const QuestionsDisplay = ({
                   }
                   disabled={!answerMode}
                   className="choice"
-                  style={ {fontFamily: "inherit", fontSize:"16px"} }
+                  style={{ fontFamily: "inherit", fontSize: "16px" }}
                 >
                   {value}
                 </button>
                 <p
                   style={{
-                    backgroundColor: answerInfo.answer === value && "#0f1959", fontFamily: "inherit",
+                    backgroundColor: answerInfo.answer === value && "#0f1959",
+                    fontFamily: "inherit",
                     color: answerInfo.answer === value && "white",
                   }}
                   className="choice-number"
