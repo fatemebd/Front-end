@@ -1,45 +1,99 @@
+
+
+:root {
+    /* fonts */
+    --iransansx: IRANSansX;
+    --font-roboto: Roboto;
+    --overline: Inter;
+  
+    /* font sizes */
+    --font-size-xl: 20px;
+    --font-size-5xs: 8px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-17xl: 36px;
+    --font-size-5xl: 24px;
+    --overline-size: 10px;
+    --iransansx-size: 25px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --color-gray-300: #fafafa;
+    --color-gray-100: #181d31;
+    --color-gray-200: rgba(0, 0, 0, 0.56);
+    --color-midnightblue-100: #0f1959;
+    --color-lightgray: #d6d6d6;
+    --color-darkgray: #a6a6a6;
+    --color-black: #000;
+    --color-silver: #c1c1c1;
+  
+    /* Gaps */
+    --gap-9xs: 4px;
+    --gap-sm: 14px;
+    --gap-5xs: 8px;
+    --gap-5xl: 24px;
+  
+    /* Paddings */
+    --padding-14xl: 33px;
+    --padding-20xl: 39px;
+    --padding-18xl: 37px;
+    --padding-3xs: 10px;
+    --padding-422xl: 441px;
+    --padding-5xl: 24px;
+    --padding-26xl: 45px;
+  
+    /* border radiuses */
+    --br-11xl: 30px;
+    --br-3xs: 10px;
+    --br-12xs: 1px;
+    --br-xl: 20px;
+    --br-31xl: 50px;
+    --br-9xs: 4px;
+}
 .mainPage {
     font-family: var(--iransansx);
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     text-align: center;
     font-size: var(--font-size-xl);
+    font-family: var(--iransansx);
     display: flex ;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    gap:1vh;
 }
 
 .main {
-    height: 85vh;
-    /* width: 10vw; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-
-.container {
-    height: 75vh;
+    height: 65vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 5%;
-   
-    padding-right: 3%;
-    position: relative;
+    justify-content: space-between;
 }
-.search{
-    position: relative;
+
+.stat {
+    width: 10vw;
+}
+
+.container {
+    height: 65vh;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    padding-right: 5%;
+}
+.searchcontainer{
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    gap: 3vh;
-    
+    align-items: center;
+    padding-right: 8.2%;
+    padding-top: 0.3%;
 }

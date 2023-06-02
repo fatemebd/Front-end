@@ -61,7 +61,7 @@ function Table(props) {
               </td>
             )}
             {props.values.map((element)=>
-              <td>{item[element]}</td>                
+              <td id={element}> {item[element]}</td>                
             )}
             <td className={style.rowNum}>{counter++}</td>
           </tr>
