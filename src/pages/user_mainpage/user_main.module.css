@@ -3,7 +3,7 @@
 .user_main_page {
   position: relative;
   background-color: var(--color-white);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   text-align: center;
   font-size: var(--font-size-xl);
