@@ -17,7 +17,7 @@ function ChoosingTargetEmployee () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox text="جست و جو در کارمندان" />
+            <SearchBox text="جست‌و‌جو در کارمندان" />
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="1" />

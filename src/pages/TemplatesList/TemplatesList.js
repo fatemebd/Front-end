@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import styles from "./TemplatesList.module.css";
 import Header from '../../components/Admin_Header';
 import Footer from '../../components/Footer';
-import SearchBox from "../../components/SearchBox";
-import Box from "../../components/Box"
+import TemplateSearch from "../../components/TemplateSearch"
+import Box from '../../components/Box';
 import { useState, useEffect } from 'react';
 import { FiPlusCircle } from 'react-icons/fi';
 
@@ -52,7 +52,7 @@ function TemplatesList () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            {/* <SearchBox text="جست و جو در قالب ها" onChange={() => {handleSearchChange()}} /> */}
+            <TemplateSearch text="جست‌و‌جو در قالب‌ها" onChange={() => {handleSearchChange()}} />
             <div className={styles.container}>
                 <div className={styles.box} onClick={() => navigate('/questions')}>
                     <div className={styles.formName}>

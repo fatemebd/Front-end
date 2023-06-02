@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import styles from "./ChoosingSurveyTemplate.module.css";
 import Header from '../../components/Admin_Header';
 import Footer from '../../components/Footer';
-import SearchBox from "../../components/SearchBox";
 import Box from "../../components/Box"
+import TemplateSearch from "../../components/TemplateSearch"
 import StatusBar from '../../components/StatusBar';
 import ChangePageIcon from '../../components/ChangePageIcon';
 import { useState, useEffect } from 'react';
@@ -50,7 +50,7 @@ function ChoosingSurveyTemplate () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            {/* <SearchBox text="جست و جو در قالب ها"/> */}
+            <TemplateSearch text="جست‌و‌جو در قالب‌ها"/>
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="2" />
