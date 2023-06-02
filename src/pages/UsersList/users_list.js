@@ -6,8 +6,8 @@ import Table from "../../components/Table";
 import Footer from "../../components/Footer";
 import EditUserInfo from "../../components/EditUserInfo"
 
-const columns=['userList',,'تلفن همراه','ایمیل','سمت','دانشکده',' نام خانوادگی','نام' ,'ردیف'];
-const values=['phone','email','position','faculty','last_name','first_name'];
+const columns=['userList','تلفن همراه','ایمیل','سمت','دانشکده',' نام و نام خانوادگی' ,' نام کاربری ','ردیف'];
+const values=['phone','email','position','faculty','name','username'];
 
 const UserList=()=>{
     return(

@@ -3,7 +3,7 @@ import Table from "../components/Table";
 import React, { useState, useEffect } from "react";
 
 const SearchBox = (props) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   useEffect(() => {
     const headers = new Headers({
