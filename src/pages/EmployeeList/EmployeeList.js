@@ -3,7 +3,7 @@ import style from "./EmployeeList.module.css"
 import Header from "../../components/Admin_Header";
 import SearchBox from "../../components/SearchBox";
 import Footer from "../../components/Footer";
-import EditUserInfo from "../../components/EditUserInfo"
+import AddEmployee from "../../components/AddEmployee";
 
 const columns=['userList','تلفن همراه','سمت','دانشکده','ایمیل','نام و نام خانوادگی',' نام کاربری','ردیف'];
 const values=['phone','position','faculty','email','name','username'];
@@ -17,7 +17,7 @@ const UserList=()=>{
          <Footer/>   
          
       </div>
-      
+      <AddEmployee/>
       </>
       
     );

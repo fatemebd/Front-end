@@ -2,11 +2,33 @@ import style from "../styles/search_box.module.css";
 import Table from "../components/Table";
 import React, { useState, useEffect } from "react";
 
+const addHandle=()=>
+  {
+    var popup = document.getElementById("addEmp");
+    if (!popup) return;
+    var popupStyle = popup.style;
+    if (popupStyle) {
+      
+      popupStyle.display = "flex";
+      popupStyle.zIndex = 100;
+      popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+      popupStyle.alignItems = "center";
+      popupStyle.justifyContent = "center";
+    }
+    popup.setAttribute("closable", "");
+
+    var onClick =
+      popup.onClick ||
+      function (e) {
+        if (e.target === popup && popup.hasAttribute("closable")) {
+          popupStyle.display = "none";
+        }
+      };
+    popup.addEventListener("click", onClick); 
+}  
+  
 const SearchBox = (props) => {
   const [data, setData] = useState([]);
-
-
-
   useEffect(() => {
     const headers = new Headers({
       "Content-Type": "application/json",
@@ -47,6 +69,7 @@ const t=()=>{
 }
   return (
     <div className={style.ss}>
+      <div className={style.ssb}>
       <div className={style.search_box}>
           <button className={style.search_icon}>
             <img
@@ -61,9 +84,11 @@ const t=()=>{
           type="text"
           placeholder={props.text}
           onKeyDown={handleSearch}
-        />     
+        />  
+           
       </div>
-      {props.addemp && <button className={style.addemp} > افزودن کارمند </button>}
+      {props.addemp && (<button className={style.addemp} onClick={addHandle} > افزودن کارمند </button>)}
+      </div>
       
       <div id="tbl1" className={style.table_body}>
         {t()}
