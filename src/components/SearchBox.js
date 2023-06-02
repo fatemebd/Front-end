@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 const SearchBox = (props) => {
   const [data, setData] = useState([]);
 
+
+
   useEffect(() => {
     const headers = new Headers({
       "Content-Type": "application/json",
@@ -16,7 +18,8 @@ const SearchBox = (props) => {
       .then(data => setData(data))
       .catch(error => console.error(error));
   }, [props.apilink]);
-  
+
+console.log(data);  
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
@@ -25,7 +28,6 @@ const SearchBox = (props) => {
         "Authorization": `Token ${localStorage.getItem('token')}`,
       });
       const link = props.apilink + "?search=" + e.target.value;
-      console.log(link);
       fetch(link,{ headers })
         .then(response => response.json())
         .then(data => setData(data))
@@ -45,7 +47,7 @@ const t=()=>{
   )
 }
   return (
-    <>
+    <div className={style.ss}>
       <div className={style.search_box}>
         <button className={style.search_icon}>
           <img
@@ -64,7 +66,7 @@ const t=()=>{
       <div id="tbl1" className={style.table_body}>
         {t()}
       </div>
-    </>
+    </div>
   );
 };
 

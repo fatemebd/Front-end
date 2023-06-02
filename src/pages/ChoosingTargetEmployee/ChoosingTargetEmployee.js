@@ -22,13 +22,15 @@ function ChoosingTargetEmployee () {
     return (
         <div className={styles.mainPage}>
             <Header />
-            <SearchBox text="جست‌و‌جو در کارمندان" />
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="1" />
                 </div>
                
+            <div className={styles.searchcontainer}>
+            <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها" columns={columns} values={values} apilink="http://localhost:8000/accounts/get-emp/" />
 
+            </div>
                 
             </div>
             <ChangePageIcon next="/ChoosingSurveyTemplate" />

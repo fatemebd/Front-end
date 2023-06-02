@@ -65,3 +65,12 @@ input::placeholder{
     width: 80%;
     color: var(--color-black); 
   }
+  .ss{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10vh;
+    align-items: center;
+    width: 100%;
+
+}

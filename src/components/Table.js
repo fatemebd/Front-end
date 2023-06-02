@@ -1,6 +1,6 @@
 import Icon, { Result,Edit,Delete } from "../components/icon";
 import React from "react";
-import RadioButton from "./RadioButton"
+import RadioButton from "../components/RadioButton"
 
 
 import style from "../styles/Table.module.css"
@@ -43,6 +43,7 @@ function Table(props) {
         </thead>
         
         <tbody>
+          {console.log(props.data)}
         {props.data.map((item) => (  
           <tr >
             {radio &&(
@@ -62,8 +63,7 @@ function Table(props) {
             {props.values.map((element)=>
               <td>{item[element]}</td>                
             )}
-            <td classN
-            ame={style.rowNum}>{counter++}</td>
+            <td className={style.rowNum}>{counter++}</td>
           </tr>
         ))}
         </tbody>

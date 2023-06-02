@@ -14,6 +14,9 @@ const UserSetting = React.lazy(() => import("./pages/UserSetting/UserSetting"));
 const Answer=React.lazy(()=>import("./pages/Answer/index"))
 const ManagerSetting = React.lazy(() => import("./pages/ManagerSetting/ManagerSetting"));
 const TargetEmp = React.lazy(()=>import("./pages/ChoosingTargetEmployee/ChoosingTargetEmployee"))
+const Results = React.lazy(()=>import("./pages/Results/results"))
+
+
 
 const ProjectRoutes = () => {
   return (
@@ -32,6 +35,8 @@ const ProjectRoutes = () => {
           <Route path="/UserSetting" element={<UserSetting />} />
           <Route path="/ManagerSetting" element={<ManagerSetting />} />
           <Route path="/TargetEmp" element={<TargetEmp />} />
+          <Route path="/Reasults" element={<Results />} />
+
         </Routes>
       </Router>
     </React.Suspense>
