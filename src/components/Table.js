@@ -60,6 +60,7 @@ function Table(props) {
                 </div>
               </td>
             )}
+        
             {props.values.map((element)=>
               <td>{item[element]}</td>                
             )}

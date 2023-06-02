@@ -35,8 +35,8 @@ const ProjectRoutes = () => {
           <Route path="/UserSetting" element={<UserSetting />} />
           <Route path="/ManagerSetting" element={<ManagerSetting />} />
           <Route path="/TargetEmp" element={<TargetEmp />} />
+          <Route path="/ChoosingRespondents" element={<ChoosingRespondents />} />
           <Route path="/Reasults" element={<Results />} />
-
         </Routes>
       </Router>
     </React.Suspense>
