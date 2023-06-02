@@ -1,7 +1,8 @@
 import QuestionsDisplay from "../Questions/ModalContent/QuestionsDisplay";
 import UserHeader from "../../components/User_Header";
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import "./modal-content.css";
+import { useNavigate } from "react-router-dom";
 
 // you should fetch data below --------------------------------------
 const data = {
@@ -52,31 +53,60 @@ const data = {
 };
 export const Answer = () => {
   const answers = useRef({});
-
+  const navigate = useNavigate();
   const addAnswer = (answer) => {
-    const { questionId, type } = answer.questionInfo;
     answers.current = {
       ...answers.current,
       ...(answer?.questionInfo && {
-        [answer.questionInfo.number]: {
-          type,
-          questionId,
-          answer: answer.answer,
-        },
+        [answer.questionInfo.number]: answer.answer,
       }),
     };
   };
   // fetch data here and replace with dummy data --------------------------------------------------------------
-  const fetchedData = () => {};
+  const headers = new Headers({
+    "Content-Type": "application/json",
+    Authorization: "Token" + localStorage.getItem("token"),
+  });
+  // test realData then replace with dummy data -----------------------------------------------------------
+  const [realData, setData] = useState();
+  console.log(realData);
+  const getUrl = "localhost:8000/question/get/";
+  const fetchedData = () => {
+    fetch(getUrl, {
+      method: "GET",
+      headers,
+    })
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch(() => alert("لطفا دوباره تلاش کنید."));
+  };
 
+  useLayoutEffect(() => {
+    fetchedData();
+  }, []);
+  const [loading, setLoading] = useState(false);
+  const postUrl = "localhost:8000/questionnaire/submissions/create/";
   // send data --------------------------------------------------------------------
   const send = () => {
     // send if all answered --------------------------------------------------------
+    setLoading(true);
     if (data.questions.length === Object.values(answers.current).length) {
-      console.log(answers.current);
+      fetch(postUrl, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          userId: localStorage.getItem("userid"),
+          answers: answers.current,
+        }),
+      })
+        .then(() => {
+          navigate("/UserMain");
+        })
+        .catch(() => alert("لطفا دوباره تلاش کنید."))
+        .finally(() => setLoading(false));
       return;
     }
-    console.log("please answer all questions");
+    alert("لطفا به تمامی سوالات پاسخ دهید.");
   };
 
   return (
@@ -119,6 +149,7 @@ export const Answer = () => {
       ))}
       <button
         onClick={send}
+        disabled={loading}
         className="sendBtn"
         style={{
           position: "fixed",
