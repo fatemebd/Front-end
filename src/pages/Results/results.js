@@ -4,6 +4,8 @@ import Table from "../../components/Table";
 import Footer from "../../components/Footer"
 import styles from "./results.module.css"
 import { FiDownload } from "react-icons/fi";
+import DescriptiveQuestions from "../../components/DescriptiveQuestions";
+
 const Results = () => {
  
     return (
@@ -29,6 +31,11 @@ const Results = () => {
                 <p className={styles.title}>تعداد پاسخ</p>
             </div>
         </div>
+
+        <div className={styles.shortQ}>
+            <DescriptiveQuestions />
+        </div>
+
         <Footer />
       </div>
     );
