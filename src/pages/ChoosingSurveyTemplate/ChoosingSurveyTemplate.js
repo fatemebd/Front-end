@@ -57,7 +57,7 @@ function ChoosingSurveyTemplate () {
                 </div>
                 <div className={styles.container}>
 
-                    <TemplateSearch text="جست‌و‌جو در قالب‌ها"/>
+                    <TemplateSearch text="جست‌و‌جو در قالب‌ها..."/>
                     {/* {boxes} */}
 
                 </div>

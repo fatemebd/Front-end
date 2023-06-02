@@ -13,7 +13,7 @@ const UsermainpagePage = () => {
         <>
       <div className={style.user_main_page}>
          <Header/>
-         <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها" columns={columns} values={values} apilink="http://localhost:8000/questionnaire/questionnaires/"/>
+         <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها..." columns={columns} values={values} apilink="http://localhost:8000/questionnaire/questionnaires/"/>
 
          <Footer/>
       </div>

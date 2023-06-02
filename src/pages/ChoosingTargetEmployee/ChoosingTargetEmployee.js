@@ -13,6 +13,16 @@ const values=['position','name','username'];
 
 
 function ChoosingTargetEmployee () {
+
+    const survey = {
+
+        template : null,
+        employee : null,
+        deadline : null,
+        users : [], 
+      }
+      window.localStorage.setItem("survey", JSON.stringify(survey));
+
     const navigate = useNavigate();
     if (localStorage.getItem('token') == 'null') {
         navigate("/");
@@ -28,7 +38,7 @@ function ChoosingTargetEmployee () {
                 </div>
                
             <div className={styles.searchcontainer}>
-            <SearchBox  text="جست‌و‌جو در نظرسنجی‌ها" columns={columns} values={values} apilink="http://localhost:8000/accounts/get-emp/" />
+            <SearchBox  text="جست‌و‌جو در کارمندان..." columns={columns} values={values} apilink="http://localhost:8000/accounts/get-emp/" />
 
             </div>
                 

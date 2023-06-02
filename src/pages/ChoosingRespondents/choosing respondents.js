@@ -32,10 +32,10 @@ const ChoosingRespondentsPage = () => {
                 <StatusBar status="3" />
             </div>
             <div className={styles.search}>
-            <SearchBox  text="جست و جو در کارمندان" columns={columns} values={values} apilink={apilink} />
+            <SearchBox  text="جست و جو در کارمندان..." columns={columns} values={values} apilink={apilink} />
             </div>
             </div>
-            <ChangePageIcon before="/ChoosingSurveyTemplate" next="/ServrySetting" />
+            <ChangePageIcon before="/ChoosingSurveyTemplate" next="/SurveySetting" />
             <Footer />
         </div> 
      </> 

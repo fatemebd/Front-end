@@ -43,11 +43,10 @@ function Table(props) {
         </thead>
         
         <tbody>
-          {console.log(props.data)}
         {props.data.map((item) => (  
           <tr >
             {radio &&(
-              <td ><RadioButton /></td>
+              <td ><RadioButton id={item['username']}/></td>
             )}
             {iconManager &&(
               <td className={style.iconManager}><Result /></td>
