@@ -20,22 +20,22 @@ function ChoosingSurveyTemplate () {
         setSearchQuery(event.target.value);
     };
 
-    useEffect(() => {
-        const url = "http://localhost:8000/questionnaire/questionnaire_templates/";
-        const headers = new Headers({
-            "Content-Type": "application/json",
-            "Authorization": "Token " + localStorage.getItem('token'),
-        });
-        fetch(url, { headers })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => setQuestionnaires(data))
-            .catch(error => console.log(error));
-    }, [searchQuery]);
+    // useEffect(() => {
+    //     const url = "http://localhost:8000/questionnaire/questionnaire_templates/";
+    //     const headers = new Headers({
+    //         "Content-Type": "application/json",
+    //         "Authorization": "Token " + localStorage.getItem('token'),
+    //     });
+    //     fetch(url, { headers })
+    //         .then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error('Network response was not ok');
+    //             }
+    //             return response.json();
+    //         })
+    //         .then(data => setQuestionnaires(data))
+    //         .catch(error => console.log(error));
+    // }, [searchQuery]);
 
 
     if (localStorage.getItem('token') == 'null') {
@@ -43,22 +43,22 @@ function ChoosingSurveyTemplate () {
         return;
     }      
 
-    const boxes = questionnaires.map((questionnaire) => (
-        <Box key={questionnaire.id} formName={questionnaire.template_name} />
-    ));
+    // const boxes = questionnaires.map((questionnaire) => (
+    //     <Box key={questionnaire.id} formName={questionnaire.template_name} />
+    // ));
 
     return (
         <div className={styles.mainPage}>
             <Header />
-            <TemplateSearch text="جست‌و‌جو در قالب‌ها"/>
+            
             <div className={styles.main}>
                 <div className={styles.stat}>
                     <StatusBar status="2" />
                 </div>
                 <div className={styles.container}>
 
-
-                    {boxes}
+                    <TemplateSearch text="جست‌و‌جو در قالب‌ها"/>
+                    {/* {boxes} */}
 
                 </div>
 

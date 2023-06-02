@@ -66,3 +66,41 @@ input::placeholder{
     width: 80vw;
     color: var(--color-black); 
   }
+
+  .container {
+    height: 65vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+.box {
+  direction: rtl;
+  font-size: 16px;
+  border: 2px solid var(--color-midnightblue-100);
+  border-radius: 10px;
+  width: 20vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.formName {
+  display: flex ;
+  align-items: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.box:hover {
+  box-shadow: 1px 1px var(--color-midnightblue-100);
+  cursor: pointer;
+}
