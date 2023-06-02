@@ -1,9 +1,9 @@
 import style from "../styles/search_box.module.css";
 import Table from "../components/Table";
 import React, { useState, useEffect } from "react";
-
+import dataa from "../MOCK_DATA (1).json"
 const SearchBox = (props) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(dataa);
 
   useEffect(() => {
     const headers = new Headers({
