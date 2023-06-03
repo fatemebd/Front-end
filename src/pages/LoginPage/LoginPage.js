@@ -1,9 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./index.css";
 import Header from "../../components/loginHeader.js";
 import Footer from "../../components/Footer";
-import Button from "../../components/Button";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -193,7 +192,7 @@ function LoginPage () {
             <input className="input" type="text" />
 
             <div className="wrapper">              
-              <p className="b1">پست الکترونیک</p>
+              <p className="b1">تلفن همراه</p>
             </div>
           </div>
           
@@ -215,7 +214,7 @@ function LoginPage () {
 
        
           <button className="signin-button">
-            <div className="buttom">بازیابی</div>
+            <div className="buttom" onClick={() => {handleRestorePassClick_close()}}>بازیابی</div>
           </button>
 
         

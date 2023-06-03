@@ -1,6 +1,8 @@
 import { useState, useCallback } from "react";
 import EditUserInfo from "./EditUserInfo";
 import { useNavigate } from 'react-router-dom';
+import { FiList } from 'react-icons/fi';
+
 window.localStorage.setItem('tempid', null);
 
 
@@ -72,7 +74,7 @@ export const Survey = ()=>{
 
   return(
       <div>
-          <img src="/assets/img/survey.svg" onClick={()=>{navigate('/Answer')}}/>
+        <FiList onClick={()=>{navigate('/Answer')}}/>
       </div>
   )
 }
