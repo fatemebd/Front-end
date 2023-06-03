@@ -25,7 +25,7 @@ const setting=()=>{
                     <StatusBar status="4" />
                 </div>
                 <div className={styles.buttonContainer}>
-                    <button className={styles.button} >ثبت نظرسنجی</button>
+                    <button className={styles.button} onClick={()=>{alert("با موفقیت ثبت شد!");}} >ثبت نظرسنجی</button>
                     <ChangePageIcon before="/ChoosingRespondents" />
 
                 </div>
