@@ -38,9 +38,18 @@ const TemplateSearch = (props) => {
           .catch(error => console.error(error));
       }
   };
+  const handle = e => {
+    console.log('clicked', e.target.formName)
+    let newObject = window.localStorage.getItem("survey");
+    let survey = JSON.parse(newObject);
+    survey.template=e.target.key;
+    console.log(survey.template)
+    window.localStorage.setItem("survey", JSON.stringify(survey));
+    console.log(survey)
 
+}
   const boxes = questionnaires.map((questionnaire) => (
-    <Box key={questionnaire.id} formName={questionnaire.template_name} />
+    <Box key={questionnaire.id} formName={questionnaire.template_name} onClick={handle} />
   ));
 
 
