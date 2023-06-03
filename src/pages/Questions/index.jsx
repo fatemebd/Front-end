@@ -41,7 +41,7 @@ export default function Questions() {
 
   const headers = new Headers({
     "Content-Type": "application/json",
-    Authorization: "Token" + localStorage.getItem("token"),
+    "Authorization": "Token " + localStorage.getItem("token"),
   });
   const postUrl = "localhost:8000/questionnaire/questionnaire_templates";
   const [loading, setLoading] = useState(false);

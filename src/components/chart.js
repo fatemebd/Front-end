@@ -20,11 +20,11 @@ ChartJS.register(
 
 const chart = props => {
     const data={
-        labels:["Mon","tue","wed"],
+        labels:["گزینه ۱","گزینه ۲"],
         datasets:[
             { 
-                label:'369',
-                data:[3,6,9],
+                label:'تعداد',
+                data:[0,1],
                 backgroundColor:'black',
                 borderWidth:1,
              }

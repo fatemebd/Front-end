@@ -38,7 +38,7 @@ function Box (props) {
                 <p> {props.formName} </p>
             </div>
             <div>
-                <p> {num} سؤال </p>
+                <p> {"۳"} سؤال </p>
             </div>
         </div>
     )

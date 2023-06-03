@@ -9,8 +9,8 @@ import Chart from "../../components/chart";
 import DescriptiveQuestions from "../../components/DescriptiveQuestions";
 import SearchBox from "../../components/SearchBox"
 
-const columns=['userList',,'سمت','دانشکده','نام و نام خانوادگی',' نام کاربری','ردیف'];
-const values=['position','faculty','name','username'];
+const columns=["نام و نام‌خانوادگی", "نام کاربری"];
+const values=["full_name", "username"];
 const apilink1="http://localhost:8000/questionnaire/submissions/not-responded-users/?id="+window.localStorage.getItem("tempid");
 
 const Results = () => {
@@ -106,6 +106,10 @@ const Results = () => {
         };
     popup.addEventListener('click',closeModal());
     };
+
+    const downloadBtn = () => {
+        
+    }
  
     return (
       
@@ -128,7 +132,7 @@ const Results = () => {
             </div >
             <div className={styles.box}>
                 <p className={styles.title}>دانلود نتایج</p>
-                <button className={styles.button}><FiDownload className={styles.icon}/><p className={styles.download}>بارگیری</p></button>
+                <button className={styles.button} onClick={() => {downloadBtn()}} ><FiDownload className={styles.icon}/><p className={styles.download}>بارگیری</p></button>
             </div>
             <div className={styles.box}>
                 <p className={styles.title}>تعداد پاسخ</p>

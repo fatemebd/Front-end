@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // you should fetch data below --------------------------------------
 const data = {
   time: "۱۴۰۲/۰۳/۲۵",
-  name: "زهرا ثمربخش",
+  name: "نظرسنجی",
   questions: [
     {
       number: 1,

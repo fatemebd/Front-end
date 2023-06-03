@@ -5,7 +5,7 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 const DescriptiveQuestions = (props)=>{
     return(
       <div className={styles.q}>
-        <p> {props.question} متن </p>
+        <p> {props.question} سوال تشریحی </p>
         <div contenteditable="false" className={styles.textarea}>
           <div className={styles.icons}>
             <div onClick={props.nextFunc}>
@@ -16,7 +16,7 @@ const DescriptiveQuestions = (props)=>{
             </div>
           </div>
           <br></br>
-           {props.text} سلام
+           {props.text} جواب
         </div>
       </div>
 

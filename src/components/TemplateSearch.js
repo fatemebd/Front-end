@@ -53,6 +53,8 @@ const TemplateSearch = (props) => {
   ));
 
 
+  const handle2 = () => (navigate('/ChoosingRespondents'));
+
   return (
     <>
       <div className={style.search_box}>
@@ -84,7 +86,7 @@ const TemplateSearch = (props) => {
           }
         </div>
 
-
+          <Box formName="نظرسنجی" onClick={handle2} />
         {boxes}
 
       </div>

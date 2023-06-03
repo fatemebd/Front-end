@@ -9,6 +9,8 @@ import ChangePageIcon from '../../components/ChangePageIcon';
 
 
 const setting=()=>{
+
+
     return(
         <div className={styles.setting}>
             <Header />
@@ -23,7 +25,7 @@ const setting=()=>{
                     <StatusBar status="4" />
                 </div>
                 <div className={styles.buttonContainer}>
-                    <button className={styles.button}>ثبت نظرسنجی</button>
+                    <button className={styles.button} >ثبت نظرسنجی</button>
                     <ChangePageIcon before="/ChoosingRespondents" />
 
                 </div>
