@@ -18,7 +18,8 @@ const UserList=()=>{
          <Footer/>   
          
       </div>
-      
+      <div id="kir"></div>
+      <EditUserInfo />
       </>
       
     );
