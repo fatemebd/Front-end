@@ -1,11 +1,14 @@
 import { useState, useCallback } from "react";
 import EditUserInfo from "./EditUserInfo";
+import { useNavigate } from 'react-router-dom';
+window.localStorage.setItem('tempid', null);
 
 
-const editClick = () =>{
+ const editClick = (info) =>{
   
           
         var popup = document.getElementById("edituser");
+        console.log(window.localStorage.getItem('prop', info))
         if (!popup) return;
         var popupStyle = popup.style;
         if (popupStyle) {
@@ -26,14 +29,16 @@ const editClick = () =>{
             }
           };
         popup.addEventListener("click", onClick);
-        
-      
+       
+       
   }  
+ 
+ 
+export const Result = (prop) => {
+  const navigate = useNavigate();
   
-export const Result = () => {
-
     return (
-        <div className='result'>
+        <div className='result' onClick={()=>{navigate("/Reasults");window.localStorage.setItem('tempid',prop.id);}}>
             <img src="/assets/img/result.svg"/>
         </div>
     );
@@ -41,13 +46,13 @@ export const Result = () => {
 
 
 
-export const Edit = (props)=>{
+export const Edit = (prop)=>{
     return(
            
         <div>
           
-            <img src="/assets/img/edit.svg" onClick={editClick}/>
-            <EditUserInfo info={props.info} />
+            <img src="/assets/img/edit.svg" onClick={()=>{editClick(prop.info)}}/>
+            
         </div> 
     )
 

@@ -2,23 +2,25 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import styles from "../styles/EditUserInfo.module.css";
 
+
+
 const close_Click = () => {
       
   const popup = document.getElementById('edituser');     
   popup.style.display = 'none';    
 };
 
-function EditUserInfo(prop) {
- 
-  const username=prop.info.name;
-  const [first_name, setfirst_name] = useState([prop.info.first_name]);
-  const [last_name, setlast_name] = useState([prop.info.last_name]);
-  const [email, setEmail] = useState([prop.info.email]);
-  const [position, setPosition] = useState([prop.info.position]);
-  const [faculty, setfaculty] = useState([prop.info.faculty]);
+function EditUserInfo() {
+
+  const username="999999991";
+  const [first_name, setfirst_name] = useState("بهروز");
+  const [last_name, setlast_name] = useState("شاهقلی");
+  const [email, setEmail] = useState("a123456@gmail.com");
+  const [position, setPosition] = useState("رییس دانشکده");
+  const [faculty, setfaculty] = useState("کامپیوتر");
   const [image, setImage] = useState("/assets/img/materialsymbolsaccountcircle.svg");//prop.info.image_path//
   const inputFile = useRef(null);
-  const [phone, setphone] = useState([prop.info.phone]);
+  const [phone, setphone] = useState();
 
   const handleImageChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -38,7 +40,7 @@ function EditUserInfo(prop) {
         headers: {
           'Content-Type': 'application/json'
         },
-         body: JSON.stringify({ username, first_name,last_name,email,faculty,position,phone })
+         body: JSON.stringify({first_name,last_name,email,faculty,position,phone })
       });
     
 

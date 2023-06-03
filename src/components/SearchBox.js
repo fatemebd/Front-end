@@ -40,6 +40,7 @@ const SearchBox = (props) => {
       .then(data => setData(data))
       .catch(error => console.error(error));
   }, [props.apilink]);
+  console.log(data);
 
 
   const handleSearch = (e) => {
@@ -48,7 +49,11 @@ const SearchBox = (props) => {
         "Content-Type": "application/json",
         "Authorization": `Token ${localStorage.getItem('token')}`,
       });
-      const link = props.apilink + "?search=" + e.target.value;
+      let link;
+      if(e.target.value!=="")
+       link = props.apilink + "?search=" + e.target.value;
+       else
+       link=props.apilink;
       fetch(link,{ headers })
         .then(response => response.json())
         .then(data => setData(data))

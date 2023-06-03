@@ -49,7 +49,7 @@ function Table(props) {
               <td ><RadioButton id={item['username']}/></td>
             )}
             {iconManager &&(
-              <td className={style.iconManager}><Result /></td>
+              <td className={style.iconManager} ><Result id={item['id']} /></td>
             )}
             {userList&&(
               <td className={style.usersListIcons}>

@@ -35,6 +35,12 @@ document.querySelectorAll("tr").forEach(e => e.addEventListener("click", ()=> {h
        users.push(e.getElementsByTagName("td")[3].innerText);
         console.log(users);
    }
+   let newObject = window.localStorage.getItem("survey");
+        let survey = JSON.parse(newObject);
+        survey.users=users;
+        console.log(survey.users)
+        window.localStorage.setItem("survey", JSON.stringify(survey));
+        console.log(survey);
 }
     return (
       <div className={styles.mainPage}>

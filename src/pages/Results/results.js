@@ -11,7 +11,7 @@ import SearchBox from "../../components/SearchBox"
 
 const columns=['userList',,'سمت','دانشکده','نام و نام خانوادگی',' نام کاربری','ردیف'];
 const values=['position','faculty','name','username'];
-
+const apilink1="http://localhost:8000/questionnaire/submissions/not-responded-users/?id="+window.localStorage.getItem("tempid");
 
 const Results = () => {
 
@@ -173,7 +173,7 @@ const Results = () => {
                         </button>
                     </div>
                     <div className={styles.contain}>
-                    <SearchBox  text="جست‌وجو در افراد..." columns={columns} values={values} apilink="http://localhost/questionnaire/submissions/not-responded-users/"/>
+                    <SearchBox  text="جست‌وجو در افراد..." columns={columns} values={values} apilink={apilink1}/>
                     </div>
 
 
