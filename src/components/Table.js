@@ -1,4 +1,4 @@
-import Icon, { Result,Edit,Delete } from "../components/icon";
+import Icon, { Result,Edit,Delete,Survey } from "../components/icon";
 import React from "react";
 import RadioButton from "../components/RadioButton"
 
@@ -10,6 +10,7 @@ let check=false;
 let radio=false;
 let fillIcon=false;
 let userList=false;
+let survey=false;
 
 
 function Table(props) {
@@ -22,6 +23,10 @@ function Table(props) {
           <tr>
             {props.columns.map((element) =>{
                 switch(element){
+                  case "survey":{
+                    survey=true;
+                    return <th> </th>;
+                  }
                   case "iconManager":{
                     iconManager=true;
                     return <th> </th>;
@@ -45,6 +50,9 @@ function Table(props) {
         <tbody>
         {props.data.map((item) => (  
           <tr >
+            {survey &&(
+              <td ><div  className={style.survey}><Survey /></div></td>
+            )}
             {radio &&(
               <td ><RadioButton id={item['username']}/></td>
             )}

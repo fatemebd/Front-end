@@ -67,3 +67,12 @@ export const Delete = ()=>{
     )
 }
 
+export const Survey = ()=>{
+  const navigate = useNavigate();
+
+  return(
+      <div>
+          <img src="/assets/img/survey.svg" onClick={()=>{navigate('/Answer')}}/>
+      </div>
+  )
+}
