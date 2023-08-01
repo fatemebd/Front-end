@@ -69,9 +69,9 @@ export const Answer = () => {
   });
   // test realData then replace with dummy data -----------------------------------------------------------
   const [realData, setData] = useState();
-  const getUrl = "localhost:8000/question/get/";
   const fetchedData = () => {
-    fetch(getUrl, {
+    const link =  "http://localhost:8000/questionnaire/questionnaires/"+localStorage.getItem("ansId") ;
+    fetch(link, {
       method: "GET",
       headers,
     })

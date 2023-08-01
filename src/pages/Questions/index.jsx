@@ -16,8 +16,9 @@ export default function Questions() {
   const [questions, setQuestions] = useState([]);
   const navigate = useNavigate();
   const [edit, setEdit] = useState(null);
-  const [surveyName, setSurveyName] = useState("");
-  console.log(questions);
+  const [surveyName,setSurveyName]= useState("")
+  const [tempId, setTempId] = useState();
+  const [content, setContent] = useState(false);
 
   const addQuestions = (question) => {
     if (edit) {
@@ -32,84 +33,175 @@ export default function Questions() {
     setQuestions((s) => [...s, question]);
   };
 
-  console.log(edit);
+  // console.log(edit);
 
   const onClick = (e) => {
     setModalview(e.currentTarget.value);
     toggle();
   };
 
-  const headers = new Headers({
-    "Content-Type": "application/json",
-    "Authorization": "Token " + localStorage.getItem("token"),
-  });
+  // const headers = new Headers({
+  //   "Content-Type": "application/json",
+  //   "Authorization": "Token " + localStorage.getItem("token"),
+  // });
   const postUrl = "localhost:8000/questionnaire/questionnaire_templates";
   const [loading, setLoading] = useState(false);
+
   const sendQuestions = () => {
+    console.log(localStorage.getItem("tempId"))
+    // const headers = new Headers({
+    //   "Content-Type": "application/json",
+    //   "Authorization": `Token ${localStorage.getItem('token')}`,
+    // });
     // send if all answered --------------------------------------------------------
     setLoading(true);
-    fetch(postUrl, {
+    fetch('http://localhost:8000/question/create/' ,{
       method: "POST",
-      headers,
+      headers: {
+        "Content-Type": "application/json",
+    "Authorization": `Token ${localStorage.getItem('token')}`
+      },
       body: JSON.stringify({
-        template_name: surveyName,
-        creator: localStorage.getItem("userid"),
-        description: "",
+        template_id: tempId,
         questions,
       }),
     })
       .then(() => {
-        navigate("/UserMain");
+        alert("قالب جدید با موفقیت اضافه شد.");
       })
       .catch(() => alert("لطفا دوباره تلاش کنید."))
       .finally(() => setLoading(false));
     return;
   };
+  const sendTemp = async () => {
 
+    const template_name=surveyName;
+    const creator=localStorage.getItem("uid");
+    const description= "";
+
+    try {
+      const response = await fetch('http://localhost:8000/questionnaire/questionnaire_templates/', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+      "Authorization": `Token ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify( {template_name,
+          creator,
+          description})
+      });
+
+      if (response.status === 201) {
+        const data = await response.json();
+        setTempId(data.id)
+        alert("نظرسنجی ایجاد شد. لطفا سوالات را طراحی نمایید.")
+      setModalview(null)
+      // Set the state with the desired JSX
+      setContent(
+        true
+      );
+      } else {
+        alert("لطفا دوباره تلاش کنید.")        
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+
+
+
+
+
+// const sendTemp=()=>{
+  
+//   setLoading(true);
+//   // const headers = new Headers({
+//   //   "Content-Type": "application/json",
+//   //   "Authorization": `Token ${localStorage.getItem('token')}`,
+//   // });
+//   const demand= fetch(
+//     'http://localhost:8000/questionnaire/questionnaire_templates/',{
+//     method: 'POST',
+//      headers:{
+//       "Content-Type": "application/json",
+//       "Authorization": `Token ${localStorage.getItem('token')}`,
+//     }, 
+//     template_name:surveyName,
+//     creator:localStorage.getItem("userid"),
+//     description: "",
+//   })
+//   // const data =  demand.json();
+//   console.log(demand)
+//     demand.then((response) => {
+//       alert(`نظرسنجی ایجاد شد. لطفا سوالات را طراحی نمایید.`)
+//       setModalview(null)
+//       console.log("then");
+//       // Set the state with the desired JSX
+//       setContent(
+//         true
+//       );
+//     })
+//     .catch(() => alert("لطفا دوباره تلاش کنید."))
+//     .finally(() => setLoading(false));
+//   return;
+// }
   return (
     <>
       <div className="main">
         <Header />
         <div className="container">
           <div className="name-of-survey-container">
+          <button
+          onClick={sendTemp}
+          className="submit-temp-btn"
+          disabled={loading}
+        >
+          ذخیره قالب
+        </button>
             <input
               onBlur={(e) => setSurveyName(e.currentTarget.value)}
               id="name-of-survey"
             />
             <label htmlFor="name-of-survey"> : نام نظرسنجی</label>
+           
           </div>
-          <TypeBtn onClick={onClick} />
+      
+        <div>
+     <TypeBtn onClick={onClick} /> 
+
           <QuestionsList
-            questions={questions.sort(
-              (current, prev) => current.number - prev.number
-            )}
-            setEdit={setEdit}
-            toggle={toggle}
-            setQuestions={setQuestions}
+          questions={questions.sort((current, prev) => current.number - prev.number)}
+          setEdit={setEdit}
+          toggle={toggle}
+          setQuestions={setQuestions}
           />
-          <Modal
-            show={show}
-            toggle={() => {
-              toggle();
-              setEdit(null);
-            }}
+          {content&&modalview &&<Modal
+          show={show}
+          toggle={() => {
+          toggle();
+          setEdit(null);
+          }}
           >
-            {modalview && (
-              <ModalContent
-                numOfQuestion={
-                  edit !== null ? "درحال  تغییر" : questions.length + 1
-                }
-                toggle={() => {
-                  toggle();
-                  setEdit(null);
-                }}
-                setter={addQuestions}
-                type={edit ? edit.type : modalview}
-                info={edit}
-              />
-            )}
-          </Modal>
+          {modalview &&content&& (
+            <ModalContent
+            numOfQuestion={edit !== null ? "درحال  تغییر" : questions.length + 1}
+            toggle={() => {
+            toggle();
+            setEdit(null);
+            }}
+            setter={addQuestions}
+            type={edit ? edit.type : modalview}
+            info={edit}
+            />
+          )}
+          </Modal>}
         </div>
+         
+        </div>
+
+        
         <button
           onClick={sendQuestions}
           className="submit-btn"
@@ -117,7 +209,7 @@ export default function Questions() {
         >
           ذخیره
         </button>
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </>
   );

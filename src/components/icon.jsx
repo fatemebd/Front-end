@@ -69,10 +69,10 @@ export const Delete = ()=>{
     )
 }
 
-export const Survey = ()=>{
+export const Survey = (props)=>{
   const navigate = useNavigate();
-
-  return(
+  window.localStorage.setItem('ansId', props.id);
+    return(
       <div>
         <FiList onClick={()=>{navigate('/Answer')}}/>
       </div>

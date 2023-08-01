@@ -1,21 +1,20 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 import "./index.css";
 import Header from "../../components/loginHeader.js";
 import Footer from "../../components/Footer";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-
-function LoginPage () {
+function LoginPage() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [isStaff, setIsStaff] = useState('');
-  window.localStorage.setItem('token', null);
-  window.localStorage.setItem('fullName', null);
-  window.localStorage.setItem('isAuthenticated', false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [isStaff, setIsStaff] = useState("");
+  window.localStorage.setItem("token", null);
+  window.localStorage.setItem("fullName", null);
+  window.localStorage.setItem("isAuthenticated", false);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -24,91 +23,91 @@ function LoginPage () {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
- 
+
   const handleRestorePassClick = () => {
-    const popup = document.getElementById('restorePassModalContainer');
+    const popup = document.getElementById("restorePassModalContainer");
     if (!popup) return;
     const popupStyle = popup.style;
     if (popupStyle) {
-      popupStyle.display = 'flex';
+      popupStyle.display = "flex";
       popupStyle.zIndex = 100;
-      popupStyle.backgroundColor = 'rgba(113, 113, 113, 0.3)';
-      popupStyle.alignItems = 'center';
-      popupStyle.justifyContent = 'center';
+      popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+      popupStyle.alignItems = "center";
+      popupStyle.justifyContent = "center";
     }
-    popup.setAttribute('closable', '');
+    popup.setAttribute("closable", "");
 
     const onClick =
       popup.onClick ||
       function (e) {
-        if (e.target === popup && popup.hasAttribute('closable')) {
-          popupStyle.display = 'none';
+        if (e.target === popup && popup.hasAttribute("closable")) {
+          popupStyle.display = "none";
         }
       };
-    popup.addEventListener('click', onClick);
+    popup.addEventListener("click", onClick);
   };
 
   const handleScrollAnimElementIntersecting = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting || entry.intersectionRatio > 0) {
         const targetElement = entry.target;
-        targetElement.classList.add('animate');
+        targetElement.classList.add("animate");
         observer.unobserve(targetElement);
       }
     });
   };
 
- 
   const handleRestorePassClick_close = () => {
     const closeModal = () => {
-      const popup = document.getElementById('restorePassModalContainer');
+      const popup = document.getElementById("restorePassModalContainer");
       if (!popup) return;
-      popup.removeEventListener('click', onClick);
-      popup.style.display = 'none';
-    }
-    
-    const popup = document.getElementById('restorePassModalContainer');
+      popup.removeEventListener("click", onClick);
+      popup.style.display = "none";
+    };
+
+    const popup = document.getElementById("restorePassModalContainer");
     if (!popup) return;
-    
-    popup.setAttribute('closable', '');
-  
+
+    popup.setAttribute("closable", "");
+
     const onClick =
       popup.onClick ||
       function (e) {
-        if (e.target === popup && popup.hasAttribute('closable')) {
+        if (e.target === popup && popup.hasAttribute("closable")) {
           closeModal();
         }
       };
-    popup.addEventListener('click',closeModal());
+    popup.addEventListener("click", closeModal());
   };
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:8000/accounts/login/', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8000/accounts/login/", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }),
       });
 
       if (response.status === 200) {
         const data = await response.json();
         setIsStaff(data.is_staff);
         setToken(data.token);
-        window.localStorage.setItem('token', data.token);
+        window.localStorage.setItem("token", data.token);
         setFullName(data.user_full_name);
-        window.localStorage.setItem('fullName', data.user_full_name);
-        window.localStorage.setItem('isAuthenticated', true);
-        window.localStorage.setItem('userid', username);
-        if (data.image_path != '') {
-          window.localStorage.setItem('img', data.image_path);
-        }
-        else if (data.is_staff) {
-          window.localStorage.setItem('img', "/assets/img/materialsymbolsaccountcircle.svg");
-        }
-        else {
-          window.localStorage.setItem('img', "/assets/img/vector1.svg");
+        window.localStorage.setItem("fullName", data.user_full_name);
+        window.localStorage.setItem("isAuthenticated", true);
+        window.localStorage.setItem("userid", username);
+        if (data.image_path != "") {
+          window.localStorage.setItem("img", data.image_path);
+        } else if (data.is_staff) {
+          window.localStorage.setItem(
+            "img",
+            "/assets/img/materialsymbolsaccountcircle.svg"
+          );
+        } else {
+          window.localStorage.setItem("img", "/assets/img/vector1.svg");
         }
         console.log("200");
         console.log(data);
@@ -120,7 +119,7 @@ function LoginPage () {
           navigate("/UserMain");
         }
       } else {
-        alert('Invalid credentials');
+        alert("Invalid credentials");
         console.log("else");
       }
     } catch (error) {
@@ -128,45 +127,86 @@ function LoginPage () {
     }
   };
 
-  const observer = new IntersectionObserver(handleScrollAnimElementIntersecting, {
-    threshold: 0.15,
-  });
+  async function sendPhoneNumber(phoneNumber) {
+    const url = `http://localhost:8000/accounts/forget-password/?phone=${phoneNumber}`;
+
+    try {
+      const response = await fetch(url);
+      if (response.status === 200) {
+        alert("رمز عبور جدید برای شما ارسال شد.");
+        handleRestorePassClick_close();
+      } else {
+        alert("مشکلی در ارسال پیامک رخ داده است.");
+      }
+      return await response;
+    } catch (error) {
+      return console.error(error);
+    }
+  }
+
+  const observer = new IntersectionObserver(
+    handleScrollAnimElementIntersecting,
+    {
+      threshold: 0.15,
+    }
+  );
 
   React.useEffect(() => {
-    const scrollAnimElements = document.querySelectorAll('[data-animate-on-scroll]');
+    const scrollAnimElements = document.querySelectorAll(
+      "[data-animate-on-scroll]"
+    );
     scrollAnimElements.forEach((element) => observer.observe(element));
   }, []);
 
   return (
-    <div className='loginPage'>
-  
+    <div className="loginPage">
       <header className="login-page" data-animate-on-scroll>
         <Header />
         <div className="login">
           <b className="b6">ورود</b>
           <div className="input-field-name">
-            <input value={username} onChange={handleUsernameChange} className="input2" type="text" />
-            <div className="name">              
+            <input
+              value={username}
+              onChange={handleUsernameChange}
+              className="input2"
+              type="text"
+            />
+            <div className="name">
               <p className="b7">نام کاربری</p>
             </div>
           </div>
           <div className="pass">
-            <b className="b8" id="text3" onClick={handleRestorePassClick}>فراموشی رمز عبور</b>
+            <b className="b8" id="text3" onClick={handleRestorePassClick}>
+              فراموشی رمز عبور
+            </b>
             <div className="input-field-pass2">
-              <input value={password} onChange={handlePasswordChange} className="input2" type="password" />
-              <div className="name">                
+              <input
+                value={password}
+                onChange={handlePasswordChange}
+                className="input2"
+                type="password"
+              />
+              <div className="name">
                 <p className="b9">رمز عبور</p>
               </div>
             </div>
           </div>
           <div className="robot1">
             <div className="frame2">
-              <input className="checkbox1" type="checkbox" defaultChecked={false} />
+              <input
+                className="checkbox1"
+                type="checkbox"
+                defaultChecked={false}
+              />
 
               <div className="im-not-a1">I'm not a robot</div>
             </div>
             <div className="frame3">
-              <img className="logo-icon1" alt="" src="/assets/img/RecaptchaLogo.png" />
+              <img
+                className="logo-icon1"
+                alt=""
+                src="/assets/img/RecaptchaLogo.png"
+              />
 
               <div className="im-not-a1">Privacy - Terms</div>
             </div>
@@ -178,53 +218,70 @@ function LoginPage () {
         <Footer />
       </header>
 
-      <div id="restorePassModalContainer" className="popup-overlay" style={{ display: 'none' }}>
+      <div
+        id="restorePassModalContainer"
+        className="popup-overlay"
+        style={{ display: "none" }}
+      >
         <div className="restore-pass-modal">
-          <div className='close-btn'>
-          <button className='close-icon' onClick={handleRestorePassClick_close}>
-            <img className="vector-icon" alt="" src="/assets/img/close.png" />
-          </button>
+          <div className="close-btn">
+            <button
+              className="close-icon"
+              onClick={handleRestorePassClick_close}
+            >
+              <img className="vector-icon" alt="" src="/assets/img/close.png" />
+            </button>
           </div>
-          
+
           <b className="b">بازیابی رمز عبور</b>
 
           <div className="input-field-pass">
             <input className="input" type="text" />
 
-            <div className="wrapper">              
+            <div className="wrapper">
               <p className="b1">تلفن همراه</p>
             </div>
           </div>
-          
+
           <b className="b3">
-            رمز عبور موقت به ایمیل شما ارسال شد. لطفا پس از وارد شدن رمز خود را تغییر دهید.
+            رمز عبور موقت به ایمیل شما ارسال شد. لطفا پس از وارد شدن رمز خود را
+            تغییر دهید.
           </b>
           <div className="robot1">
             <div className="frame2">
-              <input className="checkbox1" type="checkbox" defaultChecked={true} />
+              <input
+                className="checkbox1"
+                type="checkbox"
+                defaultChecked={true}
+              />
 
               <div className="im-not-a1">I'm not a robot</div>
             </div>
             <div className="frame3">
-              <img className="logo-icon1" alt="" src="/assets/img/RecaptchaLogo.png" />
+              <img
+                className="logo-icon1"
+                alt=""
+                src="/assets/img/RecaptchaLogo.png"
+              />
 
               <div className="im-not-a1">Privacy - Terms</div>
             </div>
           </div>
 
-       
           <button className="signin-button">
-            <div className="buttom" onClick={() => {handleRestorePassClick_close()}}>بازیابی</div>
+            <div
+              className="buttom"
+              onClick={() => {
+                sendPhoneNumber("09190961025");
+              }}
+            >
+              بازیابی
+            </div>
           </button>
-
-        
         </div>
       </div>
     </div>
-  )
-
+  );
 }
-  
-
 
 export default LoginPage;

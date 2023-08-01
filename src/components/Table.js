@@ -51,10 +51,10 @@ function Table(props) {
         {props.data.map((item) => (  
           <tr >
             {survey &&(
-              <td ><div  className={style.survey}><Survey /></div></td>
+              <td ><div  className={style.survey}><Survey id={item['id']} /></div></td>
             )}
             {radio &&(
-              <td ><RadioButton id={item['username']}/></td>
+              <td ><RadioButton id={item.username}/></td>
             )}
             {iconManager &&(
               <td className={style.iconManager} ><Result id={item['id']} /></td>
