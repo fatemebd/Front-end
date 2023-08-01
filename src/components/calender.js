@@ -3,7 +3,7 @@ import DatePicker from "react-multi-date-picker"
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import styles from "../styles/calendar.module.css"
-import "react-multi-date-picker/styles/colors/mycolor.css"
+import "react-multi-date-picker/styles/colors/teal.css"
 
 //this function shuold put input value into survey.deadline in string format
 export default function Example() {
